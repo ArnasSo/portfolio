@@ -11,10 +11,13 @@
   justify-content: flex-end;
   padding: 5rem var(--page-padding) 5rem var(--page-padding);
   border-right: 1px solid var(--border);
+  background:
+    linear-gradient(145deg, rgba(237, 217, 207, 0.72) 0%, rgba(245, 242, 237, 0.92) 48%, rgba(221, 217, 211, 0.58) 100%),
+    var(--cream);
 }
 
 .tag {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -28,7 +31,8 @@
   font-family: var(--serif);
   font-size: clamp(3.5rem, 6vw, 6rem);
   line-height: 1.0;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  letter-spacing: 0;
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 0.8s 0.4s forwards;
@@ -40,7 +44,7 @@
 }
 
 .desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--ink-light);
   max-width: 380px;
   line-height: 1.8;
@@ -58,16 +62,113 @@
 }
 
 .right {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 5rem var(--page-padding);
   opacity: 0;
   animation: fadeIn 1.2s 0.8s forwards;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.abstractGraphic {
+  position: absolute;
+  top: 5%;
+  right: -8%;
+  width: min(105%, 48rem);
+  aspect-ratio: 1;
+  opacity: 0.84;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatGraphic 9s ease-in-out infinite;
+}
+
+.abstractGraphicSecondary {
+  position: absolute;
+  top: 20%;
+  left: -18%;
+  width: min(74%, 34rem);
+  aspect-ratio: 1;
+  opacity: 0.66;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatGraphicSecondary 11s ease-in-out infinite;
+}
+
+.abstractGraphic svg,
+.abstractGraphicSecondary svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.orbit,
+.orbitMuted,
+.thread,
+.threadMuted,
+.orbitSecondary,
+.threadSecondary {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fillWash {
+  fill: rgba(237, 217, 207, 0.34);
+}
+
+.fillWashSecondary {
+  fill: rgba(237, 217, 207, 0.26);
+}
+
+.orbit {
+  stroke: rgba(196, 96, 58, 0.24);
+  stroke-width: 1.6;
+}
+
+.orbitMuted {
+  stroke: rgba(26, 24, 20, 0.08);
+  stroke-width: 1.3;
+}
+
+.thread {
+  stroke: rgba(196, 96, 58, 0.2);
+  stroke-width: 1.4;
+}
+
+.threadMuted {
+  stroke: rgba(107, 103, 96, 0.18);
+  stroke-width: 1.2;
+}
+
+.orbitSecondary {
+  stroke: rgba(196, 96, 58, 0.16);
+  stroke-width: 1.5;
+}
+
+.threadSecondary {
+  stroke: rgba(107, 103, 96, 0.16);
+  stroke-width: 1.3;
+}
+
+.node {
+  fill: rgba(196, 96, 58, 0.38);
+}
+
+.nodeSecondary {
+  fill: rgba(196, 96, 58, 0.28);
+}
+
+.nodeMuted {
+  fill: rgba(107, 103, 96, 0.28);
 }
 
 .rightLabel {
-  font-size: 0.72rem;
+  position: relative;
+  z-index: 1;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-light);
@@ -77,14 +178,16 @@
 }
 
 .skills {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .skillTag {
-  font-size: 0.78rem;
-  font-weight: 400;
+  font-size: 0.875rem;
+  font-weight: 500;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--border);
   border-radius: 2rem;
@@ -109,6 +212,23 @@
   to   { opacity: 1; }
 }
 
+@keyframes floatGraphic {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(-10px, 8px, 0) rotate(1.5deg); }
+}
+
+@keyframes floatGraphicSecondary {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-4deg); }
+  50% { transform: translate3d(9px, -7px, 0) rotate(-2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abstractGraphic,
+  .abstractGraphicSecondary {
+    animation: none;
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
@@ -123,5 +243,19 @@
 
   .right {
     padding: 3rem var(--page-padding);
+  }
+
+  .abstractGraphic {
+    top: 4%;
+    right: -7rem;
+    width: min(34rem, 112%);
+    opacity: 0.58;
+  }
+
+  .abstractGraphicSecondary {
+    top: 28%;
+    left: -8rem;
+    width: min(26rem, 92%);
+    opacity: 0.41;
   }
 }

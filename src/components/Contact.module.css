@@ -38,7 +38,7 @@
   align-items: end;
 }
 
-/* ── Left ── */
+/* Left */
 .available {
   display: inline-flex;
   align-items: center;
@@ -68,7 +68,7 @@
 }
 
 .headline em {
-  color: var(--accent);
+  color: #A7C7B1;
   font-style: italic;
 }
 
@@ -100,7 +100,7 @@
   color: var(--accent);
 }
 
-/* ── Right ── */
+/* Right */
 .links {
   display: flex;
   flex-direction: column;
@@ -134,7 +134,7 @@
   flex-shrink: 0;
 }
 
-/* ── Footer ── */
+/* Footer */
 .footer {
   margin-top: 6rem;
   padding-top: 1.5rem;
@@ -152,7 +152,7 @@
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
+  50% { opacity: 0.4; }
 }
 
 @media (max-width: 900px) {

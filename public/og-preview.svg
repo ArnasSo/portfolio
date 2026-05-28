@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Arnas Sokolovas UX Design Portfolio preview">
+  <rect width="1200" height="630" fill="#F5F2ED"/>
+  <path d="M0 0H1200V630H0Z" fill="url(#bg)"/>
+  <g opacity="0.86">
+    <path d="M782 421C716 280 778 74 930 -8C1089 -96 1284 -44 1385 98C1490 246 1445 450 1297 559C1143 673 865 599 782 421Z" fill="#EDD9CF" opacity="0.58"/>
+    <path d="M865 461C777 349 792 173 904 72C1024 -37 1204 -22 1309 100C1414 224 1392 408 1268 503C1147 597 957 577 865 461Z" fill="none" stroke="#C4603A" stroke-width="4" opacity="0.24"/>
+    <path d="M746 319C855 248 902 115 1031 94C1168 73 1230 216 1359 173C1440 147 1478 70 1508 12" fill="none" stroke="#C4603A" stroke-width="4" stroke-linecap="round" opacity="0.22"/>
+  </g>
+  <g opacity="0.7">
+    <path d="M60 524C20 393 101 245 234 198C382 147 537 227 586 377C637 533 553 688 401 731C249 774 105 674 60 524Z" fill="#EDD9CF" opacity="0.36"/>
+    <path d="M81 445C178 475 249 428 309 346C382 245 487 228 592 298C652 337 697 397 749 412" fill="none" stroke="#6B6760" stroke-width="3" stroke-linecap="round" opacity="0.2"/>
+  </g>
+  <text x="84" y="118" fill="#C4603A" font-family="Roboto, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="4">UX DESIGN PORTFOLIO</text>
+  <text x="84" y="268" fill="#1A1814" font-family="Roboto, Arial, sans-serif" font-size="82" font-weight="700">Arnas Sokolovas</text>
+  <text x="84" y="354" fill="#1A1814" font-family="Roboto, Arial, sans-serif" font-size="54" font-weight="400">Designing for people, not screens.</text>
+  <text x="84" y="448" fill="#6B6760" font-family="Roboto, Arial, sans-serif" font-size="30" font-weight="400">User research, accessibility, prototyping, and interaction design.</text>
+  <g transform="translate(84 508)">
+    <rect width="180" height="48" rx="24" fill="#1A1814"/>
+    <text x="90" y="32" text-anchor="middle" fill="#F5F2ED" font-family="Roboto, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="2">PORTFOLIO</text>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1200" y1="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDD9CF" stop-opacity="0.48"/>
+      <stop offset="0.45" stop-color="#F5F2ED" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#DDD9D3" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+</svg>

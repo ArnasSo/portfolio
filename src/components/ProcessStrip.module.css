@@ -20,7 +20,7 @@
 }
 
 .num {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
@@ -31,12 +31,13 @@
   font-family: var(--serif);
   font-size: 1.3rem;
   font-style: italic;
+  font-weight: 500;
   color: var(--cream);
   margin-bottom: 0.5rem;
 }
 
 .desc {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: rgba(245, 242, 237, 0.45);
   line-height: 1.6;
 }

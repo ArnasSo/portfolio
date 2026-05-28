@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Nav.module.css'
 
 export default function Nav() {
@@ -12,7 +13,7 @@ export default function Nav() {
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
-      <a href="#home" className={styles.logo}>
+      <a href="#home" className={styles.logo} onClick={event => scrollToSection(event, '#home')}>
         Arnas Sokolovas
       </a>
 
@@ -23,7 +24,7 @@ export default function Nav() {
           { label: 'Contact', href: '#contact' },
         ].map(link => (
           <li key={link.href}>
-            <a href={link.href} className={styles.link}>
+            <a href={link.href} className={styles.link} onClick={event => scrollToSection(event, link.href)}>
               {link.label}
             </a>
           </li>

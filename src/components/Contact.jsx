@@ -1,71 +1,55 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
+import { useReveal } from '../hooks/useReveal'
 import styles from './Contact.module.css'
 
 const links = [
   {
     label: 'Email',
-    text: 'hello@yourname.dk',
-    href: 'mailto:hello@yourname.dk',
+    text: 'arnas.sokolovas@gmail.com',
+    href: 'mailto:arnas.sokolovas@gmail.com',
   },
   {
     label: 'LinkedIn',
-    text: 'linkedin.com/in/yourname',
-    href: 'https://linkedin.com/in/yourname',
+    text: 'linkedin.com/in/arnassokolovas',
+    href: 'https://www.linkedin.com/in/arnassokolovas/',
   },
   {
     label: 'Location',
-    text: 'Aarhus, Denmark',
+    text: 'Aalborg, Denmark',
     href: null,
   },
 ]
 
 export default function Contact() {
   const sectionRef = useRef(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const els = sectionRef.current?.querySelectorAll('.reveal')
-    els?.forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+  useReveal(sectionRef)
 
   return (
     <section id="contact" className={styles.contact} ref={sectionRef}>
-      <div className={styles.header}>
+      <div className={`${styles.header} reveal`}>
         <span className={styles.sectionNumber}>03</span>
         <h2 className={styles.sectionTitle}>Contact</h2>
       </div>
 
       <div className={styles.grid}>
-        <div className="reveal">
+        <div className="reveal" style={{ '--reveal-delay': '80ms' }}>
           <p className={styles.available}>
             <span className={styles.dot} />
-            Available for internships — Aarhus / Remote
+            Available for internships - Aalborg, Aarhus commute, or remote
           </p>
           <h3 className={styles.headline}>
             Let's make something<br /><em>worth using.</em>
           </h3>
           <p className={styles.sub}>
             Whether you're hiring, collaborating, or just want to talk
-            UX — my inbox is open.
+            UX - my inbox is open.
           </p>
-          <a href="mailto:hello@yourname.dk" className={styles.btnAccent}>
+          <a href="mailto:arnas.sokolovas@gmail.com" className={styles.btnAccent}>
             Say hello →
           </a>
         </div>
 
-        <div className={`${styles.links} reveal`}>
+        <div className={`${styles.links} reveal`} style={{ '--reveal-delay': '160ms' }}>
           {links.map(link => (
             link.href
               ? <a key={link.label} href={link.href} className={styles.link}>
@@ -82,7 +66,7 @@ export default function Contact() {
 
       <div className={styles.footer}>
         <span>© 2026 Arnas Sokolovas</span>
-        <span>Designed & built with intention - Aalborg/Aarhus, DK</span>
+        <span>Designed & built with intention - Aalborg · Aarhus, DK</span>
       </div>
     </section>
   )

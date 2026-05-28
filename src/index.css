@@ -13,6 +13,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:where(body, body *) {
+  cursor: default;
+}
+
+:where(a, button, [role='button'], summary) {
+  cursor: pointer;
+}
+
 img, video {
   max-width: 100%;
   display: block;
