@@ -282,13 +282,23 @@ export default function Work() {
 
             <div className={activePreview.previewMode === 'screen' ? styles.screenStage : styles.phoneStage}>
               {activePreview.previewMode === 'screen' ? (
-                <div className={styles.screenShell}>
-                  <iframe
-                    src={activePreview.previewUrl}
-                    title={`${activePreview.title} screen preview`}
-                    className={styles.screenFrame}
-                  />
-                </div>
+                <>
+                  <div className={styles.screenShell}>
+                    <iframe
+                      src={activePreview.previewUrl}
+                      title={`${activePreview.title} screen preview`}
+                      className={styles.screenFrame}
+                    />
+                  </div>
+                  <div className={styles.phoneShell}>
+                    <div className={styles.phoneSpeaker} />
+                    <iframe
+                      src={activePreview.previewUrl}
+                      title={`${activePreview.title} phone preview`}
+                      className={styles.phoneFrame}
+                    />
+                  </div>
+                </>
               ) : (
                 <div className={styles.phoneShell}>
                   <div className={styles.phoneSpeaker} />

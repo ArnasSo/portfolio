@@ -414,6 +414,10 @@
     rgba(26, 24, 20, 0.92);
 }
 
+.screenStage .phoneShell {
+  display: none;
+}
+
 .screenShell {
   width: min(1500px, calc(100vw - 4rem));
   max-height: calc(100vh - 9rem);
@@ -506,5 +510,28 @@
 
   .videoHeader {
     padding: 1rem;
+  }
+
+  .screenOverlay {
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .screenModal {
+    width: min(680px, 100%);
+    min-height: auto;
+  }
+
+  .screenStage {
+    flex: initial;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+
+  .screenStage .screenShell {
+    display: none;
+  }
+
+  .screenStage .phoneShell {
+    display: block;
   }
 }
