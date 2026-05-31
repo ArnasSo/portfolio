@@ -43,7 +43,7 @@ const projects = [
     title: 'Copenhagen Fashion Week Infoscreen',
     desc: 'A school group project for a Copenhagen Fashion Week infoscreen, focused on visual direction, typography, color, hierarchy, and clear event information. The process included research, design exploration, and refinement of the screen experience.',
     tags: ['Infoscreen', 'Visual Design', 'Typography', 'Color'],
-    year: '2026',
+    year: '2025',
     visualClass: styles.bgCphfw,
     visualLabel: 'Fashion week\ninfoscreen',
     darkLabel: false,
@@ -82,19 +82,20 @@ const projects = [
   },
 ]
 
-function ProjectCard({ project, onOpenVideo, onOpenPreview }) {
+function ProjectCard({ project, index, onOpenVideo, onOpenPreview }) {
   const isPlayable = Boolean(project.videoUrl)
   const hasPreview = Boolean(project.previewUrl)
   const isInteractive = isPlayable || hasPreview
+  const actionLabel = isPlayable ? 'Watch case study' : hasPreview ? 'Open preview' : 'Coming soon'
 
-  const openProject = () => {
+  const openProject = trigger => {
     if (isPlayable) {
-      onOpenVideo(project)
+      onOpenVideo(project, trigger)
       return
     }
 
     if (hasPreview) {
-      onOpenPreview(project)
+      onOpenPreview(project, trigger)
     }
   }
 
@@ -104,7 +105,7 @@ function ProjectCard({ project, onOpenVideo, onOpenPreview }) {
     }
 
     event.preventDefault()
-    openProject()
+    openProject(event.currentTarget)
   }
 
   return (
@@ -113,11 +114,12 @@ function ProjectCard({ project, onOpenVideo, onOpenPreview }) {
       role={isInteractive ? 'button' : undefined}
       tabIndex={isInteractive ? 0 : undefined}
       aria-label={isPlayable ? `Open ${project.title} video` : hasPreview ? `Preview ${project.title} mobile app` : undefined}
-      onClick={isInteractive ? openProject : undefined}
+      onClick={isInteractive ? event => openProject(event.currentTarget) : undefined}
       onKeyDown={handleKeyDown}
     >
       <div className={styles.info}>
         <div>
+          <p className={styles.projectNumber}>Project {String(index + 1).padStart(2, '0')}</p>
           <div className={styles.tags}>
             {project.tags.map(tag => (
               <span key={tag} className={styles.tag}>{tag}</span>
@@ -128,17 +130,22 @@ function ProjectCard({ project, onOpenVideo, onOpenPreview }) {
         </div>
         <div className={styles.footer}>
           <span className={styles.year}>{project.year}</span>
-          <span className={styles.arrow} aria-hidden="true">
-            <svg viewBox="0 0 24 24" className={styles.arrowIcon}>
-              {isPlayable ? (
-                <path d="M9 6L18 12L9 18Z" />
-              ) : (
-                <>
-                  <path d="M7 17L17 7" />
-                  <path d="M9 7H17V15" />
-                </>
-              )}
-            </svg>
+          <span className={styles.action}>
+            {actionLabel}
+            {isInteractive && (
+              <span className={styles.arrow} aria-hidden="true">
+                <svg viewBox="0 0 24 24" className={styles.arrowIcon}>
+                  {isPlayable ? (
+                    <path d="M9 6L18 12L9 18Z" />
+                  ) : (
+                    <>
+                      <path d="M7 17L17 7" />
+                      <path d="M9 7H17V15" />
+                    </>
+                  )}
+                </svg>
+              </span>
+            )}
           </span>
         </div>
       </div>
@@ -160,6 +167,8 @@ function ProjectCard({ project, onOpenVideo, onOpenPreview }) {
 
 export default function Work() {
   const sectionRef = useRef(null)
+  const modalRef = useRef(null)
+  const triggerRef = useRef(null)
   const [activeVideo, setActiveVideo] = useState(null)
   const [activePreview, setActivePreview] = useState(null)
   useReveal(sectionRef)
@@ -173,6 +182,30 @@ export default function Work() {
       if (event.key === 'Escape') {
         setActiveVideo(null)
         setActivePreview(null)
+        return
+      }
+
+      if (event.key !== 'Tab') {
+        return
+      }
+
+      const focusable = modalRef.current?.querySelectorAll(
+        'button, a[href], iframe, [tabindex]:not([tabindex="-1"])'
+      )
+
+      if (!focusable?.length) {
+        return
+      }
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
       }
     }
 
@@ -182,14 +215,30 @@ export default function Work() {
     return () => {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', handleKeyDown)
+      triggerRef.current?.focus()
     }
   }, [activeVideo, activePreview])
+
+  const openVideo = (project, trigger) => {
+    triggerRef.current = trigger
+    setActiveVideo(project)
+  }
+
+  const openPreview = (project, trigger) => {
+    triggerRef.current = trigger
+    setActivePreview(project)
+  }
 
   return (
     <section id="work" className={styles.work} ref={sectionRef}>
       <div className={`${styles.header} reveal`}>
         <span className="section-number">01</span>
         <h2 className="section-title">Selected Work</h2>
+      </div>
+
+      <div className={`${styles.intro} reveal`}>
+        <p>Selected projects across UX research, accessibility, interaction design, and frontend prototyping.</p>
+        <span>Choose a project to explore</span>
       </div>
 
       <div className={styles.grid}>
@@ -201,8 +250,9 @@ export default function Work() {
           >
             <ProjectCard
               project={project}
-              onOpenVideo={setActiveVideo}
-              onOpenPreview={setActivePreview}
+              index={i}
+              onOpenVideo={openVideo}
+              onOpenPreview={openPreview}
             />
           </div>
         ))}
@@ -215,6 +265,7 @@ export default function Work() {
           onMouseDown={() => setActiveVideo(null)}
         >
           <div
+            ref={modalRef}
             className={styles.videoModal}
             role="dialog"
             aria-modal="true"
@@ -230,6 +281,7 @@ export default function Work() {
                 type="button"
                 className={styles.closeButton}
                 aria-label="Close video"
+                autoFocus
                 onClick={() => setActiveVideo(null)}
               >
                 <span />
@@ -256,6 +308,7 @@ export default function Work() {
           onMouseDown={() => setActivePreview(null)}
         >
           <div
+            ref={modalRef}
             className={activePreview.previewMode === 'screen' ? styles.screenModal : styles.phoneModal}
             role="dialog"
             aria-modal="true"
@@ -273,6 +326,7 @@ export default function Work() {
                 type="button"
                 className={styles.closeButton}
                 aria-label="Close preview"
+                autoFocus
                 onClick={() => setActivePreview(null)}
               >
                 <span />

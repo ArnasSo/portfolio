@@ -19,7 +19,7 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 
 .header .sectionTitle {
@@ -74,7 +74,7 @@
 
 .sub {
   font-size: 0.95rem;
-  color: rgba(245, 242, 237, 0.55);
+  color: rgba(245, 242, 237, 0.68);
   line-height: 1.7;
   margin-bottom: 2.5rem;
 }
@@ -97,7 +97,8 @@
 
 .btnAccent:hover {
   background: transparent;
-  color: var(--accent);
+  color: var(--accent-on-dark);
+  border-color: var(--accent-on-dark);
 }
 
 /* Right */
@@ -122,14 +123,14 @@
 }
 
 .link:hover {
-  color: var(--accent);
+  color: var(--accent-on-dark);
 }
 
 .linkLabel {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245, 242, 237, 0.35);
+  color: rgba(245, 242, 237, 0.68);
   width: 80px;
   flex-shrink: 0;
 }
@@ -146,7 +147,7 @@
 
 .footer span {
   font-size: 0.75rem;
-  color: rgba(245, 242, 237, 0.3);
+  color: rgba(245, 242, 237, 0.68);
   letter-spacing: 0.05em;
 }
 

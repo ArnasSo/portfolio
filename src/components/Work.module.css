@@ -5,11 +5,39 @@
 
 .header {
   padding: 0 var(--page-padding) 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 0;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.25rem var(--page-padding) 3rem;
+}
+
+.intro p {
+  max-width: 650px;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+
+.intro span,
+.projectNumber,
+.action {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro span {
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 .grid {
@@ -23,7 +51,6 @@
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid var(--border);
   transition: background 0.3s;
-  outline: none;
 }
 
 .cardInteractive {
@@ -35,7 +62,7 @@
 }
 
 .card:focus-visible {
-  box-shadow: inset 0 0 0 2px rgba(196, 96, 58, 0.42);
+  outline-offset: -4px;
 }
 
 .card:hover .arrow {
@@ -49,6 +76,16 @@
   filter: saturate(1.1) brightness(1.08);
 }
 
+.grid > :nth-child(even) .info {
+  order: 2;
+  margin-right: var(--page-padding);
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: var(--page-padding);
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+
 /* Card Info */
 .info {
   padding: 3.5rem var(--page-padding) 3.5rem 0;
@@ -57,6 +94,11 @@
   justify-content: space-between;
   border-right: 1px solid var(--border);
   margin-left: var(--page-padding);
+}
+
+.projectNumber {
+  color: var(--ink-light);
+  margin-bottom: 1rem;
 }
 
 .tags {
@@ -71,9 +113,10 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-light);
+  color: #943C22;
+  background: #EDD9CF;
   padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(148, 60, 34, 0.22);
   border-radius: 2rem;
 }
 
@@ -104,6 +147,17 @@
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   color: var(--ink-light);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--ink-light);
+}
+
+.cardInteractive .action {
+  color: var(--accent);
 }
 
 .arrow {
@@ -151,6 +205,16 @@
   min-height: 320px;
   overflow: hidden;
   padding: 3rem;
+}
+
+.visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(145deg, rgba(26, 24, 20, 0.58), rgba(26, 24, 20, 0.7));
+  pointer-events: none;
 }
 
 .visualBg {
@@ -205,6 +269,7 @@
 
 .circle {
   position: absolute;
+  z-index: 2;
   border-radius: 50%;
   border: 1px solid rgba(245, 242, 237, 0.18);
   pointer-events: none;
@@ -218,17 +283,19 @@
 
 .visualLabel {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   font-family: var(--serif);
   font-size: 1.05rem;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.6);
+  color: #FFFFFF;
   text-align: center;
   line-height: 1.6;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.46);
 }
 
 .visualLabelDark {
-  color: var(--ink-light);
+  color: #FFFFFF;
 }
 
 .videoOverlay {
@@ -489,6 +556,13 @@
 }
 
 @media (max-width: 900px) {
+  .intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding-bottom: 2rem;
+  }
+
   .card {
     grid-template-columns: 1fr;
   }
@@ -497,6 +571,14 @@
     margin-left: 0;
     padding: 2.5rem var(--page-padding);
     border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .grid > :nth-child(even) .info {
+    order: initial;
+    margin-right: 0;
+    padding-left: var(--page-padding);
+    border-left: none;
     border-bottom: 1px solid var(--border);
   }
 

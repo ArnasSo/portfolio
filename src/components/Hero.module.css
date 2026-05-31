@@ -223,6 +223,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .tag,
+  .name,
+  .desc,
+  .cta,
+  .right {
+    opacity: 1;
+    animation: none;
+  }
+
   .abstractGraphic,
   .abstractGraphicSecondary {
     animation: none;
@@ -257,5 +266,11 @@
     left: -8rem;
     width: min(26rem, 92%);
     opacity: 0.41;
+  }
+}
+
+@media (max-width: 500px) {
+  .cta {
+    flex-wrap: wrap;
   }
 }

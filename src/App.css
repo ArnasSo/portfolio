@@ -5,8 +5,9 @@
   --cream: #F5F2ED;
   --ink: #1A1814;
   --ink-light: #6B6760;
-  --accent: #C4603A;
-  --accent-light: #EDD9CF;
+  --accent: #B14F2F;
+  --accent-on-dark: #D47A58;
+  --accent-light: #F7EFEB;
   --border: #DDD9D3;
 
   /* Typography */
@@ -34,6 +35,28 @@ body {
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 300;
+  padding: 0.65rem 1rem;
+  color: var(--cream);
+  background: var(--ink);
+  border: 2px solid var(--cream);
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:where(a, button, [role='button']):focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
 }
 
 /* Shared section padding */
@@ -90,11 +113,22 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal,
   .reveal-enabled .reveal {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .btn-primary,
+  .btn-secondary {
+    padding-inline: 1.25rem;
   }
 }
 

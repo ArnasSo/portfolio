@@ -29,6 +29,10 @@
 }
 
 .link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   font-size: 0.82rem;
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -41,8 +45,35 @@
   color: var(--ink);
 }
 
+.link::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s ease;
+}
+
+.link:hover::after,
+.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.active {
+  color: var(--ink);
+}
+
 @media (max-width: 900px) {
+  .nav {
+    padding-block: 0.8rem;
+  }
+
   .links {
-    gap: 1.5rem;
+    gap: 0.9rem;
   }
 }

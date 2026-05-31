@@ -23,7 +23,7 @@
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-on-dark);
   margin-bottom: 0.75rem;
 }
 
@@ -38,7 +38,7 @@
 
 .desc {
   font-size: 0.95rem;
-  color: rgba(245, 242, 237, 0.45);
+  color: rgba(245, 242, 237, 0.68);
   line-height: 1.6;
 }
 
