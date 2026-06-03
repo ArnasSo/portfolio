@@ -255,17 +255,11 @@
   }
 
   .abstractGraphic {
-    top: 4%;
-    right: -7rem;
-    width: min(34rem, 112%);
-    opacity: 0.58;
+    display: none;
   }
 
   .abstractGraphicSecondary {
-    top: 28%;
-    left: -8rem;
-    width: min(26rem, 92%);
-    opacity: 0.41;
+    display: none;
   }
 }
 
