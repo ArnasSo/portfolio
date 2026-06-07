@@ -1,61 +1,62 @@
 .strip {
-  background: var(--ink);
-  padding: 4rem var(--page-padding);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background: var(--blue);
+  border-block: 2px solid var(--ink);
 }
 
 .step {
-  padding: 0 2rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  min-height: 320px;
+  padding: 2rem;
+  color: white;
+  border-right: 2px solid var(--ink);
+  transition: color 0.25s ease, background 0.25s ease;
 }
 
-.step:first-child {
-  padding-left: 0;
-}
-
-.step:last-child {
-  border-right: none;
-  padding-right: 0;
-}
+.step:last-child { border-right: 0; }
+.step:hover { color: var(--ink); background: var(--acid); }
 
 .num {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent-on-dark);
-  margin-bottom: 0.75rem;
+  display: grid;
+  width: 2.7rem;
+  height: 2.7rem;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font: 0.7rem var(--mono);
 }
 
 .name {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--cream);
-  margin-bottom: 0.5rem;
+  position: absolute;
+  left: 2rem;
+  bottom: 7rem;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  text-transform: uppercase;
 }
 
 .desc {
-  font-size: 0.95rem;
-  color: rgba(245, 242, 237, 0.68);
-  line-height: 1.6;
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  max-width: 290px;
+  font: 0.67rem/1.55 var(--mono);
+  text-transform: uppercase;
+  opacity: 0.78;
 }
 
 @media (max-width: 900px) {
-  .strip {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-
-  .step {
-    border-right: none;
-    padding: 0;
-  }
+  .strip { grid-template-columns: 1fr 1fr; }
+  .step:nth-child(2) { border-right: 0; }
+  .step:nth-child(-n + 2) { border-bottom: 2px solid var(--ink); }
 }
 
-@media (max-width: 500px) {
-  .strip {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 520px) {
+  .strip { grid-template-columns: 1fr; }
+  .step { min-height: 250px; border-right: 0; border-bottom: 2px solid var(--ink); }
+  .step:nth-child(3) { border-bottom: 2px solid var(--ink); }
 }

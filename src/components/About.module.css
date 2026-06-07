@@ -1,73 +1,113 @@
 .about {
   padding: var(--space-2xl) var(--page-padding);
-  border-top: 1px solid var(--border);
+  background: var(--paper);
 }
 
 .header {
   display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: clamp(4rem, 8vw, 8rem);
 }
+
+.header p { font: 0.68rem var(--mono); text-transform: uppercase; }
 
 .grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 6rem;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
   align-items: start;
 }
 
-/* Left */
-.text p {
-  font-size: 1.06rem;
-  color: var(--ink-light);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
+.statement { grid-column: 1 / span 9; }
+.statement > p { margin-bottom: 1rem; color: var(--blue); font: 0.7rem var(--mono); text-transform: uppercase; }
+.statement h2 {
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
 }
+.statement em { color: var(--blue); font-style: normal; }
+.statement span { padding: 0 0.12em; background: var(--acid); box-decoration-break: clone; }
 
-.text p strong {
-  color: var(--ink);
-  font-weight: 500;
+.profile { grid-column: 2 / span 4; margin-top: 7rem; }
+.portrait {
+  position: relative;
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  background: var(--paper-bright);
+  border: 2px solid var(--ink);
+  box-shadow: 12px 12px 0 var(--blue);
+  transform: rotate(-2deg);
 }
-
-.cta {
-  margin-top: 2rem;
+.portrait::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(var(--line) 0.75px, transparent 0.75px);
+  background-size: 9px 9px;
 }
-
-/* Right */
-.listLabel {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+.portraitDrawing {
+  position: absolute;
+  inset: 1% -6% -2% -7%;
+  width: 113%;
+  max-width: none;
+  height: 101%;
+}
+.shirtColor { fill: #84b8ff; stroke: var(--ink); stroke-width: 4; }
+.neckColor, .faceColor { fill: #ff9b73; stroke: var(--ink); stroke-width: 4; }
+.earColor, .earMono { fill: none; stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+.hairColor, .hairMono { fill: var(--ink); stroke: var(--ink); stroke-width: 4; }
+.armColor { fill: #84b8ff; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.handColor { fill: #ff9b73; stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+.shirtMono { fill: #c8c8c8; stroke: var(--ink); stroke-width: 4; }
+.neckMono, .faceMono { fill: #dedede; stroke: var(--ink); stroke-width: 4; }
+.glasses { fill: #191919; stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; }
+.glassesArm, .nose, .smileLine, .brow {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.glassesShine, .teeth { fill: var(--paper-bright); }
+.teeth { stroke: var(--ink); stroke-width: 3; }
+.splitLine { fill: none; stroke: var(--blue); stroke-width: 2; stroke-dasharray: 8 8; opacity: 0.8; }
+.portrait > p {
+  position: absolute;
+  right: 5%;
+  bottom: 4%;
+  z-index: 2;
+  padding: 0.18em;
+  background: var(--acid);
+  font-size: clamp(1.4rem, 2.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+  text-align: right;
   text-transform: uppercase;
-  color: var(--ink-light);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
 }
+.tape { position: absolute; top: 4%; right: -4%; padding: 0.7rem 1.2rem; background: var(--acid); border: 1px solid var(--ink); font: 0.62rem var(--mono); transform: rotate(7deg); }
 
-.list {
-  margin-bottom: 2.5rem;
-}
+.bio { grid-column: 7 / span 5; margin-top: 12rem; }
+.bio p { margin-bottom: 1.5rem; font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 500; }
+.bio a { margin-top: 1rem; }
 
-.listItem {
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border);
-  color: var(--ink-light);
-  display: flex;
-  justify-content: space-between;
-}
-
-.listItem span {
-  color: var(--ink);
-}
+.facts { grid-column: 7 / span 6; margin-top: 2rem; border-top: 2px solid var(--ink); }
+.facts div { display: grid; grid-template-columns: 0.7fr 1.3fr; padding: 1rem 0; border-bottom: 1px solid var(--ink); }
+.facts dt { font: 0.65rem var(--mono); text-transform: uppercase; }
+.facts dd { font-weight: 700; }
 
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
+  .statement { grid-column: 1 / -1; }
+  .profile { grid-column: 1 / span 6; }
+  .bio, .facts { grid-column: 7 / -1; margin-top: 7rem; }
+  .facts { margin-top: 1rem; }
+}
+
+@media (max-width: 650px) {
+  .grid { display: block; }
+  .profile { width: 82%; margin: 4rem 0; }
+  .bio { margin: 0; }
+  .facts { margin: 3rem 0 0; }
 }
