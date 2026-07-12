@@ -1,54 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Arnas Sokolovas UX UI designer portfolio preview">
-  <defs>
-    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#121212" opacity=".1"/>
-    </pattern>
-    <clipPath id="portrait">
-      <circle cx="1012" cy="296" r="116"/>
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Arnas Sokolovas UX designer portfolio preview">
+  <rect width="1200" height="630" fill="#F4F1EA"/>
+  <rect x="52" y="52" width="1096" height="526" rx="18" fill="#FFFEFA" stroke="#171717" stroke-width="3"/>
 
-  <rect width="1200" height="630" fill="#F3F0E8"/>
-  <rect width="1200" height="630" fill="url(#dots)"/>
-  <rect x="0" y="0" width="1200" height="22" fill="#2146FF"/>
-  <rect x="46" y="50" width="48" height="48" rx="24" fill="#2146FF" stroke="#121212" stroke-width="3"/>
-  <text x="70" y="80" text-anchor="middle" fill="#FFFDF6" font-family="Arial, sans-serif" font-size="15" font-weight="700">AS</text>
-  <text x="110" y="80" fill="#121212" font-family="Arial, sans-serif" font-size="18" font-weight="700">ARNAS SOKOLOVAS</text>
-  <text x="1152" y="78" text-anchor="end" fill="#121212" font-family="monospace" font-size="12" letter-spacing="1">UX / UI PORTFOLIO · 2026</text>
-  <path d="M46 112H1154" stroke="#121212" stroke-width="2"/>
+  <rect x="88" y="88" width="58" height="58" rx="12" fill="#F4F1EA" stroke="#171717" stroke-width="3"/>
+  <path d="M104 129L114.8 104H120L130.5 129H124.9L122.9 123.7H112.1L110.1 129H104ZM113.8 119.4H121.1L117.5 109.6L113.8 119.4Z" fill="#171717"/>
+  <path d="M136 104V129" stroke="#2F5F5B" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="136" cy="104" r="3.5" fill="#2F5F5B"/>
 
-  <text x="48" y="230" fill="#FF6A55" font-family="Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="-7">I</text>
-  <text x="105" y="230" fill="#121212" font-family="Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="-7">DESIGN</text>
-  <rect x="45" y="252" width="598" height="104" fill="#2146FF"/>
-  <text x="62" y="338" fill="#FFFDF6" font-family="Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="-7">USEFUL THINGS</text>
-  <text x="48" y="455" fill="#121212" font-family="Arial, sans-serif" font-size="94" font-weight="900" letter-spacing="-6">FOR REAL PEOPLE.</text>
+  <text x="166" y="112" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Arnas Sokolovas</text>
+  <text x="166" y="140" fill="#777168" font-family="DM Mono, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="1">UX DESIGNER PORTFOLIO</text>
+  <text x="1112" y="123" text-anchor="end" fill="#777168" font-family="DM Mono, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="1">AALBORG / AARHUS / REMOTE</text>
 
-  <path d="M52 492V563" stroke="#FF6A55" stroke-width="6"/>
-  <text x="72" y="518" fill="#121212" font-family="Arial, sans-serif" font-size="18" font-weight="700">RESEARCH → IDEAS → INTERFACES</text>
-  <text x="72" y="550" fill="#5E5B54" font-family="Arial, sans-serif" font-size="16">Human-centered design with clarity, character, and purpose.</text>
+  <path d="M88 178H1112" stroke="#171717" stroke-opacity=".14" stroke-width="2"/>
 
-  <g transform="rotate(4 1000 300)">
-    <rect x="846" y="137" width="308" height="324" fill="#C8BAFF" stroke="#121212" stroke-width="4"/>
-    <circle cx="1012" cy="296" r="116" fill="#D8FF36" stroke="#121212" stroke-width="4"/>
-    <g clip-path="url(#portrait)">
-      <rect x="896" y="180" width="116" height="232" fill="#FF9B73"/>
-      <rect x="1012" y="180" width="116" height="232" fill="#D8D8D8"/>
-      <path d="M913 415C920 350 950 329 982 321H1045C1085 331 1110 361 1116 415Z" fill="#84B8FF" stroke="#121212" stroke-width="4"/>
-      <path d="M955 258C955 209 983 181 1017 184C1057 187 1077 220 1070 271L1063 315C1057 349 1036 368 1011 365C981 361 962 337 957 303Z" fill="#FF9B73" stroke="#121212" stroke-width="4"/>
-      <path d="M1012 184C1057 187 1077 220 1070 271L1063 315C1057 349 1036 368 1012 365Z" fill="#D8D8D8"/>
-      <path d="M953 240C952 198 979 174 1018 177C1051 179 1072 201 1075 235C1048 220 1026 214 1001 217C983 219 969 227 953 240Z" fill="#121212"/>
-      <path d="M957 239C978 229 998 231 1012 239V270C996 279 973 276 962 265C958 258 957 248 957 239ZM1012 239C1031 228 1053 229 1073 240L1069 266C1058 279 1033 279 1018 269C1014 261 1012 250 1012 239Z" fill="#121212"/>
-      <circle cx="1057" cy="245" r="6" fill="#FFFDF6"/>
-      <path d="M982 315C998 330 1024 331 1041 313" fill="none" stroke="#121212" stroke-width="4" stroke-linecap="round"/>
-      <path d="M925 373C893 350 889 320 900 287L918 222C923 204 936 190 951 187L969 210C957 226 952 246 952 268L955 331Z" fill="#84B8FF" stroke="#121212" stroke-width="4"/>
-      <path d="M950 201C958 183 973 162 990 153C1003 147 1016 151 1018 161C1018 169 1011 174 1002 174L985 172L974 195L1001 197C1012 198 1018 205 1015 214C1012 221 1005 223 995 221L969 218C960 222 951 214 950 201Z" fill="#FF9B73" stroke="#121212" stroke-width="4"/>
-    </g>
-    <path d="M1012 180V412" stroke="#2146FF" stroke-width="2" stroke-dasharray="7 7"/>
-    <rect x="823" y="115" width="134" height="82" fill="#D8FF36" stroke="#121212" stroke-width="3" transform="rotate(-8 890 156)"/>
-    <text x="888" y="149" text-anchor="middle" fill="#121212" font-family="Arial, sans-serif" font-size="16" font-weight="900" transform="rotate(-8 890 156)">SEE IT</text>
-    <text x="888" y="169" text-anchor="middle" fill="#121212" font-family="Arial, sans-serif" font-size="16" font-weight="900" transform="rotate(-8 890 156)">DIFFERENTLY</text>
+  <text x="88" y="286" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Designing clearer</text>
+  <text x="88" y="370" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">product experiences</text>
+  <text x="88" y="454" fill="#2F5F5B" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">around real user needs.</text>
+
+  <rect x="88" y="502" width="214" height="42" rx="21" fill="#171717"/>
+  <text x="195" y="529" text-anchor="middle" fill="#FFFEFA" font-family="DM Mono, Consolas, monospace" font-size="14" font-weight="700">CASE STUDIES</text>
+
+  <rect x="326" y="502" width="182" height="42" rx="21" fill="#EBE7DD"/>
+  <text x="417" y="529" text-anchor="middle" fill="#171717" font-family="DM Mono, Consolas, monospace" font-size="14" font-weight="700">RESEARCH</text>
+
+  <rect x="532" y="502" width="196" height="42" rx="21" fill="#EBE7DD"/>
+  <text x="630" y="529" text-anchor="middle" fill="#171717" font-family="DM Mono, Consolas, monospace" font-size="14" font-weight="700">PROTOTYPING</text>
+
+  <g transform="translate(828 228)">
+    <rect width="284" height="250" rx="14" fill="#F4F1EA" stroke="#171717" stroke-width="2"/>
+    <text x="28" y="44" fill="#777168" font-family="DM Mono, Consolas, monospace" font-size="13" font-weight="700">FOR RECRUITERS</text>
+    <path d="M28 70H256" stroke="#171717" stroke-opacity=".14" stroke-width="2"/>
+    <text x="28" y="112" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Focus</text>
+    <text x="28" y="140" fill="#56534C" font-family="Inter, Arial, sans-serif" font-size="18">UX, research, interaction</text>
+    <text x="28" y="184" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Learning</text>
+    <text x="28" y="212" fill="#56534C" font-family="Inter, Arial, sans-serif" font-size="18">Google UX Certificate</text>
   </g>
-
-  <rect x="890" y="510" width="264" height="63" fill="#121212"/>
-  <text x="1022" y="549" text-anchor="middle" fill="#D8FF36" font-family="monospace" font-size="15" font-weight="700" letter-spacing="1">AALBORG · AARHUS · REMOTE</text>
 </svg>

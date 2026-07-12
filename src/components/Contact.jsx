@@ -7,26 +7,22 @@ export default function Contact() {
   useReveal(sectionRef)
 
   return (
-    <section id="contact" className={styles.contact} ref={sectionRef}>
-      <div className={`${styles.top} reveal`}>
-        <span className="section-number">03</span>
-        <p><i /> Available for internships</p>
-        <span>Aalborg · Aarhus · Remote</span>
-      </div>
-
-      <div className={`${styles.main} reveal`} style={{ '--reveal-delay': '80ms' }}>
-        <p className={styles.kicker}>Have a project, internship, or interesting problem?</p>
-        <h2>Let&apos;s make<br /><span>something useful.</span></h2>
-        <a href="mailto:arnas.sokolovas@gmail.com">Start a conversation <b>↗</b></a>
-      </div>
-
-      <div className={styles.bottom}>
+    <section id="contact" className={styles.contact} ref={sectionRef} aria-labelledby="contact-title">
+      <div className={`${styles.inner} reveal`}>
+        <p className="section-kicker">Contact</p>
+        <h2 id="contact-title">Open to UX internships, student jobs, and junior design roles.</h2>
         <div className={styles.links}>
-          <a href="mailto:arnas.sokolovas@gmail.com">Email ↗</a>
-          <a href="https://www.linkedin.com/in/arnassokolovas/">LinkedIn ↗</a>
+          <a href="mailto:arnas.sokolovas@gmail.com" aria-label="Email Arnas Sokolovas">arnas.sokolovas@gmail.com</a>
+          <a
+            href="https://www.linkedin.com/in/arnassokolovas/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Arnas Sokolovas on LinkedIn in a new tab"
+          >
+            LinkedIn
+          </a>
         </div>
-        <p>Arnas Sokolovas<br />UX / UI Designer</p>
-        <p>Designed and built with<br />curiosity in Denmark · 2026</p>
+        <p className={styles.meta}>Aalborg / Aarhus / remote. Designed and built by Arnas Sokolovas.</p>
       </div>
     </section>
   )

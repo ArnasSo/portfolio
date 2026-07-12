@@ -4,24 +4,24 @@ import styles from './ProcessStrip.module.css'
 
 const steps = [
   {
-    num: '01',
-    name: 'Discover',
-    desc: 'Interviews, observations, desk research - understanding the real problem before solving anything.',
+    name: 'Empathize',
+    desc: 'Understand users, context, needs, and the situation around the product.',
   },
   {
-    num: '02',
     name: 'Define',
-    desc: 'Affinity mapping, user stories, insight synthesis - finding the right problem to solve.',
+    desc: 'Turn findings into a clearer problem, goals, and constraints.',
   },
   {
-    num: '03',
-    name: 'Develop',
-    desc: 'Sketching, wireframing, prototyping - exploring ideas through iteration, not perfection.',
+    name: 'Ideate',
+    desc: 'Explore flows, structure, sketches, and possible directions.',
   },
   {
-    num: '04',
-    name: 'Deliver',
-    desc: 'Refined interfaces grounded in research - and honest reflection on what comes next.',
+    name: 'Prototype',
+    desc: 'Make ideas tangible through wireframes and interactive prototypes.',
+  },
+  {
+    name: 'Test',
+    desc: 'Use feedback to learn what works, what confuses users, and what should change.',
   },
 ]
 
@@ -30,18 +30,29 @@ export default function ProcessStrip() {
   useReveal(sectionRef)
 
   return (
-    <div className={styles.strip} ref={sectionRef}>
-      {steps.map((step, index) => (
-        <div
-          key={step.num}
-          className={`${styles.step} reveal`}
-          style={{ '--reveal-delay': `${index * 70}ms` }}
-        >
-          <p className={styles.num}>{step.num}</p>
-          <p className={styles.name}>{step.name}</p>
-          <p className={styles.desc}>{step.desc}</p>
-        </div>
-      ))}
-    </div>
+    <section className={styles.process} ref={sectionRef} aria-labelledby="process-title">
+      <div className={`${styles.header} reveal`}>
+        <p className="section-kicker">How I work</p>
+        <h2 id="process-title">A user-centered process for understanding, shaping, and testing ideas.</h2>
+        <p className={styles.intro}>
+          I am familiar with design thinking and Double Diamond, and I am open
+          to the process a team already uses. I want to keep learning from
+          experienced designers while contributing to real product work.
+        </p>
+      </div>
+      <div className={styles.steps}>
+        {steps.map((step, index) => (
+          <article
+            key={step.name}
+            className={`${styles.step} reveal`}
+            style={{ '--reveal-delay': `${index * 70}ms` }}
+          >
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{step.name}</h3>
+            <p>{step.desc}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   )
 }

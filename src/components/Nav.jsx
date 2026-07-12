@@ -33,7 +33,7 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} aria-label="Primary navigation">
       <a href="#home" className={styles.logo} onClick={event => scrollToSection(event, '#home')}>
         Arnas Sokolovas
       </a>

@@ -1,73 +1,51 @@
 import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Hero.module.css'
 
-const skills = ['Research', 'UX Strategy', 'Prototyping', 'UI Design', 'Accessibility', 'React']
+const signals = [
+  ['Focus', 'UX design, research, interaction'],
+  ['Looking for', 'Internship / junior UX role'],
+  ['Learning', 'Google UX Design Certificate in progress'],
+  ['Location', 'Aalborg, Aarhus, remote'],
+]
 
 export default function Hero() {
   return (
-    <section id="home" className={styles.hero}>
-      <div className={styles.topline}>
-        <p>UX / UI designer in progress</p>
-        <p>Aalborg · Aarhus · Remote</p>
-        <p>Portfolio 2026</p>
-      </div>
-
-      <div className={styles.stage}>
+    <section id="home" className={styles.hero} aria-labelledby="hero-title">
+      <div className={styles.inner}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}><span /> Hello, I&apos;m Arnas</p>
-          <h1 className={styles.name}>
-            <span className={styles.firstLine}><b>I</b> design</span>
-            <span className={styles.offset}>useful things</span>
-            <span className={styles.outline}>for real people.</span>
-          </h1>
-          <div className={styles.bottomCopy}>
-            <p className={styles.desc}>
-              Multimedia Design student turning research, messy ideas, and human
-              needs into interfaces that feel clear, inclusive, and alive.
-            </p>
-            <div className={styles.cta}>
-              <a href="#work" className="btn-primary" onClick={event => scrollToSection(event, '#work')}>
-                See selected work ↓
-              </a>
-              <a href="#contact" className="btn-secondary" onClick={event => scrollToSection(event, '#contact')}>
-                Let&apos;s talk
-              </a>
-            </div>
+          <p className={styles.eyebrow}>UX Designer portfolio</p>
+          <h1 id="hero-title">Designing clearer product experiences around real user needs.</h1>
+          <p className={styles.summary}>
+            I am Arnas Sokolovas, a UX-focused designer learning how research,
+            prototyping, and clear thinking can make digital services easier to
+            use. I am completing the Google UX Design Certificate and looking
+            for teams where I can learn by contributing.
+          </p>
+          <div className={styles.actions}>
+            <a href="#work" className="btn-primary" onClick={event => scrollToSection(event, '#work')}>
+              View case studies
+            </a>
+            <a href="#contact" className="btn-secondary" onClick={event => scrollToSection(event, '#contact')}>
+              Contact
+            </a>
           </div>
         </div>
 
-        <div className={styles.playground} aria-hidden="true">
-          <div className={styles.window}>
-            <div className={styles.windowBar}><i /><i /><i /><span>human-centered.fig</span></div>
-            <div className={styles.canvas}>
-              <div className={styles.cursor}>Arnas</div>
-              <div className={styles.face}>
-                <span className={styles.eyeLeft} />
-                <span className={styles.eyeRight} />
-                <span className={styles.smile} />
+        <aside className={styles.panel} aria-label="Portfolio summary">
+          <p className={styles.panelLabel}>For Recruiters</p>
+          <dl>
+            {signals.map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
               </div>
-              <p>Design should feel<br />obvious <em>after</em> it&apos;s made.</p>
-              <span className={styles.measure}>240 px</span>
-            </div>
+            ))}
+          </dl>
+          <div className={styles.note}>
+            <strong>What you will see</strong>
+            <p>Projects framed around users, problems, process, and what I learned.</p>
           </div>
-          <div className={styles.note}>Ask why.<br />Then ask again.</div>
-          <div className={styles.sticker}>Open to<br />internships</div>
-          <svg className={styles.scribble} viewBox="0 0 180 100">
-            <path d="M6 73C39 16 92 12 146 39M133 21L148 39L126 46" />
-          </svg>
-        </div>
-      </div>
-
-      <div className={styles.ticker}>
-        <div className={styles.tickerTrack}>
-          {[0, 1].map(group => (
-            <div className={styles.tickerGroup} aria-hidden={group === 1} key={group}>
-              {skills.map(skill => (
-                <span key={skill}>{skill}<b>✦</b></span>
-              ))}
-            </div>
-          ))}
-        </div>
+        </aside>
       </div>
     </section>
   )
