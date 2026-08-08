@@ -16,6 +16,16 @@ const signals = [
   },
   { label: 'Location', value: 'Aalborg, Aarhus, remote' },
   {
+    label: 'Certificates',
+    value: (
+      <>
+        <strong>Google UX Certificate Program</strong>
+        <br />
+        1/7 certificates in progress
+      </>
+    ),
+  },
+  {
     label: 'LinkedIn',
     value: 'arnassokolovas',
     href: 'https://www.linkedin.com/in/arnassokolovas/',
