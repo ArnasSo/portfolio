@@ -631,6 +631,11 @@
     aspect-ratio: 10 / 7;
   }
 
+  .snapshotVisual + .snapshotVisual,
+  .snapshotVisual + .snapshotMeta {
+    margin-top: 5px;
+  }
+
   .snapshotVisual strong {
     font-size: clamp(1.25rem, 7vw, 1.8rem);
   }
@@ -648,7 +653,7 @@
   }
 
   .snapshotMeta {
-    margin-top: 1rem;
+    margin-top: 5px;
   }
 
   .detailVisual,
