@@ -5,24 +5,39 @@
 }
 
 .header {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr) minmax(260px, 0.45fr);
-  gap: clamp(2rem, 5vw, 5rem);
+  position: relative;
+  isolation: isolate;
   max-width: var(--max-width);
   margin: 0 auto clamp(2rem, 5vw, 4rem);
+  padding-top: clamp(1.8rem, 4vw, 3.2rem);
+  text-align: center;
+}
+
+.processLabel {
+  position: absolute;
+  top: -0.15rem;
+  left: 50%;
+  z-index: -1;
+  color: var(--ink);
+  font-family: var(--creative);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 0.85;
+  opacity: 0.08;
+  transform: translateX(-50%) rotate(-2deg);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .header h2 {
-  max-width: 760px;
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
   font-size: clamp(2.2rem, 5vw, 5rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
-}
-
-.intro {
-  align-self: end;
-  color: var(--ink-soft);
 }
 
 .steps {
@@ -52,9 +67,38 @@
   line-height: 1;
 }
 
+.step h3.creativeTitle {
+  font-family: var(--creative);
+  font-size: clamp(1.75rem, 2.45vw, 2.55rem);
+  font-weight: 400;
+}
+
+.step h3.roboticTitle {
+  font-family: var(--robotic);
+  font-size: clamp(1.3rem, 1.8vw, 1.9rem);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .step p {
   margin-top: 1rem;
   color: var(--ink-soft);
+}
+
+.quote {
+  max-width: var(--max-width);
+  margin: clamp(1.5rem, 4vw, 2.5rem) auto 0;
+}
+
+.quote p {
+  max-width: 1040px;
+  margin: 0 auto;
+  color: var(--ink-soft);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-style: italic;
+  opacity: 0.82;
+  text-align: center;
+  line-height: 1.55;
 }
 
 @media (max-width: 900px) {
@@ -73,11 +117,34 @@
     grid-template-columns: 1fr;
   }
 
+  .process {
+    padding-block: var(--space-2xl);
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .header h2 {
+    font-size: clamp(2rem, 10vw, 2.95rem);
+    line-height: 1.05;
+  }
+
+  .processLabel {
+    font-size: clamp(3.5rem, 17vw, 5.2rem);
+  }
+
   .step {
     min-height: 0;
+    padding: 1rem;
   }
 
   .step h3 {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .step p {
+    font-size: 0.94rem;
   }
 }

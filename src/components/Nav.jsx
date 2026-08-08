@@ -2,6 +2,15 @@ import { useEffect, useState } from 'react'
 import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Nav.module.css'
 
+const navLinks = [
+  { label: 'Work', href: '#work' },
+  { label: 'Process', href: '#process' },
+  { label: 'About', href: '#about' },
+  { label: 'Contact', href: '#contact' },
+]
+
+const observedSections = ['#home', ...navLinks.map(link => link.href)]
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('#home')
@@ -13,23 +22,51 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const sections = ['#home', '#work', '#about', '#contact']
+    const sections = observedSections
       .map(id => document.querySelector(id))
       .filter(Boolean)
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`)
-          }
-        })
-      },
-      { rootMargin: '-20% 0px -65% 0px' }
-    )
+    let frameId = null
 
-    sections.forEach(section => observer.observe(section))
-    return () => observer.disconnect()
+    const updateActiveSection = () => {
+      const scrollTarget = window.scrollY + Math.min(window.innerHeight * 0.3, 220)
+      const isAtPageEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
+
+      if (isAtPageEnd) {
+        setActiveSection('#contact')
+        return
+      }
+
+      const currentSection = sections.reduce((current, section) => {
+        return section.offsetTop <= scrollTarget ? `#${section.id}` : current
+      }, '#home')
+
+      setActiveSection(currentSection)
+    }
+
+    const scheduleActiveUpdate = () => {
+      if (frameId) {
+        return
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null
+        updateActiveSection()
+      })
+    }
+
+    scheduleActiveUpdate()
+    window.addEventListener('scroll', scheduleActiveUpdate, { passive: true })
+    window.addEventListener('resize', scheduleActiveUpdate)
+
+    return () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId)
+      }
+
+      window.removeEventListener('scroll', scheduleActiveUpdate)
+      window.removeEventListener('resize', scheduleActiveUpdate)
+    }
   }, [])
 
   return (
@@ -39,11 +76,7 @@ export default function Nav() {
       </a>
 
       <ul className={styles.links}>
-        {[
-          { label: 'Work', href: '#work' },
-          { label: 'About', href: '#about' },
-          { label: 'Contact', href: '#contact' },
-        ].map(link => (
+        {navLinks.map(link => (
           <li key={link.href}>
             <a
               href={link.href}

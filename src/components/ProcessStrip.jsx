@@ -13,10 +13,12 @@ const steps = [
   },
   {
     name: 'Ideate',
+    style: 'creative',
     desc: 'Explore flows, structure, sketches, and possible directions.',
   },
   {
     name: 'Prototype',
+    style: 'robotic',
     desc: 'Make ideas tangible through wireframes and interactive prototypes.',
   },
   {
@@ -30,15 +32,10 @@ export default function ProcessStrip() {
   useReveal(sectionRef)
 
   return (
-    <section className={styles.process} ref={sectionRef} aria-labelledby="process-title">
+    <section id="process" className={styles.process} ref={sectionRef} aria-labelledby="process-title">
       <div className={`${styles.header} reveal`}>
-        <p className="section-kicker">How I work</p>
+        <p className={`${styles.processLabel} section-kicker`}>How I work</p>
         <h2 id="process-title">A user-centered process for understanding, shaping, and testing ideas.</h2>
-        <p className={styles.intro}>
-          I am familiar with design thinking and Double Diamond, and I am open
-          to the process a team already uses. I want to keep learning from
-          experienced designers while contributing to real product work.
-        </p>
       </div>
       <div className={styles.steps}>
         {steps.map((step, index) => (
@@ -48,11 +45,19 @@ export default function ProcessStrip() {
             style={{ '--reveal-delay': `${index * 70}ms` }}
           >
             <span>{String(index + 1).padStart(2, '0')}</span>
-            <h3>{step.name}</h3>
+            <h3 className={step.style ? styles[`${step.style}Title`] : undefined}>{step.name}</h3>
             <p>{step.desc}</p>
           </article>
         ))}
       </div>
+      <blockquote className={`${styles.quote} reveal`}>
+        <p>
+          "I use design methods to replace assumptions with sharper questions,
+          useful insights, and testable ideas. I am open to the process a team
+          already uses, and I want to keep learning from experienced designers
+          while contributing to real product work." - Arnas
+        </p>
+      </blockquote>
     </section>
   )
 }
