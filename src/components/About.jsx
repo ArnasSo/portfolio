@@ -230,11 +230,13 @@ export default function About() {
         </div>
 
         <div className={styles.profileRow}>
-          <div className={styles.profileGrid} aria-label="Professional profile">
+          <div className={`${styles.profileGrid} ${styles.skillSection}`} aria-label="Professional profile">
             {profile.map(item => (
-              <article key={item.title} className={styles.profileCard}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+              <article key={item.title} className={styles.skillGroup}>
+                <h4>{item.title}</h4>
+                <ul className={styles.skillList}>
+                  <li>{item.text}</li>
+                </ul>
               </article>
             ))}
           </div>

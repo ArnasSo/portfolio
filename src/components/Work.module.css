@@ -166,13 +166,13 @@
 }
 
 .snapshotMeta ul {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 0.55rem;
   margin-top: 0.75rem;
 }
 
 .snapshotMeta li {
+  width: 100%;
   padding: 0.55rem 0.7rem;
   color: var(--ink);
   background: var(--wash);

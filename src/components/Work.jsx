@@ -14,7 +14,7 @@ const projects = [
     secondarySnapshotImage: '/bla-sol-app-preview.png',
     problem: 'BLA SOL needed a stronger event-discovery experience inside an existing festival app, helping visitors find relevant activities without forcing them to constantly use their phone during the festival.',
     role: 'Stakeholder research, client interviews, interview and observation guides, synthesis, UX direction, prototype, and testing.',
-    process: ['Mapping Visitor Needs', 'Event Discovery Focused UI', 'Mobile-first Design'],
+    process: ['User Needs Mapping', 'Event Discovery UX', 'Mobile-first Interface Design', 'Team-based Client Project'],
     outcome: <>A user-centered digital solution that worked with the festival's existing visual identity while adding clearer paths into events, artists, and personal planning.</>,
     detailVisuals: [
       'Client and Discovery',
@@ -62,7 +62,7 @@ const projects = [
     secondarySnapshotImage: '/planthunt-observation-app.png',
     problem: 'The botanical garden experience needed a playful digital layer that could keep children and families engaged while supporting real-life exploration instead of replacing it.',
     role: 'Project planning, field observation, target-group definition, persona development, interactive prototype, coded QR interaction, and usability testing.',
-    process: ['Observed the botanical garden visit', 'Captured notes and opportunities', 'Tested interactions and QR codes'],
+    process: ['Field Observation and Analysis', 'Persona and Target Group Definition', 'QR Interaction Testing', 'Team-based Flash Project'],
     outcome: <>A structured flash project that translated <strong>research and observation</strong> into an interactive plant game where children could play, scan, and learn through the garden visit.</>,
     detailVisuals: [
       'Project Planning and Garden Context',
@@ -111,7 +111,7 @@ const projects = [
     secondarySnapshotImage: '/keybee-case-film.jpg',
     problem: 'The project explored how a familiar digital interaction could move beyond the screen, with the final concept direction focused on haptic feedback through vibration.',
     role: 'Concept development, haptic interaction exploration, sketching, prototyping, vibration-based interaction direction, and case film presentation.',
-    process: ['Explored non-visual interaction', 'Developed a concept direction', 'Concept through case film'],
+    process: ['Inclusive Interaction Research', 'Haptic Feedback Concepting', 'Concept Prototyping and Case Film', 'Individual Concept Project'],
     outcome: <>A digital concept with potential for further user-centered development, especially around <strong>haptic interaction</strong>, accessibility, and vibration-based feedback.</>,
     detailVisuals: [
       'Haptic Interaction Exploration',
@@ -160,7 +160,7 @@ const projects = [
     secondarySnapshotImage: '/cphfw-visual-hierarchy.jpg',
     problem: 'CPHFW needed an event-ready information touchpoint that could present, inform, and support learning around sustainable materials in a clear desktop and infoscreen format.',
     role: 'CPHFW research, target-group and persona work, concept direction, prototyping, usability testing, and visual hierarchy testing.',
-    process: ['Supported research and testing', 'Worked with teammates across roles', 'Contributed to UX decisions'],
+    process: ['Sustainability Context Research', 'Target Group and Persona Work', 'Usability and Hierarchy Testing', 'Team-based Event Project'],
     outcome: <>An event-ready infoscreen application designed for <strong>desktop and large-screen use</strong>, with mobile left as a future iteration.</>,
     detailVisuals: [
       'CPHFW Research',
