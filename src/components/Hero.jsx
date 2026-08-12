@@ -37,7 +37,7 @@ export default function Hero() {
     <section id="home" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <h1 id="hero-title">Designing clearer product experiences around real user needs.</h1>
+          <h1 id="hero-title">Designing clearer product experiences around real user needs</h1>
           <p className={styles.summary}>
             I am <strong>Arnas Sokolovas</strong>, a <strong>UX-focused designer</strong> turning
             user insights into practical interfaces and digital solutions. I am

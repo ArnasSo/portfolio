@@ -255,7 +255,7 @@ export default function Work() {
   return (
     <section id="work" className={styles.work} ref={sectionRef} aria-labelledby="work-title">
       <div className={`${styles.header} reveal`}>
-        <h2 id="work-title">Case studies built for scanning, then depth.</h2>
+        <h2 id="work-title">Case studies built for scanning, then depth</h2>
       </div>
 
       <div className={styles.list}>

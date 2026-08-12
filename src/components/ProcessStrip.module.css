@@ -96,7 +96,6 @@
   color: var(--ink-soft);
   font-size: clamp(0.9rem, 1vw, 1rem);
   font-style: italic;
-  opacity: 0.82;
   text-align: center;
   line-height: 1.55;
 }

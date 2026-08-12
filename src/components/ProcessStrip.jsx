@@ -35,7 +35,7 @@ export default function ProcessStrip() {
     <section id="process" className={styles.process} ref={sectionRef} aria-labelledby="process-title">
       <div className={`${styles.header} reveal`}>
         <p className={`${styles.processLabel} section-kicker`}>How I work</p>
-        <h2 id="process-title">A user-centered process for understanding, shaping, and testing ideas.</h2>
+        <h2 id="process-title">A user-centered process for understanding, shaping, and testing ideas</h2>
       </div>
       <div className={styles.steps}>
         {steps.map((step, index) => (

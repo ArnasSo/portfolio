@@ -179,17 +179,25 @@
     padding-top: 5.6rem;
   }
 
+  .copy,
+  .actions,
+  .recruiterStack {
+    max-width: 22rem;
+  }
+
   .copy h1 {
-    max-width: 100%;
-    font-size: clamp(2.05rem, 10vw, 2.55rem);
+    max-width: 12ch;
+    font-size: clamp(1.9rem, 8.7vw, 2.35rem);
     line-height: 1.03;
     overflow-wrap: break-word;
   }
 
   .summary {
+    max-width: 100%;
     margin-top: 1rem;
     font-size: 0.98rem;
     line-height: 1.55;
+    overflow-wrap: anywhere;
   }
 
   .actions {

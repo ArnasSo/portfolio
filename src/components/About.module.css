@@ -201,12 +201,100 @@
 
 .starEmpty {
   color: var(--muted);
-  opacity: 0.45;
+}
+
+.timeline {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.timelineIntro h3 {
+  max-width: 24rem;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.timelineIntro p:last-child {
+  max-width: 29rem;
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.timelineLabel {
+  margin-bottom: 0.55rem;
+  color: var(--muted);
+}
+
+.timelineColumns {
+  display: grid;
+  grid-template-columns: 0.92fr 1fr;
+  gap: 1rem;
+}
+
+.timelineColumn {
+  min-width: 0;
+}
+
+.timelineColumn > h3 {
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.timelineList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.timelineItem {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0 0 0.8rem 0.9rem;
+  border-left: 2px solid rgba(23, 23, 23, 0.12);
+}
+
+.timelineItem:not(:last-child) {
+  border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+.timelineItem h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.timelineMeta,
+.timelineItem time {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.timelineItem time {
+  font-family: var(--mono);
+}
+
+.timelineItem > p:last-child {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 960px) {
   .profileGrid,
-  .skillsRow {
+  .skillsRow,
+  .timeline,
+  .timelineColumns {
     grid-template-columns: 1fr;
   }
 }
@@ -214,7 +302,9 @@
 @media (max-width: 780px) {
   .inner,
   .skillsRow,
-  .groups {
+  .groups,
+  .timeline,
+  .timelineColumns {
     grid-template-columns: 1fr;
   }
 
@@ -242,6 +332,10 @@
 
   .skillSection {
     padding: 1rem;
+  }
+
+  .timeline {
+    gap: 1.1rem;
   }
 
   .skillList li {
