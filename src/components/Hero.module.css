@@ -144,6 +144,73 @@
   color: var(--ink);
 }
 
+.certificateMenu {
+  position: relative;
+  display: inline-block;
+}
+
+.certificateMenu button {
+  padding: 0;
+  color: var(--accent);
+  background: transparent;
+  border: 0;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  cursor: pointer;
+}
+
+.certificateMenu button:hover,
+.certificateMenu button:focus-visible {
+  color: var(--ink);
+}
+
+.certificateDropdown {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  z-index: 20;
+  min-width: min(15rem, 72vw);
+  padding: 0.45rem;
+  visibility: hidden;
+  opacity: 0;
+  background: var(--paper-bright);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 2px);
+  box-shadow: 0 14px 34px rgba(23, 23, 23, 0.12);
+  transform: translateY(-0.25rem);
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease,
+    visibility 0.16s ease;
+}
+
+.certificateMenu:hover .certificateDropdown,
+.certificateMenu:focus-within .certificateDropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.certificateDropdown a {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.58rem 0.65rem;
+  color: var(--ink);
+  background: rgba(235, 231, 221, 0.42);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.certificateDropdown a:hover {
+  color: var(--paper-bright);
+  background: var(--accent);
+}
+
 .externalIcon {
   display: inline-grid;
   place-items: center;

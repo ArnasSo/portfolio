@@ -29,6 +29,12 @@ const signals = [
         1/7 certificates in progress
       </>
     ),
+    links: [
+      {
+        label: 'Verify certificate 1',
+        href: 'https://www.coursera.org/account/accomplishments/verify/0ZA3ABEZFUSY',
+      },
+    ],
   },
   {
     label: 'LinkedIn',
@@ -79,6 +85,20 @@ export default function Hero() {
                         <span>{signal.value}</span>
                         <span className={styles.externalIcon} aria-hidden="true">{'\u2197'}</span>
                       </a>
+                    ) : signal.links ? (
+                      <div className={styles.certificateMenu}>
+                        <button type="button" aria-haspopup="true">
+                          <span>{signal.value}</span>
+                        </button>
+                        <div className={styles.certificateDropdown}>
+                          {signal.links.map(link => (
+                            <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                              <span>{link.label}</span>
+                              <span className={styles.externalIcon} aria-hidden="true">{'\u2197'}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     ) : signal.value}
                   </dd>
                 </div>
