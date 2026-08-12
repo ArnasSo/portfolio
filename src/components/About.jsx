@@ -135,26 +135,60 @@ export default function About() {
     <section id="about" className={styles.about} ref={sectionRef} aria-labelledby="about-title">
       <div className={`${styles.inner} reveal`}>
         <div className={styles.heading}>
-          <p className={`${styles.sectionLabel} section-kicker`}>About</p>
+          <p className={`${styles.sectionLabel} section-kicker`} aria-hidden="true">About</p>
           <h2 id="about-title">Learning UX through real problems</h2>
         </div>
 
         <div className={styles.body}>
-          <div className={styles.profileGrid} aria-label="Professional profile">
-            {profile.map(item => (
-              <article key={item.title} className={styles.profileCard}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
+          <div className={`${styles.timelineIntro} ${styles.currentRole}`}>
+            <p className={`${styles.timelineLabel} section-kicker`}>Current position</p>
+            <h3>Junior-ready, still early in my UX career</h3>
+            <p>
+              I am currently looking for a UX internship, student job, or junior UX/UI role.
+              My professional experience so far is internship-based, supported by hands-on project work.
+            </p>
           </div>
+        </div>
+
+        <div className={`${styles.timelineColumns} ${styles.experienceRow}`} aria-label="Experience and education">
+          <section className={styles.timelineColumn} aria-labelledby="experience-title">
+            <h3 id="experience-title">Experience</h3>
+            <div className={styles.timelineList}>
+              {experienceItems.map(item => (
+                <article key={`${item.place}-${item.role}`} className={styles.timelineItem}>
+                  <div>
+                    <h4>{item.role}</h4>
+                    <p className={styles.timelineMeta}>{item.place} / {item.type}</p>
+                  </div>
+                  <time>{item.date}</time>
+                  <p>{item.note}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.timelineColumn} aria-labelledby="education-title">
+            <h3 id="education-title">Education</h3>
+            <div className={styles.timelineList}>
+              {educationItems.map(item => (
+                <article key={`${item.school}-${item.program}`} className={styles.timelineItem}>
+                  <div>
+                    <h4>{item.school}</h4>
+                    <p className={styles.timelineMeta}>{item.program}</p>
+                  </div>
+                  <time>{item.date}</time>
+                  <p>{item.note}</p>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
 
         <div className={styles.skillsRow}>
           <div className={styles.skillSection}>
             <div className={styles.skillsHeader}>
               <div>
-                <h3>Soft skills</h3>
+                <h3 className={styles.softSkillsTitle}>Soft skills</h3>
                 <p>Collaboration, feedback, and user-centered decision-making.</p>
               </div>
             </div>
@@ -195,48 +229,14 @@ export default function About() {
           </div>
         </div>
 
-        <div className={styles.timeline} aria-label="Experience and education">
-          <div className={styles.timelineIntro}>
-            <p className={`${styles.timelineLabel} section-kicker`}>Current position</p>
-            <h3>Junior-ready, still early in my UX career</h3>
-            <p>
-              I am currently looking for a UX internship, student job, or junior UX/UI role.
-              My professional experience so far is internship-based, supported by hands-on project work.
-            </p>
-          </div>
-
-          <div className={styles.timelineColumns}>
-            <section className={styles.timelineColumn} aria-labelledby="experience-title">
-              <h3 id="experience-title">Experience</h3>
-              <div className={styles.timelineList}>
-                {experienceItems.map(item => (
-                  <article key={`${item.place}-${item.role}`} className={styles.timelineItem}>
-                    <div>
-                      <h4>{item.role}</h4>
-                      <p className={styles.timelineMeta}>{item.place} / {item.type}</p>
-                    </div>
-                    <time>{item.date}</time>
-                    <p>{item.note}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className={styles.timelineColumn} aria-labelledby="education-title">
-              <h3 id="education-title">Education</h3>
-              <div className={styles.timelineList}>
-                {educationItems.map(item => (
-                  <article key={`${item.school}-${item.program}`} className={styles.timelineItem}>
-                    <div>
-                      <h4>{item.school}</h4>
-                      <p className={styles.timelineMeta}>{item.program}</p>
-                    </div>
-                    <time>{item.date}</time>
-                    <p>{item.note}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
+        <div className={styles.profileRow}>
+          <div className={styles.profileGrid} aria-label="Professional profile">
+            {profile.map(item => (
+              <article key={item.title} className={styles.profileCard}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

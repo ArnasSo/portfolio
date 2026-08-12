@@ -6,9 +6,9 @@
 
 .inner {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
-  column-gap: clamp(3rem, 7vw, 7rem);
-  row-gap: clamp(2.5rem, 5vw, 4rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1rem;
+  row-gap: clamp(2.75rem, 5vw, 4.25rem);
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -49,6 +49,20 @@
   max-width: 820px;
 }
 
+.currentRole {
+  padding-top: 0;
+}
+
+.profileRow {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+
+.profileRow .profileGrid {
+  width: min(100%, 960px);
+}
+
 .profileGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -60,11 +74,11 @@
   padding: 1rem 1rem 1.15rem;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(255, 254, 250, 0.78), rgba(244, 241, 234, 0.92)),
+    linear-gradient(180deg, rgba(255, 254, 250, 0.92), rgba(248, 246, 241, 0.98)),
     var(--paper);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(23, 23, 23, 0.11);
   border-radius: var(--radius);
-  box-shadow: 0 14px 32px rgba(23, 23, 23, 0.045);
+  box-shadow: 0 12px 28px rgba(23, 23, 23, 0.035);
 }
 
 .profileCard::before {
@@ -72,8 +86,19 @@
   position: absolute;
   inset: 0 0 auto;
   height: 0.22rem;
-  background: var(--accent);
   opacity: 0.82;
+}
+
+.profileCard:nth-child(1)::before {
+  background: #3f7f50;
+}
+
+.profileCard:nth-child(2)::before {
+  background: #a86120;
+}
+
+.profileCard:nth-child(3)::before {
+  background: #416f9b;
 }
 
 .profileCard h3,
@@ -98,9 +123,9 @@
   min-width: 0;
   padding: clamp(1rem, 2vw, 1.25rem);
   background:
-    linear-gradient(180deg, rgba(255, 254, 250, 0.72), rgba(244, 241, 234, 0.96)),
+    linear-gradient(180deg, rgba(255, 254, 250, 0.9), rgba(248, 246, 241, 0.98)),
     var(--paper);
-  border: 1px solid var(--line);
+  border: 1px solid rgba(23, 23, 23, 0.11);
   border-radius: var(--radius);
 }
 
@@ -108,7 +133,7 @@
   display: grid;
   grid-column: 1 / -1;
   grid-template-columns: minmax(260px, 0.58fr) minmax(0, 1fr);
-  gap: 1rem;
+  gap: clamp(1rem, 1.7vw, 1.5rem);
 }
 
 .skillsHeader {
@@ -119,6 +144,10 @@
   font-size: clamp(1.35rem, 2vw, 1.85rem);
   font-weight: 800;
   line-height: 1;
+}
+
+.skillsHeader .softSkillsTitle {
+  font-weight: 700;
 }
 
 .skillsHeader p {
@@ -234,8 +263,14 @@
 
 .timelineColumns {
   display: grid;
-  grid-template-columns: 0.92fr 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 1.7vw, 1.5rem);
+}
+
+.experienceRow {
+  grid-column: 1 / -1;
+  padding-top: clamp(1.25rem, 2.3vw, 1.75rem);
+  border-top: 1px solid var(--line);
 }
 
 .timelineColumn {
@@ -244,8 +279,8 @@
 
 .timelineColumn > h3 {
   margin-bottom: 0.75rem;
-  font-size: 0.82rem;
-  font-weight: 800;
+  color: var(--muted);
+  font: 700 0.78rem var(--mono);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -259,7 +294,7 @@
   display: grid;
   gap: 0.42rem;
   padding: 0 0 0.8rem 0.9rem;
-  border-left: 2px solid rgba(23, 23, 23, 0.12);
+  border-left: 2px solid rgba(47, 95, 91, 0.22);
 }
 
 .timelineItem:not(:last-child) {

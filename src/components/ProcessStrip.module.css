@@ -40,15 +40,45 @@
   line-height: 1.04;
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
+.stepsWrap {
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
+.processLine {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tabletLine,
+.mobileLine {
+  display: none;
+}
+
+.processPath {
+  fill: none;
+  stroke: rgba(47, 95, 91, 0.22);
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+.steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(1.2rem, 1.8vw, 1.8rem);
+}
+
 .step {
+  position: relative;
   min-height: 260px;
   padding: 1.3rem;
   background: var(--paper-bright);
@@ -108,12 +138,32 @@
   .steps {
     grid-template-columns: 1fr 1fr;
   }
+
+  .desktopLine {
+    display: none;
+  }
+
+  .tabletLine {
+    display: block;
+  }
 }
 
 @media (max-width: 560px) {
   .header,
   .steps {
     grid-template-columns: 1fr;
+  }
+
+  .desktopLine {
+    display: none;
+  }
+
+  .tabletLine {
+    display: none;
+  }
+
+  .mobileLine {
+    display: block;
   }
 
   .process {
@@ -147,5 +197,27 @@
 
   .step p {
     font-size: 0.94rem;
+  }
+}
+
+:global(.reveal-enabled) .processPath {
+  stroke-dashoffset: 1;
+}
+
+:global(.reveal-enabled) .stepsWrap:global(.visible) .processPath {
+  animation: drawProcessLine 17s cubic-bezier(0.2, 0.78, 0.16, 1) 0.2s forwards;
+}
+
+@keyframes drawProcessLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .processPath,
+  :global(.reveal-enabled) .processPath {
+    animation: none;
+    stroke-dashoffset: 0;
   }
 }
