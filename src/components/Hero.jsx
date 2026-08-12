@@ -14,6 +14,11 @@ const signals = [
       </>
     ),
   },
+  {
+    label: 'Work experience',
+    value: 'Internships + education',
+    sectionId: '#about',
+  },
   { label: 'Location', value: 'Aalborg, Aarhus, remote' },
   {
     label: 'Certificates',
@@ -65,7 +70,11 @@ export default function Hero() {
                 <div key={signal.label}>
                   <dt>{signal.label}</dt>
                   <dd>
-                    {signal.href ? (
+                    {signal.sectionId ? (
+                      <a href={signal.sectionId} onClick={event => scrollToSection(event, signal.sectionId)}>
+                        <span>{signal.value}</span>
+                      </a>
+                    ) : signal.href ? (
                       <a href={signal.href} target="_blank" rel="noreferrer">
                         <span>{signal.value}</span>
                         <span className={styles.externalIcon} aria-hidden="true">{'\u2197'}</span>
