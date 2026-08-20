@@ -34,8 +34,8 @@ export default function ProcessStrip() {
   return (
     <section id="process" className={styles.process} ref={sectionRef} aria-labelledby="process-title">
       <div className={`${styles.header} reveal`}>
-        <p className={`${styles.processLabel} section-kicker`}>How I work</p>
-        <h2 id="process-title">A user-centered process for understanding, shaping, and testing ideas</h2>
+        <p className={`${styles.processLabel} section-kicker`}>Design process</p>
+        <h2 id="process-title">How I move from user needs to testable interface ideas</h2>
       </div>
       <div className={`${styles.stepsWrap} reveal`}>
         <svg className={`${styles.processLine} ${styles.desktopLine}`} viewBox="0 0 1000 260" aria-hidden="true">

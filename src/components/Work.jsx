@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Work.module.css'
 
-const projects = [
+export const projects = [
   {
+    slug: 'bla-sol-festival-app',
     title: 'BLA SOL festival app',
     type: 'Mobile UX / client project',
     year: '2026',
@@ -52,6 +53,7 @@ const projects = [
     cta: 'Open prototype',
   },
   {
+    slug: 'planthunt',
     title: 'PlantHunt',
     type: 'Flash UX/UI Project / learning game',
     year: '2026',
@@ -100,6 +102,7 @@ const projects = [
     cta: 'Open prototype',
   },
   {
+    slug: 'keybee',
     title: 'KeyBee',
     type: 'Inclusive product concept',
     year: '2026',
@@ -150,6 +153,7 @@ const projects = [
     mediaType: 'video',
   },
   {
+    slug: 'cphfw-infoscreen',
     title: 'CPHFW infoscreen',
     type: 'Service touchpoint / visual hierarchy',
     year: '2025',
@@ -199,81 +203,31 @@ const projects = [
   },
 ]
 
-const detailCopy = [
-  {
-    title: 'Research direction',
-    text: 'Key user insight, stakeholder input, or observation that helped shape the project direction.',
-  },
-  {
-    title: 'Key findings',
-    text: 'Synthesis, patterns, or user needs that helped define the design opportunity.',
-  },
-  {
-    title: 'Design decisions',
-    text: 'The most important flow, structure, prototype, or testing decision made during the project.',
-  },
-  {
-    title: 'Validation',
-    text: 'Testing, feedback, iteration, or the result that shaped the final direction.',
-  },
-]
-
 export default function Work() {
   const sectionRef = useRef(null)
-  const [expandedProjects, setExpandedProjects] = useState([])
-  const [activeVideo, setActiveVideo] = useState(null)
   useReveal(sectionRef)
-
-  useEffect(() => {
-    if (!activeVideo) {
-      return undefined
-    }
-
-    const handleKeyDown = event => {
-      if (event.key === 'Escape') {
-        setActiveVideo(null)
-      }
-    }
-
-    document.body.style.overflow = 'hidden'
-    window.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      document.body.style.overflow = ''
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [activeVideo])
-
-  const toggleProject = title => {
-    setExpandedProjects(current =>
-      current.includes(title)
-        ? current.filter(projectTitle => projectTitle !== title)
-        : [...current, title]
-    )
-  }
 
   return (
     <section id="work" className={styles.work} ref={sectionRef} aria-labelledby="work-title">
       <div className={`${styles.header} reveal`}>
-        <h2 id="work-title">Case studies built for scanning, then depth</h2>
+        <p className="section-kicker">Case studies</p>
+        <h2 id="work-title">UX/UI case studies with research, interface work, and prototypes</h2>
       </div>
 
       <div className={styles.list}>
         {projects.map((project, index) => {
-          const isExpanded = expandedProjects.includes(project.title)
-          const detailsId = `case-details-${index}`
-          const caseDetails = project.details || detailCopy
-
           return (
-            <article
+            <a
+              href={`/case/${project.slug}`}
               className={`${styles.card} reveal`}
               style={{
                 '--reveal-delay': `${index * 80}ms`,
                 '--project-accent': project.accent,
-                '--project-bg': project.backgroundImage && !isExpanded ? `url(${project.backgroundImage})` : 'none',
+                '--project-bg': project.backgroundImage ? `url(${project.backgroundImage})` : 'none',
                 '--project-bg-size': project.backgroundSize,
               }}
               key={project.title}
+              aria-label={`Read the ${project.title} case study`}
             >
               <div className={styles.index}>{String(index + 1).padStart(2, '0')}</div>
               <div className={styles.main}>
@@ -282,37 +236,7 @@ export default function Work() {
                     <p>{project.type} / {project.year}</p>
                     <h3>{project.title}</h3>
                   </div>
-                  <div className={styles.cardActions}>
-                    {project.mediaType === 'video' ? (
-                      <button
-                        type="button"
-                        className={styles.caseLink}
-                        aria-label={`${project.cta} for ${project.title}`}
-                        onClick={() => setActiveVideo(project)}
-                      >
-                        {project.cta}
-                      </button>
-                    ) : (
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.cta} for ${project.title} in a new tab`}
-                      >
-                        {project.cta}
-                      </a>
-                    )}
-                    <button
-                      type="button"
-                      className={styles.expandButton}
-                      aria-expanded={isExpanded}
-                      aria-controls={detailsId}
-                      onClick={() => toggleProject(project.title)}
-                    >
-                      <span>{isExpanded ? 'Show less' : 'Learn more'}</span>
-                      <span className={styles.arrow} aria-hidden="true">{isExpanded ? '\u2191' : '\u2193'}</span>
-                    </button>
-                  </div>
+                  <span className={styles.readLink}>Read case study <span aria-hidden="true">-&gt;</span></span>
                 </div>
 
                 <div
@@ -337,110 +261,11 @@ export default function Work() {
                     </ul>
                   </div>
                 </div>
-
-                <div
-                  id={detailsId}
-                  className={`${styles.detailsShell} ${isExpanded ? styles.detailsOpen : ''}`}
-                  aria-hidden={!isExpanded}
-                >
-                  <div className={styles.caseDetails}>
-                    <div className={styles.detailsInner}>
-                      <div className={styles.contentGrid}>
-                        <section>
-                          <h4>Problem</h4>
-                          <p>{project.problem}</p>
-                        </section>
-                        <section>
-                          <h4>Role</h4>
-                          <p>{project.role}</p>
-                        </section>
-                        <section>
-                          <h4>Process</h4>
-                          <ul>
-                            {project.process.map(step => <li key={step}>{step}</li>)}
-                          </ul>
-                        </section>
-                        <section>
-                          <h4>Outcome</h4>
-                          <p>{project.outcome}</p>
-                        </section>
-                      </div>
-
-                      {caseDetails.map((detail, detailIndex) => (
-                        <div
-                          className={`${styles.detailRow} ${detailIndex % 2 === 1 ? styles.detailRowReverse : ''}`}
-                          key={detail.title}
-                        >
-                          <figure className={styles.detailVisual}>
-                            <div
-                              className={`${styles.visualFrame} ${project.detailVisualImages?.[detailIndex] ? styles.visualFrameImage : ''}`}
-                              style={
-                                project.detailVisualImages?.[detailIndex]
-                                  ? { '--detail-image': `url(${project.detailVisualImages[detailIndex]})` }
-                                  : undefined
-                              }
-                            >
-                              <strong>{project.detailVisuals?.[detailIndex] || `${detail.title} visual`}</strong>
-                            </div>
-                          </figure>
-
-                          <section className={styles.detailText}>
-                            <span>{String(detailIndex + 1).padStart(2, '0')}</span>
-                            <h4>{detail.title}</h4>
-                            <p>{detail.text}</p>
-                          </section>
-                        </div>
-                      ))}
-
-                      {project.evidence && (
-                        <div className={styles.placeholder}>
-                          <p>{project.evidence}</p>
-                          <a
-                            href={project.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={`${project.cta} for ${project.title} in a new tab`}
-                          >
-                            {project.cta}
-                          </a>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
               </div>
-            </article>
+            </a>
           )
         })}
       </div>
-
-      {activeVideo && (
-        <div
-          className={styles.videoOverlay}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="case-video-title"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div className={styles.videoModal} onClick={event => event.stopPropagation()}>
-            <div className={styles.videoHeader}>
-              <div>
-                <p>Case film</p>
-                <h3 id="case-video-title">{activeVideo.title}</h3>
-              </div>
-              <button type="button" onClick={() => setActiveVideo(null)} aria-label="Close video">
-                Close
-              </button>
-            </div>
-            <iframe
-              src={activeVideo.href}
-              title={`${activeVideo.title} case film`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
     </section>
   )
 }

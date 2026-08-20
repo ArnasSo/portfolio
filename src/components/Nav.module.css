@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  min-width: 0;
 }
 
 .link {
@@ -58,6 +59,12 @@
     justify-content: flex-start;
     gap: 0;
     min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .links::-webkit-scrollbar {
+    display: none;
   }
 
   .logo {
@@ -68,8 +75,9 @@
   }
 
   .link {
-    padding: 0.44rem 0.36rem;
-    font-size: 0.7rem;
+    white-space: nowrap;
+    padding: 0.44rem 0.5rem;
+    font-size: 0.66rem;
   }
 }
 
@@ -83,7 +91,7 @@
   }
 
   .links {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .link {

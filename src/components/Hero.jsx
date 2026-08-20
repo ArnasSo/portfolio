@@ -2,8 +2,9 @@ import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Hero.module.css'
 
 const signals = [
-  { label: 'Focus', value: 'UX research, UI structure, interaction' },
-  { label: 'Looking for', value: <strong>Internship / junior UX role</strong> },
+  { label: 'Role', value: <strong>Junior UX/UI Designer</strong> },
+  { label: 'Frontend', value: 'HTML, CSS, WordPress, React.js basics' },
+  { label: 'Looking for', value: <strong>UX/UI, frontend, or internship</strong> },
   {
     label: 'Studying',
     value: (
@@ -41,6 +42,11 @@ const signals = [
     value: 'arnassokolovas',
     href: 'https://www.linkedin.com/in/arnassokolovas/',
   },
+  {
+    label: 'Human note',
+    value: 'Friendly, calm, and mildly sarcastic',
+    subtext: 'Usually productive sarcasm. Mostly.',
+  },
 ]
 
 export default function Hero() {
@@ -48,11 +54,12 @@ export default function Hero() {
     <section id="home" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <h1 id="hero-title">Designing clearer product experiences around real user needs</h1>
+          <p className={styles.role}>Junior UX/UI Designer</p>
+          <h1 id="hero-title">Designing clear interfaces without making people think too hard</h1>
           <p className={styles.summary}>
-            I am <strong>Arnas Sokolovas</strong>, a <strong>UX-focused designer</strong> turning
-            user insights into practical interfaces and digital solutions. I am
-            <strong> ready to bring curiosity, structure, and user-centered thinking to a team solving real problems</strong>.
+            I am <strong>Arnas Sokolovas</strong>, an early-career designer with a UX mindset,
+            UI practice, and some frontend experience in WordPress and React.js. I like useful
+            details, honest feedback, and teams where good ideas are allowed to be a little messy first.
           </p>
           <div className={styles.actions}>
             <a href="#work" className="btn-primary" onClick={event => scrollToSection(event, '#work')}>
@@ -73,7 +80,7 @@ export default function Hero() {
             <p className={styles.panelLabel}>For Recruiters</p>
             <dl>
               {signals.map(signal => (
-                <div key={signal.label}>
+                <div key={signal.label} className={signal.subtext ? styles.humanNote : undefined}>
                   <dt>{signal.label}</dt>
                   <dd>
                     {signal.sectionId ? (
@@ -99,6 +106,11 @@ export default function Hero() {
                           ))}
                         </div>
                       </div>
+                    ) : signal.subtext ? (
+                      <>
+                        <span>{signal.value}</span>
+                        <small>{signal.subtext}</small>
+                      </>
                     ) : signal.value}
                   </dd>
                 </div>

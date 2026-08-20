@@ -3,9 +3,10 @@ import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Nav.module.css'
 
 const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'Process', href: '#process' },
-  { label: 'About', href: '#about' },
+  { label: 'Case Studies', href: '#work' },
+  { label: 'Design Process', href: '#process' },
+  { label: 'Background', href: '#about' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ]
 

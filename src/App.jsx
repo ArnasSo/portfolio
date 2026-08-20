@@ -3,12 +3,21 @@ import './App.css'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Work from './components/Work'
+import CaseStudy from './components/CaseStudy'
 import ProcessStrip from './components/ProcessStrip'
 import About from './components/About'
+import Skills from './components/Skills'
 import Contact from './components/Contact'
 
 function App() {
+  const caseMatch = window.location.pathname.match(/^\/case\/([^/]+)\/?$/)
+
   useEffect(() => {
+    if (caseMatch) {
+      window.scrollTo(0, 0)
+      return
+    }
+
     const hash = window.location.hash
 
     if (!hash) {
@@ -19,7 +28,16 @@ function App() {
       document.querySelector(hash)?.scrollIntoView()
       window.history.replaceState(null, '', window.location.pathname + window.location.search)
     })
-  }, [])
+  }, [caseMatch])
+
+  if (caseMatch) {
+    return (
+      <>
+        <a className="skip-link" href="#case-title">Skip to case study</a>
+        <CaseStudy slug={caseMatch[1]} />
+      </>
+    )
+  }
 
   return (
     <>
@@ -30,6 +48,7 @@ function App() {
         <Work />
         <ProcessStrip />
         <About />
+        <Skills />
         <Contact />
       </main>
     </>
