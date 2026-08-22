@@ -101,7 +101,7 @@
   color: var(--ink-soft);
   line-height: 1.72;
   hyphens: auto;
-  text-align: justify;
+  text-align: left;
   text-align-last: left;
 }
 
@@ -232,7 +232,7 @@
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   line-height: 1.56;
   hyphens: auto;
-  text-align: justify;
+  text-align: left;
   text-align-last: left;
 }
 
