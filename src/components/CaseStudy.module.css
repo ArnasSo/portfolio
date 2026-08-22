@@ -1572,7 +1572,7 @@
   }
 
   .transparentHeroVisual .staticHeroImage {
-    width: min(17.5rem, 100%) !important;
+    width: min(16.5rem, 100%) !important;
     max-width: 100% !important;
     margin: 0 auto;
   }
