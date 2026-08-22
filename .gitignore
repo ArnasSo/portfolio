@@ -11,6 +11,20 @@ node_modules
 dist
 dist-ssr
 *.local
+.chrome-*
+.tmp-build
+
+# Local QA screenshots generated during responsive checks
+qa-*.png
+check-*.png
+final*-*.png
+desktop.png
+mobile.png
+about-*.png
+*-desktop.png
+*-mobile.png
+*-check.png
+mobile-hero.png
 
 # Editor directories and files
 .vscode/*
