@@ -34,7 +34,7 @@
   position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  font-size: clamp(2.2rem, 5vw, 5rem);
+  font-size: clamp(2.2rem, 4.35vw, 4.7rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
@@ -145,6 +145,60 @@
 
   .tabletLine {
     display: block;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1600px) {
+  .header {
+    margin-bottom: clamp(1.5rem, 3.2vw, 2.6rem);
+    padding-top: clamp(1.4rem, 3vw, 2.4rem);
+  }
+
+  .processLabel {
+    font-size: clamp(3rem, 7vw, 5.9rem);
+  }
+
+  .header h2 {
+    max-width: 900px;
+    font-size: clamp(2rem, 3.55vw, 3.85rem);
+  }
+
+  .steps {
+    gap: 0.8rem;
+  }
+
+  .step {
+    min-height: 215px;
+    padding: 1rem;
+  }
+
+  .step h3 {
+    margin-top: 3.4rem;
+    font-size: clamp(1.3rem, 1.75vw, 1.8rem);
+  }
+
+  .step h3.creativeTitle {
+    font-size: clamp(1.45rem, 1.95vw, 2rem);
+  }
+
+  .step h3.roboticTitle {
+    font-size: clamp(1.12rem, 1.45vw, 1.5rem);
+  }
+
+  .step p {
+    margin-top: 0.75rem;
+    font-size: 0.92rem;
+    line-height: 1.48;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 800px) {
+  .step {
+    min-height: 190px;
+  }
+
+  .step h3 {
+    margin-top: 2.7rem;
   }
 }
 

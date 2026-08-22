@@ -38,7 +38,7 @@
 
 .heading h2 {
   max-width: 820px;
-  font-size: clamp(2.1rem, 4.2vw, 4.35rem);
+  font-size: clamp(2.1rem, 3.85vw, 4.05rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
@@ -161,11 +161,12 @@
 }
 
 .timelineItem h4 {
-  max-width: 15rem;
+  max-width: none;
   padding-top: 0.35rem;
   font-size: clamp(1rem, 1.4vw, 1.16rem);
   font-weight: 800;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .timelineMeta {
@@ -202,6 +203,48 @@
   .timeline,
   .timelineColumns {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1600px) {
+  .about {
+    padding-block: clamp(3rem, 5.6vw, 4.8rem);
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.54fr);
+    column-gap: clamp(1.4rem, 3vw, 2.8rem);
+  }
+
+  .heading h2 {
+    max-width: 720px;
+    font-size: clamp(2rem, 3.25vw, 3.45rem);
+  }
+
+  .sectionLabel {
+    font-size: clamp(3rem, 6.8vw, 5.8rem);
+  }
+
+  .timelineColumns {
+    gap: 0.9rem;
+  }
+
+  .timelineItem {
+    min-height: 130px;
+    padding: 0.95rem 0.85rem 0.85rem;
+  }
+
+  .compactEducationItem {
+    min-height: 120px;
+  }
+
+  .timelineItem h4 {
+    font-size: clamp(0.96rem, 1.15vw, 1.08rem);
+  }
+
+  .timelineItem > p:last-child {
+    font-size: 0.84rem;
+    line-height: 1.42;
   }
 }
 
@@ -249,6 +292,7 @@
 
   .timelineItem h4 {
     max-width: none;
+    white-space: normal;
   }
 
   .timelineItem time {

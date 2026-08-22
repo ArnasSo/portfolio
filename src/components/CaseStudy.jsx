@@ -69,6 +69,8 @@ export default function CaseStudy({ slug }) {
   const project = projects.find(item => item.slug === slug) || defaultProject
   const otherProjects = projects.filter(item => item.slug !== project.slug)
   const [openImage, setOpenImage] = useState(null)
+  const heroImage = project.caseHeroImage || project.secondarySnapshotImage || project.backgroundImage
+  const isHeroZoomable = project.caseHeroZoomable !== false
 
   useEffect(() => {
     if (!openImage) {
@@ -95,15 +97,19 @@ export default function CaseStudy({ slug }) {
   }
 
   return (
-    <main className={styles.casePage}>
+    <main
+      className={styles.casePage}
+      style={{
+        '--project-accent': project.accent,
+        '--case-shape-primary': project.caseShapePrimary,
+        '--case-shape-secondary': project.caseShapeSecondary,
+        '--hero-image': `url(${project.backgroundImage})`,
+      }}
+    >
       <a className={styles.backLink} href="/#work">Back to work</a>
 
       <section
-        className={styles.hero}
-        style={{
-          '--project-accent': project.accent,
-          '--hero-image': `url(${project.backgroundImage})`,
-        }}
+        className={`${styles.hero} ${project.caseHeroImage ? styles.imageHero : ''}`}
         aria-labelledby="case-title"
       >
         <div className={styles.heroCopy}>
@@ -120,15 +126,19 @@ export default function CaseStudy({ slug }) {
             </section>
           </div>
         </div>
-        <figure className={styles.heroVisual}>
-          <button
-            type="button"
-            className={styles.imageButton}
-            onClick={() => openCaseImage(project.secondarySnapshotImage || project.backgroundImage, `${project.title} preview`)}
-            aria-label={`Open larger image of ${project.title} preview`}
-          >
-            <img src={project.secondarySnapshotImage || project.backgroundImage} alt={`${project.title} preview`} />
-          </button>
+        <figure className={`${styles.heroVisual} ${project.caseHeroImage ? styles.transparentHeroVisual : ''}`}>
+          {isHeroZoomable ? (
+            <button
+              type="button"
+              className={styles.imageButton}
+              onClick={() => openCaseImage(heroImage, `${project.title} preview`)}
+              aria-label={`Open larger image of ${project.title} preview`}
+            >
+              <img src={heroImage} alt={`${project.title} preview`} />
+            </button>
+          ) : (
+            <img className={styles.staticHeroImage} src={heroImage} alt={`${project.title} preview`} />
+          )}
         </figure>
       </section>
 
@@ -145,6 +155,72 @@ export default function CaseStudy({ slug }) {
         </div>
       </section>
 
+      {project.caseLead && (
+        <section className={styles.caseLead} aria-label="Case study direction">
+          <div>
+            <p className="section-kicker">Case direction</p>
+            <h2>{project.caseLead.title}</h2>
+            <p>{project.caseLead.text}</p>
+          </div>
+          <dl>
+            {project.caseLead.points.map(point => (
+              <div key={point.label}>
+                <dt>{point.label}</dt>
+                <dd>{point.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      {project.caseSections && (
+        <section className={`${styles.caseNarrative} ${styles.customNarrative}`} aria-label={`${project.title} case study`}>
+          {project.caseSections.map((section, sectionIndex) => {
+            const images = section.images || []
+
+            return (
+              <article
+                className={`${images.length ? styles.caseSection : styles.textOnlyCaseSection} ${styles.customCaseSection} ${!images.length ? styles.closingCaseSection : ''} ${images.length && sectionIndex % 2 === 1 ? styles.reverseCaseSection : ''}`}
+                data-step={String(sectionIndex + 1).padStart(2, '0')}
+                data-case-section={section.eyebrow.toLowerCase().replace(/\s+/g, '-')}
+                key={section.title}
+              >
+                <div className={styles.sectionCopy}>
+                  <div className={styles.caseStepHeader}>
+                    <span>{String(sectionIndex + 1).padStart(2, '0')}</span>
+                    <span>{section.eyebrow}</span>
+                  </div>
+                  <h2>{section.title}</h2>
+                  {section.takeaway && <p className={styles.takeaway}>{section.takeaway}</p>}
+                  {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                  {section.highlights && (
+                    <ul className={styles.sectionHighlights}>
+                      {section.highlights.map(highlight => <li key={highlight}>{highlight}</li>)}
+                    </ul>
+                  )}
+                </div>
+
+                {images.length > 0 && (
+                  <div className={`${styles.imageGrid} ${images.length === 1 ? styles.singleImageGrid : ''}`}>
+                    {images.map(item => (
+                      <figure className={styles.evidencePanel} key={item.label}>
+                        <ImageSlot
+                          src={item.src}
+                          label={item.alt || item.label}
+                          onOpen={openCaseImage}
+                        />
+                        <figcaption>{item.label}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
+              </article>
+            )
+          })}
+        </section>
+      )}
+
+      {!project.caseSections && (
       <section className={styles.caseNarrative} aria-label={`${project.title} case study draft structure`}>
         {caseStudySections.map((section, sectionIndex) => {
           const firstImageIndex = sectionIndex * 2
@@ -179,7 +255,9 @@ export default function CaseStudy({ slug }) {
           )
         })}
       </section>
+      )}
 
+      {!project.caseSections && (
       <section className={styles.gallery} aria-label={`${project.title} existing case study notes`}>
         {project.details.map((detail, index) => (
           <article className={styles.storyBlock} key={detail.title}>
@@ -202,9 +280,13 @@ export default function CaseStudy({ slug }) {
           </article>
         ))}
       </section>
+      )}
 
       <section className={styles.nextStep} aria-label="Project link">
-        <p>{project.evidence}</p>
+        <div className={styles.nextStepCopy}>
+          <span>{project.noteLabel || 'Final takeaway'}</span>
+          <p>{project.evidence}</p>
+        </div>
         <a href={project.href} target="_blank" rel="noreferrer">
           {project.cta}
         </a>

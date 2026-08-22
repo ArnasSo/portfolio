@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Work.module.css'
@@ -9,14 +10,27 @@ export const projects = [
     type: 'Mobile UX / client project',
     year: '2026',
     accent: '#2f5f5b',
+    caseShapePrimary: 'rgba(61, 126, 186, 0.14)',
+    caseShapeSecondary: 'rgba(47, 95, 91, 0.1)',
     backgroundImage: '/bla-sol-background.png',
+    caseHeroImage: '/bla-sol-app-hero.png',
+    caseHeroZoomable: false,
     snapshot: 'User-centered Digital Solution',
     secondarySnapshot: 'Mobile Festival Experience',
     secondarySnapshotImage: '/bla-sol-app-preview.png',
     problem: 'BLA SOL needed a stronger event-discovery experience inside an existing festival app, helping visitors find relevant activities without forcing them to constantly use their phone during the festival.',
     role: 'Stakeholder research, client interviews, interview and observation guides, synthesis, UX direction, prototype, and testing.',
-    process: ['User Needs Mapping', 'Event Discovery UX', 'Mobile-first Interface Design', 'Team-based Client Project'],
-    outcome: <>A user-centered digital solution that worked with the festival's existing visual identity while adding clearer paths into events, artists, and personal planning.</>,
+    process: ['Festival Discovery UX', 'Community Event Visibility', 'Personal Planning', 'Team-based Client Project'],
+    outcome: <>A delivered UX/UI concept that worked with the festival's existing visual identity while making smaller activities easier to notice, save, and join.</>,
+    caseLead: {
+      title: 'From scattered festival information to a playful planning flow',
+      text: 'The case is about turning a broad client question into a focused mobile experience: help visitors discover smaller BLA SOL activities before they disappear behind the main music lineup.',
+      points: [
+        { label: 'Main tension', value: 'Community activities existed, but the app made them feel secondary.' },
+        { label: 'UX move', value: 'Use visual discovery, story-like browsing, saving, and reminders.' },
+        { label: 'Delivered concept', value: 'A lighter festival app direction that supports spontaneous decisions instead of over-planning.' },
+      ],
+    },
     detailVisuals: [
       'Client and Discovery',
       'User-centered Research and Synthesis',
@@ -31,23 +45,112 @@ export const projects = [
     ],
     details: [
       {
-        title: 'Discovery',
-        text: 'Stakeholder input and client interviews established the festival context, business goals, and what the existing app needed to support.',
+        title: 'A festival app that needed to show more than the lineup',
+        text: 'The existing digital experience focused mostly on artists and music. The opportunity was to help visitors discover the smaller social activities that make BLA SOL feel local, spontaneous, and community-driven.',
       },
       {
-        title: 'Research setup',
-        text: 'Interviews and observations helped clarify user needs, then synthesis shaped a clearer problem direction around spontaneity and discovery of smaller festival events and activities.',
+        title: 'Research turned scattered information into a clearer UX problem',
+        text: 'Desk research, a client interview, user interviews, observation, affinity mapping, persona work, VPC, HMW questions, user stories, OOUX, requirements, and user flows helped define what the app needed to make visible.',
       },
       {
-        title: 'Design direction',
-        text: 'Rather than recreating the whole app, the solution built on BLA SOL\'s existing visual identity and introduced event-discovery elements into the experience.',
+        title: 'A focused redesign instead of a full rebrand',
+        text: 'The project kept BLA SOL\'s existing visual language and focused on interaction flow: story highlights, a clearer program, event imagery, personal saving, and reminders shortly before events begin.',
       },
       {
-        title: 'Testing',
-        text: 'Usability testing was done on the lo-fi prototype, while 5-second and preference tests helped confirm the solution values, festival fit, and final design direction.',
+        title: 'Testing supported a more visual and flexible experience',
+        text: 'Think-aloud usability testing shaped the early wireframes, while preference and 5-second testing supported the hi-fi direction. Participants preferred event pages with imagery because they were easier to scan and recognize quickly.',
       },
     ],
-    noteLabel: 'Project thread',
+    caseSections: [
+      {
+        eyebrow: 'Context',
+        title: 'The festival identity was bigger than the app made it feel',
+        takeaway: 'The app needed to represent the full festival experience, not only the artist lineup.',
+        paragraphs: [
+          'BLA SOL is a young non-profit music festival in Randers. In its second year, the one-day event had 16 artists across three stages, but the strongest festival experience was not only the lineup.',
+          'The synopsis frames BLA SOL as local and community-oriented, with smaller activities like a hobby horsing competition and a music quiz. Those moments gave the festival a more social, spontaneous character.',
+        ],
+        highlights: ['One-day festival', '16 artists', 'Three stages', 'Community activities'],
+        images: [
+          {
+            src: '/bla-sol-client-discovery.webp',
+            label: 'Bla Sol Festival 2025',
+            alt: 'Photo from Bla Sol Festival 2025 showing the festival entrance and visitors',
+          },
+        ],
+      },
+      {
+        eyebrow: 'Problem',
+        title: 'Smaller experiences were present, but too easy to miss',
+        takeaway: 'The real UX gap was discoverability: useful event information existed, but it was scattered and easy to overlook.',
+        paragraphs: [
+          'The existing digital experience centered mostly on music. Smaller daytime events, social activities, workshops, and community experiences were either hard to find or not meaningfully integrated into the app.',
+          'Information was split across the website, app, and Instagram. Visitors had to actively search to understand the full offer, which weakened the connection between BLA SOL\'s community identity and the app experience.',
+        ],
+        highlights: ['Fragmented information', 'Low visibility for smaller events', 'Discovery depended on active searching'],
+        images: [
+          { src: '/bla-sol-existing-app-overview.png', label: 'Before: existing client app screens' },
+          { src: '/bla-sol-existing-app-single.png', label: 'Before: artist-focused client app screen' },
+          { src: '/bla-sol-research-bridge.png', label: 'Research bridge from findings to problem direction' },
+        ],
+      },
+      {
+        eyebrow: 'Research',
+        title: 'I used research to narrow a broad festival challenge into a focused flow',
+        takeaway: 'Research helped turn a broad community-engagement question into concrete interface priorities.',
+        paragraphs: [
+          'The project followed the Double Diamond model, with Trello used for tasks and time estimates. Discovery combined desk research, a client interview, user interviews, observation of festival videos, and Randers as local context.',
+          'In the define phase, the team used affinity mapping, persona work, a Value Proposition Canvas, How Might We questions, user stories, OOUX, requirements, and user flows. The goal was to turn a broad engagement question into concrete interface priorities.',
+        ],
+        highlights: ['15 interviews and testing sessions', 'Affinity mapping', 'Persona and VPC', 'User flows and requirements'],
+        images: [
+          { src: '/bla-sol-persona-final.png', label: 'Final persona built from research patterns' },
+          { src: '/bla-sol-vpc-conclusion.png', label: 'Repeated patterns confirmed through VPC' },
+        ],
+      },
+      {
+        eyebrow: 'Design Direction',
+        title: 'The goal was not to redesign the brand. It was to improve discovery.',
+        takeaway: 'The redesign reused BLA SOL\'s energetic identity and focused on clearer flows, lighter planning, and faster recognition.',
+        paragraphs: [
+          'The scope deliberately kept BLA SOL\'s existing identity, colors, and energetic style. The weak point was not branding; it was discoverability, scattered event information, and the lack of lightweight interaction features.',
+          'Design work moved from sketches and Crazy 8s into lo-fi wireframes, then a hi-fi prototype. The interface used familiar mobile patterns, clearer grouping, and reduced cognitive load to make browsing feel faster.',
+        ],
+        highlights: ['Existing identity reused', 'Lo-fi to hi-fi prototype', 'Familiar mobile patterns', 'Reduced cognitive load'],
+        images: [
+          { src: '/bla-sol-lo-fi-landing-evolution.png', label: 'Landing page wireframe evolution' },
+          { src: '/bla-sol-lo-fi-event-detail-evolution.png', label: 'Event detail overlay wireframe evolution' },
+          { src: '/bla-sol-style-tile.png', label: 'Style tile connecting brand identity to UI decisions' },
+        ],
+      },
+      {
+        eyebrow: 'Solution',
+        title: 'A festival app for browsing, saving, and staying spontaneous',
+        takeaway: 'The final concept made smaller activities visible, memorable, and easy to save without forcing visitors into heavy planning.',
+        paragraphs: [
+          'The delivered direction made smaller activities easier to discover through story highlights and a redesigned program page with event imagery. Instead of scanning a flat list, visitors could recognize activities faster.',
+          'Visitors could save activities to a personal plan and get reminders shortly before events began. The point was not heavy planning; it was helping people keep track of interesting moments while staying flexible.',
+        ],
+        highlights: ['Story highlights', 'Visual program page', 'Save to personal plan', 'Event reminders'],
+        images: [
+          { src: '/bla-sol-hi-fi-home-transparent.png', label: 'Final home screen with visual discovery highlights' },
+          { src: '/bla-sol-hi-fi-program-transparent.png', label: 'Final program screen with event imagery and saving' },
+          { src: '/bla-sol-hi-fi-event-detail-transparent.png', label: 'Final event detail overlay for smaller activities' },
+          { src: '/bla-sol-hi-fi-plan-transparent.png', label: 'Final personal plan with saved events and reminders' },
+        ],
+      },
+      {
+        eyebrow: 'Reflection',
+        title: 'Validated direction, next real-world test',
+        takeaway: 'The concept showed promise, but the next step is testing it during a real festival day.',
+        paragraphs: [
+          'Research and testing involved around 10-15 participants through convenience sampling, so the findings are useful but not fully conclusive.',
+          'A future iteration should test whether reminders and personal planning still help when visitors are moving, socializing, and making decisions in the moment.',
+        ],
+        highlights: ['Controlled testing', 'Indicative findings', 'No full backend', 'Future real-event validation'],
+      },
+    ],
+    noteLabel: 'Final takeaway',
     evidence: 'From client needs, through user research, to a final digital solution designed for an active festival experience without constant phone use.',
     href: 'https://bla-sol.pages.dev/',
     cta: 'Open prototype',
@@ -58,6 +161,8 @@ export const projects = [
     type: 'Flash UX/UI Project / learning game',
     year: '2026',
     accent: '#657c3f',
+    caseShapePrimary: 'rgba(101, 124, 63, 0.14)',
+    caseShapeSecondary: 'rgba(176, 145, 55, 0.1)',
     backgroundImage: '/planthunt-background.png',
     snapshot: 'Botanical Learning Game',
     secondarySnapshot: 'Observation-led App',
@@ -107,6 +212,8 @@ export const projects = [
     type: 'Inclusive product concept',
     year: '2026',
     accent: '#5f4b7a',
+    caseShapePrimary: 'rgba(95, 75, 122, 0.14)',
+    caseShapeSecondary: 'rgba(83, 111, 158, 0.1)',
     backgroundImage: '/keybee-background.png',
     backgroundSize: 'min(86%, 760px)',
     snapshot: 'Accessible Interaction Concept',
@@ -158,6 +265,8 @@ export const projects = [
     type: 'Service touchpoint / visual hierarchy',
     year: '2025',
     accent: '#7c5140',
+    caseShapePrimary: 'rgba(124, 81, 64, 0.14)',
+    caseShapeSecondary: 'rgba(207, 105, 70, 0.1)',
     backgroundImage: '/cphfw-background.png',
     snapshot: 'Event Information Touchpoint',
     secondarySnapshot: 'Visual Hierarchy System',

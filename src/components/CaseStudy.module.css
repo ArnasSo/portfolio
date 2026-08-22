@@ -2,8 +2,8 @@
   min-height: 100vh;
   padding: clamp(5.5rem, 9vw, 7rem) var(--page-padding) var(--space-2xl);
   background:
-    linear-gradient(118deg, rgba(207, 105, 70, 0.08) 0 16%, transparent 16% 100%),
-    linear-gradient(244deg, rgba(47, 95, 91, 0.08) 0 14%, transparent 14% 100%),
+    linear-gradient(118deg, var(--case-shape-primary, rgba(207, 105, 70, 0.08)) 0 16%, transparent 16% 100%),
+    linear-gradient(244deg, var(--case-shape-secondary, rgba(47, 95, 91, 0.08)) 0 14%, transparent 14% 100%),
     var(--paper);
 }
 
@@ -37,6 +37,7 @@
 
 .hero,
 .overview,
+.caseLead,
 .caseNarrative,
 .gallery,
 .nextStep,
@@ -53,6 +54,16 @@
   min-height: 76svh;
 }
 
+.imageHero {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.04fr);
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+.imageHero .heroCopy {
+  max-width: 560px;
+}
+
 .heroCopy > p {
   color: var(--project-accent, var(--accent));
   font: 700 0.78rem var(--mono);
@@ -63,7 +74,7 @@
 .hero h1 {
   max-width: 860px;
   margin-top: 1rem;
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3rem, 6vw, 6.4rem);
   font-weight: 800;
   line-height: 0.98;
 }
@@ -87,17 +98,20 @@
   margin-top: 0.75rem;
   color: var(--ink-soft);
   line-height: 1.72;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .heroVisual {
   position: relative;
   padding: clamp(0.8rem, 2vw, 1.25rem);
   background:
-    linear-gradient(135deg, rgba(255, 254, 250, 0.72), rgba(244, 241, 234, 0.86)),
+    linear-gradient(135deg, rgba(255, 254, 250, 0.68), color-mix(in srgb, var(--project-accent, var(--accent)) 13%, rgba(244, 241, 234, 0.9))),
     var(--hero-image);
   background-size: cover;
   background-position: center;
-  border: 1px solid var(--line);
+  border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 32%, var(--line));
   border-radius: var(--radius);
   box-shadow: 0 24px 70px rgba(23, 23, 23, 0.1);
 }
@@ -108,6 +122,31 @@
   object-fit: cover;
   object-position: center top;
   border-radius: calc(var(--radius) - 2px);
+}
+
+.transparentHeroVisual {
+  display: grid;
+  place-items: center;
+  justify-self: stretch;
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.heroVisual .staticHeroImage {
+  display: block;
+  width: min(100%, 760px);
+  max-width: 100%;
+  max-height: clamp(280px, 50svh, 520px);
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
 }
 
 .imageButton {
@@ -166,24 +205,87 @@
 }
 
 .overview ul {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(18rem, max-content));
   gap: 0.7rem;
   margin-top: 1.15rem;
 }
 
 .overview li {
+  display: grid;
+  place-items: center;
+  min-width: 18rem;
   padding: 0.62rem 0.78rem;
-  background: rgba(255, 254, 250, 0.68);
-  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(255, 254, 250, 0.78));
+  border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 24%, var(--line));
   border-radius: 999px;
   font-weight: 650;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .overviewText {
   color: var(--ink-soft);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   line-height: 1.56;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.caseLead {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.72fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 6vw, 5.2rem);
+  padding: clamp(1.5rem, 3.5vw, 3rem) 0 clamp(1.8rem, 4vw, 3.6rem);
+  border-top: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 28%, var(--line));
+}
+
+.caseLead h2 {
+  max-width: 52rem;
+  margin-top: 0.8rem;
+  font-size: clamp(2rem, 4.4vw, 4.85rem);
+  font-weight: 850;
+  line-height: 0.98;
+}
+
+.caseLead p {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 1.35vw, 1.18rem);
+  line-height: 1.68;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.caseLead dl {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.caseLead dl div {
+  padding: 0.9rem 0 0.95rem 1rem;
+  border-left: 3px solid var(--project-accent, var(--accent));
+}
+
+.caseLead dt {
+  color: var(--project-accent, var(--accent));
+  font: 800 0.72rem var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.caseLead dd {
+  max-width: 28rem;
+  margin-top: 0.35rem;
+  color: var(--ink);
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  font-weight: 720;
+  line-height: 1.45;
 }
 
 .gallery {
@@ -199,6 +301,11 @@
   gap: clamp(5.5rem, 11vw, 10rem);
 }
 
+.customNarrative {
+  gap: clamp(2.4rem, 5.2vw, 5.2rem);
+  margin-top: clamp(1rem, 2vw, 2rem);
+}
+
 .caseSection {
   display: grid;
   grid-template-columns: minmax(280px, 0.5fr) minmax(0, 1fr);
@@ -206,9 +313,115 @@
   align-items: start;
 }
 
+.customCaseSection {
+  position: relative;
+  grid-template-columns: minmax(380px, 0.78fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 6.5rem);
+  align-items: center;
+  padding: clamp(1.7rem, 3vw, 2.6rem) 0 clamp(2.4rem, 4.5vw, 4rem);
+  border-top: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 25%, var(--line));
+}
+
+.customCaseSection::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: clamp(6rem, 13vw, 13rem);
+  height: 2px;
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 78%, var(--line));
+}
+
+.customCaseSection::after {
+  content: attr(data-step);
+  position: absolute;
+  right: 0;
+  bottom: -0.22em;
+  z-index: -1;
+  color: color-mix(in srgb, var(--project-accent, var(--accent)) 7%, transparent);
+  font: 900 clamp(7rem, 15vw, 15rem) / 0.78 var(--sans);
+  letter-spacing: 0;
+  pointer-events: none;
+}
+
+.reverseCaseSection .sectionCopy {
+  order: 2;
+}
+
+.reverseCaseSection .imageGrid {
+  order: 1;
+}
+
+.textOnlyCaseSection {
+  display: grid;
+  max-width: 920px;
+}
+
+.textOnlyCaseSection.customCaseSection {
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.textOnlyCaseSection.customCaseSection::after {
+  display: none;
+}
+
+.closingCaseSection {
+  grid-template-columns: 1fr;
+  align-items: end;
+  min-height: clamp(340px, 38vw, 500px);
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.closingCaseSection .sectionCopy {
+  justify-self: start;
+  width: 100%;
+}
+
+.closingCaseSection .sectionCopy h2 {
+  max-width: 76rem;
+}
+
+.closingCaseSection .sectionCopy > p,
+.closingCaseSection .sectionCopy .takeaway,
+.closingCaseSection .sectionHighlights {
+  max-width: 76rem;
+}
+
+.closingCaseSection .sectionHighlights {
+  grid-template-columns: 1fr;
+}
+
 .sectionCopy {
   position: sticky;
   top: 5.5rem;
+}
+
+.customCaseSection .sectionCopy {
+  position: static;
+  min-width: 0;
+}
+
+.caseStepHeader {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--project-accent, var(--accent));
+  font: 800 0.76rem var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.caseStepHeader span:first-child {
+  display: inline-grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  color: var(--paper-bright);
+  background: var(--project-accent, var(--accent));
+  border-radius: 999px;
+  letter-spacing: 0;
 }
 
 .sectionCopy span {
@@ -218,12 +431,24 @@
   text-transform: uppercase;
 }
 
+.sectionCopy .caseStepHeader span:first-child {
+  color: var(--paper-bright);
+  font-weight: 900;
+}
+
 .sectionCopy h2 {
   max-width: 34rem;
   margin-top: 0.8rem;
-  font-size: clamp(2rem, 4.2vw, 4.2rem);
+  font-size: clamp(2rem, 3.65vw, 3.9rem);
   font-weight: 800;
   line-height: 1;
+}
+
+.customCaseSection .sectionCopy h2 {
+  max-width: 38rem;
+  margin-top: 1rem;
+  font-size: clamp(1.9rem, 2.95vw, 3.35rem);
+  line-height: 1.02;
 }
 
 .sectionCopy > p {
@@ -232,6 +457,67 @@
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.35vw, 1.12rem);
   line-height: 1.72;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.customCaseSection .sectionCopy > p {
+  max-width: 39rem;
+  margin-top: 1rem;
+  font-size: clamp(1rem, 1.1vw, 1.08rem);
+  line-height: 1.66;
+}
+
+.sectionCopy > p + p {
+  margin-top: 0.85rem;
+}
+
+.sectionCopy .takeaway {
+  max-width: 38rem;
+  margin-top: 1.05rem;
+  padding: 0.85rem 1rem 0.9rem;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(255, 254, 250, 0.78));
+  border-left: 4px solid var(--project-accent, var(--accent));
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  font-weight: 750;
+  line-height: 1.48;
+}
+
+.sectionHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  max-width: 36rem;
+  margin-top: 1.25rem;
+}
+
+.sectionHighlights li {
+  padding: 0.5rem 0.62rem;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 9%, rgba(255, 254, 250, 0.72));
+  border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 28%, var(--line));
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.customCaseSection .sectionHighlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 0.9rem;
+  max-width: 39rem;
+  margin-top: 1.15rem;
+}
+
+.customCaseSection .sectionHighlights li {
+  padding: 0.25rem 0 0.35rem 0.8rem;
+  border-radius: 0;
+  border-width: 0 0 0 2px;
+  background: transparent;
+  font-size: 0.84rem;
 }
 
 .textPlaceholder {
@@ -241,8 +527,8 @@
   margin-top: 1.3rem;
   padding: 1rem;
   color: var(--muted);
-  background: rgba(255, 254, 250, 0.6);
-  border: 1px dashed rgba(47, 95, 91, 0.34);
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 7%, rgba(255, 254, 250, 0.66));
+  border: 1px dashed color-mix(in srgb, var(--project-accent, var(--accent)) 44%, transparent);
   border-radius: var(--radius);
   font-size: 0.92rem;
   line-height: 1.55;
@@ -254,9 +540,57 @@
   gap: 1rem;
 }
 
+.customCaseSection .imageGrid {
+  align-self: center;
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: clamp(1.15rem, 2.4vw, 2rem);
+}
+
+.singleImageGrid {
+  grid-template-columns: 1fr;
+}
+
+.evidencePanel {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  align-self: start;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.evidencePanel:nth-child(2) {
+  margin-top: clamp(1rem, 4vw, 3rem);
+}
+
+.customCaseSection .evidencePanel:nth-child(2) {
+  margin-top: 0;
+}
+
+.evidencePanel figcaption {
+  color: var(--muted);
+  font: 700 0.7rem var(--mono);
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
 .imageGrid .imageButton,
 .imagePlaceholder {
   min-height: clamp(260px, 32vw, 440px);
+}
+
+.customCaseSection .imageButton,
+.customCaseSection .imagePlaceholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 0;
 }
 
 .imageGrid .imageButton img {
@@ -268,6 +602,18 @@
   object-position: center top;
 }
 
+.customCaseSection .imageButton img {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border-radius: 0;
+}
+
 .imagePlaceholder {
   display: grid;
   align-content: end;
@@ -275,8 +621,8 @@
   color: var(--ink);
   background:
     linear-gradient(135deg, rgba(255, 254, 250, 0.8), rgba(244, 241, 234, 0.92)),
-    repeating-linear-gradient(135deg, rgba(47, 95, 91, 0.13) 0 1px, transparent 1px 18px);
-  border: 1px dashed rgba(47, 95, 91, 0.36);
+    repeating-linear-gradient(135deg, color-mix(in srgb, var(--project-accent, var(--accent)) 22%, transparent) 0 1px, transparent 1px 18px);
+  border: 1px dashed color-mix(in srgb, var(--project-accent, var(--accent)) 42%, transparent);
   border-radius: var(--radius);
 }
 
@@ -334,7 +680,7 @@
 
 .storyBlock h2 {
   margin-top: 0.9rem;
-  font-size: clamp(2rem, 4vw, 4.2rem);
+  font-size: clamp(2rem, 3.5vw, 3.85rem);
   font-weight: 800;
   line-height: 1;
 }
@@ -345,24 +691,39 @@
   color: var(--ink-soft);
   font-size: clamp(1rem, 1.4vw, 1.18rem);
   line-height: 1.72;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .nextStep {
-  display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  align-items: center;
-  margin-top: clamp(5rem, 11vw, 9rem);
-  padding: clamp(1.1rem, 3vw, 2rem);
-  background: rgba(255, 254, 250, 0.76);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--project-accent, var(--accent));
-  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  padding: clamp(1.4rem, 3vw, 2.5rem) 0 0;
+  background: transparent;
+  border-top: 2px solid var(--project-accent, var(--accent));
 }
 
-.nextStep p {
-  max-width: 56rem;
-  color: var(--ink-soft);
+.nextStepCopy span {
+  color: var(--project-accent, var(--accent));
+  font: 800 0.72rem var(--mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nextStepCopy p {
+  max-width: 62rem;
+  margin-top: 0.75rem;
+  color: var(--ink);
+  font-size: clamp(1.15rem, 1.65vw, 1.55rem);
+  font-weight: 720;
+  line-height: 1.36;
+  hyphens: auto;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .nextStep a {
@@ -371,7 +732,7 @@
   align-items: center;
   justify-content: center;
   min-height: 3rem;
-  padding: 0.78rem 1rem;
+  padding: 0.78rem 1.05rem;
   color: var(--paper-bright);
   background: var(--ink);
   border-radius: 999px;
@@ -531,7 +892,9 @@
 @media (max-width: 900px) {
   .hero,
   .overview,
+  .caseLead,
   .caseSection,
+  .textOnlyCaseSection.customCaseSection,
   .storyBlock {
     grid-template-columns: 1fr;
   }
@@ -550,6 +913,233 @@
 
   .sectionCopy {
     position: static;
+  }
+
+  .reverseCaseSection .sectionCopy,
+  .reverseCaseSection .imageGrid {
+    order: 0;
+  }
+
+  .customCaseSection::after,
+  .textOnlyCaseSection.customCaseSection::after {
+    display: none;
+  }
+
+  .caseLead {
+    align-items: start;
+    margin-bottom: clamp(2.2rem, 7vw, 4rem);
+  }
+
+  .caseLead dl {
+    grid-template-columns: 1fr;
+  }
+
+  .customCaseSection .sectionHighlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1600px) {
+  .casePage {
+    padding-top: clamp(5rem, 7vw, 6rem);
+  }
+
+  .backLink {
+    margin-bottom: clamp(1.7rem, 3.6vw, 3rem);
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.58fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+    min-height: 68svh;
+  }
+
+  .imageHero {
+    grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
+    gap: clamp(1rem, 2.8vw, 2.6rem);
+  }
+
+  .imageHero .heroCopy {
+    max-width: 520px;
+  }
+
+  .imageHero h1 {
+    font-size: clamp(2.25rem, 4.3vw, 4.25rem);
+  }
+
+  .imageHero .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .imageHero .summaryGrid p {
+    line-height: 1.52;
+  }
+
+  .imageHero .heroVisual .staticHeroImage {
+    max-height: clamp(260px, 48svh, 460px);
+  }
+
+  .hero h1 {
+    max-width: 720px;
+    font-size: clamp(2.65rem, 5vw, 4.85rem);
+  }
+
+  .summaryGrid {
+    gap: 1rem;
+    margin-top: clamp(1.4rem, 3.2vw, 2.6rem);
+  }
+
+  .summaryGrid p {
+    line-height: 1.58;
+  }
+
+  .overview {
+    gap: clamp(1.5rem, 4vw, 4rem);
+    padding: clamp(3.4rem, 7vw, 6.2rem) 0;
+  }
+
+  .overviewText {
+    font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+  }
+
+  .caseLead {
+    grid-template-columns: minmax(0, 0.88fr) minmax(280px, 0.62fr);
+    gap: clamp(1.2rem, 3vw, 3rem);
+    margin-bottom: clamp(2.5rem, 5.5vw, 4.8rem);
+    padding: clamp(1.25rem, 2.6vw, 2.4rem) 0;
+  }
+
+  .caseLead h2 {
+    font-size: clamp(1.9rem, 3.6vw, 3.9rem);
+  }
+
+  .caseLead p,
+  .caseLead dd {
+    font-size: 0.98rem;
+  }
+
+  .caseNarrative {
+    gap: clamp(3.6rem, 7vw, 6rem);
+  }
+
+  .caseSection {
+    grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.8rem);
+  }
+
+  .customNarrative {
+    gap: clamp(2rem, 4.5vw, 3.7rem);
+  }
+
+  .customCaseSection {
+    grid-template-columns: minmax(380px, 0.78fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 3.8vw, 4rem);
+    padding: clamp(1.1rem, 2.2vw, 1.8rem) 0 clamp(1.8rem, 3.6vw, 3rem);
+  }
+
+  .closingCaseSection {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionCopy h2,
+  .storyBlock h2 {
+    font-size: clamp(1.8rem, 3vw, 3.05rem);
+  }
+
+  .customCaseSection .sectionCopy h2 {
+    font-size: clamp(1.65rem, 2.6vw, 2.55rem);
+  }
+
+  .sectionCopy > p,
+  .storyBlock p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .sectionCopy .takeaway {
+    padding: 0.78rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .customCaseSection .sectionHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .closingCaseSection .sectionHighlights {
+    grid-template-columns: 1fr;
+  }
+
+  .imageGrid {
+    gap: 0.75rem;
+  }
+
+  .imageGrid .imageButton,
+  .imagePlaceholder {
+    min-height: clamp(220px, 25vw, 340px);
+  }
+
+  .imageGrid .imageButton img {
+    min-height: clamp(220px, 25vw, 340px);
+  }
+
+  .customCaseSection .imageButton img {
+    min-height: 0;
+    max-height: none;
+  }
+
+  .customCaseSection .imageButton,
+  .customCaseSection .imagePlaceholder {
+    height: auto;
+  }
+
+  .gallery {
+    gap: clamp(3rem, 6vw, 5rem);
+    margin-top: clamp(3.6rem, 7vw, 5.8rem);
+  }
+}
+
+@media (min-width: 901px) and (max-height: 800px) {
+  .casePage {
+    padding-top: 4.6rem;
+  }
+
+  .backLink {
+    margin-bottom: 1.4rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .imageHero h1 {
+    font-size: clamp(2.15rem, 4vw, 3.55rem);
+  }
+
+  .heroCopy > p {
+    font-size: 0.7rem;
+  }
+
+  .imageHero .summaryGrid {
+    margin-top: 1.35rem;
+  }
+
+  .summaryGrid h2,
+  .summaryGrid p {
+    margin-top: 0.5rem;
+  }
+
+  .summaryGrid p {
+    font-size: 0.96rem;
+    line-height: 1.48;
+  }
+
+  .imageHero .heroVisual .staticHeroImage {
+    max-height: clamp(250px, 43svh, 360px);
+  }
+
+  .heroVisual img {
+    aspect-ratio: 16 / 12;
   }
 }
 
@@ -572,6 +1162,28 @@
     margin-top: 1.5rem;
   }
 
+  .overview ul {
+    grid-template-columns: 1fr;
+  }
+
+  .overview li {
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .caseLead h2 {
+    font-size: clamp(2rem, 12vw, 3.25rem);
+  }
+
+  .caseLead dl div {
+    padding-left: 0.8rem;
+  }
+
+  .customCaseSection .sectionCopy h2 {
+    max-width: none;
+    font-size: clamp(1.75rem, 9vw, 2.7rem);
+  }
+
   .nextStep a {
     width: 100%;
     margin-top: 1.25rem;
@@ -592,8 +1204,104 @@
   }
 
   .imageGrid .imageButton,
-  .imageGrid .imageButton img,
   .imagePlaceholder {
     min-height: 230px;
+  }
+
+  .imageGrid .imageButton img {
+    min-height: 0;
+  }
+
+  .customCaseSection .imageButton,
+  .customCaseSection .imagePlaceholder {
+    height: auto;
+  }
+
+  .evidencePanel:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+.closingCaseSection {
+  grid-template-columns: 1fr;
+}
+
+.closingCaseSection .sectionCopy {
+  width: 100%;
+  max-width: none;
+}
+
+.closingCaseSection .sectionCopy h2 {
+  max-width: none;
+}
+
+.closingCaseSection .sectionCopy > p,
+.closingCaseSection .sectionCopy .takeaway {
+  max-width: none;
+}
+
+.closingCaseSection .sectionHighlights {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .closingCaseSection .sectionHighlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+.customCaseSection[data-case-section='problem'] .imageGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.customCaseSection[data-case-section='problem'] .evidencePanel:first-child {
+  grid-column: 1 / -1;
+}
+
+.customCaseSection[data-case-section='problem'] .imageButton {
+  height: auto;
+}
+
+.customCaseSection[data-case-section='problem'] .imageButton img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(180px, 22vw, 300px);
+  object-fit: contain;
+}
+
+.customCaseSection[data-case-section='problem'] .evidencePanel:first-child .imageButton img {
+  max-height: clamp(180px, 20vw, 280px);
+}
+
+.customCaseSection[data-case-section='solution'] .imageGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(1rem, 2.4vw, 1.8rem);
+}
+
+.customCaseSection[data-case-section='solution'] .imageButton {
+  height: auto;
+}
+
+.customCaseSection[data-case-section='solution'] .imageButton img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(240px, 32vw, 430px);
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .customCaseSection[data-case-section='problem'] .imageGrid,
+  .customCaseSection[data-case-section='solution'] .imageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .customCaseSection[data-case-section='problem'] .imageButton img,
+  .customCaseSection[data-case-section='problem'] .evidencePanel:first-child .imageButton img,
+  .customCaseSection[data-case-section='solution'] .imageButton img {
+    max-height: none;
   }
 }
