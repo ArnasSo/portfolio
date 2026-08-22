@@ -1,5 +1,6 @@
 .casePage {
   min-height: 100vh;
+  overflow-x: clip;
   padding: clamp(5.5rem, 9vw, 7rem) var(--page-padding) var(--space-2xl);
   background:
     linear-gradient(118deg, var(--case-shape-primary, rgba(207, 105, 70, 0.08)) 0 16%, transparent 16% 100%),
@@ -61,6 +62,7 @@
 }
 
 .imageHero .heroCopy {
+  min-width: 0;
   max-width: 560px;
 }
 
@@ -129,6 +131,7 @@
   place-items: center;
   justify-self: stretch;
   min-width: 0;
+  max-width: 100%;
   width: 100%;
   padding: 0;
   overflow: visible;
@@ -576,6 +579,7 @@
   font: 700 0.7rem var(--mono);
   letter-spacing: 0.03em;
   line-height: 1.35;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -612,6 +616,14 @@
   object-position: center;
   background: transparent;
   border-radius: 0;
+}
+
+.videoPanel iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--ink);
 }
 
 .imagePlaceholder {
@@ -939,6 +951,32 @@
   }
 }
 
+@media (max-width: 560px) {
+  .customCaseSection {
+    gap: 1.5rem;
+    padding: 1.35rem 0 2.25rem;
+  }
+
+  .customCaseSection .imageButton img,
+  .customCaseSection[data-case-section='problem'] .imageButton img,
+  .customCaseSection[data-case-section='problem'] .evidencePanel:first-child .imageButton img,
+  .customCaseSection[data-case-section='solution'] .imageButton img,
+  .customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .imageButton img,
+  .customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .evidencePanel:nth-child(3) .imageButton img,
+  .customCaseSection[data-project='keybee'][data-case-section='concept'] .imageButton img,
+  .customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageButton img,
+  .customCaseSection[data-project='cphfw-infoscreen'] .imageButton img,
+  .customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageButton img {
+    max-height: 360px;
+    object-fit: contain;
+  }
+
+  .customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageButton img,
+  .customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageButton img {
+    max-height: 300px;
+  }
+}
+
 @media (min-width: 901px) and (max-width: 1600px) {
   .casePage {
     padding-top: clamp(5rem, 7vw, 6rem);
@@ -1145,11 +1183,62 @@
 
 @media (max-width: 560px) {
   .casePage {
-    padding-top: 6rem;
+    padding-top: 5.4rem;
   }
 
   .backLink {
     position: static;
+    margin-bottom: 2.6rem;
+  }
+
+  .hero,
+  .imageHero {
+    gap: 1.8rem;
+    min-width: 0;
+  }
+
+  .hero h1,
+  .imageHero h1 {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 12vw, 3rem);
+    line-height: 0.98;
+    overflow-wrap: anywhere;
+  }
+
+  .heroCopy > p {
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+  .summaryGrid p,
+  .overviewText,
+  .caseLead p,
+  .sectionCopy > p,
+  .storyBlock p,
+  .nextStepCopy p {
+    text-align: left;
+    text-align-last: auto;
+  }
+
+  .summaryGrid p,
+  .sectionCopy > p {
+    font-size: 0.98rem;
+    line-height: 1.58;
+  }
+
+  .transparentHeroVisual {
+    justify-self: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: calc(100vw - (var(--page-padding) * 2));
+  }
+
+  .imageHero .heroVisual .staticHeroImage,
+  .heroVisual .staticHeroImage {
+    width: 100%;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
   }
 
   .summaryGrid,
@@ -1172,7 +1261,7 @@
   }
 
   .caseLead h2 {
-    font-size: clamp(2rem, 12vw, 3.25rem);
+    font-size: clamp(1.85rem, 10vw, 2.7rem);
   }
 
   .caseLead dl div {
@@ -1181,7 +1270,7 @@
 
   .customCaseSection .sectionCopy h2 {
     max-width: none;
-    font-size: clamp(1.75rem, 9vw, 2.7rem);
+    font-size: clamp(1.6rem, 8vw, 2.25rem);
   }
 
   .nextStep a {
@@ -1293,15 +1382,109 @@
   object-fit: contain;
 }
 
+.customCaseSection[data-project='planthunt'][data-case-section='problem'] .imageGrid,
+.customCaseSection[data-project='planthunt'][data-case-section='solution'] .imageGrid {
+  grid-template-columns: 1fr;
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='problem'] .evidencePanel:first-child {
+  grid-column: auto;
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='problem'] .imageButton img {
+  max-height: clamp(180px, 23vw, 300px);
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='solution'] .imageButton img {
+  max-height: clamp(260px, 34vw, 440px);
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .imageGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .evidencePanel:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .imageButton {
+  height: auto;
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .imageButton img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(190px, 24vw, 330px);
+  object-fit: contain;
+}
+
+.customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .evidencePanel:nth-child(3) .imageButton img {
+  max-height: clamp(280px, 42vw, 620px);
+}
+
+.customCaseSection[data-project='keybee'][data-case-section='concept'] .imageGrid,
+.customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageGrid {
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.customCaseSection[data-project='keybee'][data-case-section='concept'] .imageButton,
+.customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageButton {
+  height: auto;
+}
+
+.customCaseSection[data-project='keybee'][data-case-section='concept'] .imageButton img,
+.customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageButton img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(210px, 24vw, 340px);
+  object-fit: contain;
+}
+
+.customCaseSection[data-project='keybee'][data-case-section='context'] .imageGrid {
+  grid-template-columns: 1fr;
+}
+
+.customCaseSection[data-project='cphfw-infoscreen'] .imageButton {
+  height: auto;
+}
+
+.customCaseSection[data-project='cphfw-infoscreen'] .imageButton img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(240px, 30vw, 430px);
+  object-fit: contain;
+}
+
+.customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageGrid {
+  grid-template-columns: 1fr;
+}
+
+.customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageButton img {
+  max-height: clamp(260px, 34vw, 520px);
+}
+
 @media (max-width: 900px) {
   .customCaseSection[data-case-section='problem'] .imageGrid,
-  .customCaseSection[data-case-section='solution'] .imageGrid {
+  .customCaseSection[data-case-section='solution'] .imageGrid,
+  .customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .imageGrid,
+  .customCaseSection[data-project='keybee'][data-case-section='context'] .imageGrid,
+  .customCaseSection[data-project='keybee'][data-case-section='concept'] .imageGrid,
+  .customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageGrid,
+  .customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageGrid {
     grid-template-columns: 1fr;
   }
 
   .customCaseSection[data-case-section='problem'] .imageButton img,
   .customCaseSection[data-case-section='problem'] .evidencePanel:first-child .imageButton img,
-  .customCaseSection[data-case-section='solution'] .imageButton img {
+  .customCaseSection[data-case-section='solution'] .imageButton img,
+  .customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .imageButton img,
+  .customCaseSection[data-project='planthunt'][data-case-section='design-direction'] .evidencePanel:nth-child(3) .imageButton img,
+  .customCaseSection[data-project='keybee'][data-case-section='concept'] .imageButton img,
+  .customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageButton img,
+  .customCaseSection[data-project='cphfw-infoscreen'] .imageButton img,
+  .customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageButton img {
     max-height: none;
   }
 }

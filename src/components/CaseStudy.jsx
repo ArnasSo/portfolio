@@ -177,11 +177,13 @@ export default function CaseStudy({ slug }) {
         <section className={`${styles.caseNarrative} ${styles.customNarrative}`} aria-label={`${project.title} case study`}>
           {project.caseSections.map((section, sectionIndex) => {
             const images = section.images || []
+            const hasVisual = images.length > 0 || section.video
 
             return (
               <article
-                className={`${images.length ? styles.caseSection : styles.textOnlyCaseSection} ${styles.customCaseSection} ${!images.length ? styles.closingCaseSection : ''} ${images.length && sectionIndex % 2 === 1 ? styles.reverseCaseSection : ''}`}
+                className={`${hasVisual ? styles.caseSection : styles.textOnlyCaseSection} ${styles.customCaseSection} ${!hasVisual ? styles.closingCaseSection : ''} ${hasVisual && sectionIndex % 2 === 1 ? styles.reverseCaseSection : ''}`}
                 data-step={String(sectionIndex + 1).padStart(2, '0')}
+                data-project={project.slug}
                 data-case-section={section.eyebrow.toLowerCase().replace(/\s+/g, '-')}
                 key={section.title}
               >
@@ -200,7 +202,7 @@ export default function CaseStudy({ slug }) {
                   )}
                 </div>
 
-                {images.length > 0 && (
+                {hasVisual && (
                   <div className={`${styles.imageGrid} ${images.length === 1 ? styles.singleImageGrid : ''}`}>
                     {images.map(item => (
                       <figure className={styles.evidencePanel} key={item.label}>
@@ -212,6 +214,17 @@ export default function CaseStudy({ slug }) {
                         <figcaption>{item.label}</figcaption>
                       </figure>
                     ))}
+                    {section.video && (
+                      <figure className={`${styles.evidencePanel} ${styles.videoPanel}`}>
+                        <iframe
+                          src={section.video.src}
+                          title={section.video.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                        <figcaption>{section.video.label}</figcaption>
+                      </figure>
+                    )}
                   </div>
                 )}
               </article>
