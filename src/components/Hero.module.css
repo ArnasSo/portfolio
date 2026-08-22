@@ -357,6 +357,7 @@
   .hero {
     min-height: auto;
     padding-top: 5.6rem;
+    background: var(--paper);
     overflow: hidden;
   }
 

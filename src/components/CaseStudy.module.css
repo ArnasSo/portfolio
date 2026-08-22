@@ -1175,6 +1175,7 @@
 
 @media (max-width: 560px) {
   .casePage {
+    background: var(--paper);
     padding-top: 5.4rem;
   }
 
@@ -1483,6 +1484,7 @@
 
 @media (max-width: 560px) {
   .casePage {
+    background: var(--paper);
     overflow-x: hidden !important;
     padding-right: 1rem;
     padding-left: 1rem;
