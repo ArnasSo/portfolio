@@ -3,8 +3,8 @@
   min-height: 100svh;
   padding: clamp(6.4rem, 10vw, 8rem) var(--page-padding) clamp(3.5rem, 7vw, 6rem);
   background:
-    linear-gradient(112deg, rgba(207, 105, 70, 0.09) 0 18%, transparent 18% 100%),
-    linear-gradient(205deg, rgba(47, 95, 91, 0.1) 0 16%, transparent 16% 100%),
+    linear-gradient(112deg, rgba(150, 63, 47, 0.14) 0 18%, transparent 18% 100%),
+    linear-gradient(205deg, rgba(49, 95, 135, 0.13) 0 16%, transparent 16% 100%),
     var(--paper);
   align-items: center;
 }
@@ -37,8 +37,8 @@
   margin-bottom: 1.1rem;
   padding: 0.45rem 0.68rem;
   color: var(--accent);
-  background: rgba(47, 95, 91, 0.09);
-  border: 1px solid rgba(47, 95, 91, 0.2);
+  background: rgba(150, 63, 47, 0.08);
+  border: 1px solid rgba(150, 63, 47, 0.22);
   border-radius: 999px;
   font: 700 0.76rem var(--mono);
   text-transform: uppercase;
@@ -46,7 +46,7 @@
 
 .copy h1 {
   max-width: 760px;
-  font-size: clamp(2.6rem, 5.25vw, 5.15rem);
+  font-size: clamp(2.85rem, 5.55vw, 5.45rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1;
@@ -86,7 +86,7 @@
   min-height: clamp(280px, 32vw, 430px);
   overflow: hidden;
   background:
-    linear-gradient(145deg, rgba(235, 231, 221, 0.86), rgba(255, 254, 250, 0.78)),
+    linear-gradient(145deg, rgba(236, 235, 230, 0.9), rgba(255, 255, 255, 0.78)),
     var(--wash);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -112,7 +112,7 @@
 
 .panel {
   padding: 1rem;
-  background: rgba(255, 254, 250, 0.86);
+  background: rgba(251, 251, 247, 0.92);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
@@ -234,7 +234,7 @@
   width: 100%;
   padding: 0.58rem 0.65rem;
   color: var(--ink);
-  background: rgba(235, 231, 221, 0.42);
+  background: rgba(223, 227, 218, 0.58);
   border-radius: 4px;
   text-decoration: none;
 }
@@ -287,7 +287,7 @@
 
   .copy h1 {
     max-width: 650px;
-    font-size: clamp(2.75rem, 4.35vw, 4.05rem);
+    font-size: clamp(2.9rem, 4.55vw, 4.3rem);
     line-height: 1.01;
   }
 
@@ -357,17 +357,25 @@
   .hero {
     min-height: auto;
     padding-top: 5.6rem;
+    overflow: hidden;
+  }
+
+  .inner,
+  .copy {
+    width: 100%;
+    max-width: calc(100vw - (var(--page-padding) * 2));
+    min-width: 0;
   }
 
   .copy h1 {
-    max-width: 100%;
-    font-size: clamp(2.1rem, 9vw, 2.65rem);
+    max-width: min(11ch, 100%);
+    font-size: clamp(2.05rem, 8.5vw, 2.48rem);
     line-height: 1.03;
     overflow-wrap: break-word;
   }
 
   .summary {
-    max-width: 100%;
+    max-width: min(34ch, 100%);
     margin-top: 1rem;
     font-size: 0.98rem;
     line-height: 1.55;
@@ -377,7 +385,18 @@
   .actions {
     display: grid;
     gap: 0.7rem;
+    width: min(100%, calc(100vw - (var(--page-padding) * 2)));
+    max-width: 100%;
+    padding-right: var(--page-padding);
     margin-top: 1.4rem;
+  }
+
+  .actions a,
+  .actions :global(.btn-primary),
+  .actions :global(.btn-secondary) {
+    justify-self: start;
+    width: calc(100% - var(--page-padding));
+    max-width: calc(100vw - (var(--page-padding) * 3));
   }
 
   .panel dl > div {

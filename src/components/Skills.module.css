@@ -1,8 +1,8 @@
 .skills {
   padding: var(--space-2xl) var(--page-padding);
   background:
-    linear-gradient(104deg, rgba(47, 95, 91, 0.08) 0 14%, transparent 14% 100%),
-    linear-gradient(252deg, rgba(207, 105, 70, 0.08) 0 12%, transparent 12% 100%),
+    linear-gradient(104deg, rgba(49, 95, 135, 0.11) 0 14%, transparent 14% 100%),
+    linear-gradient(252deg, rgba(150, 63, 47, 0.12) 0 12%, transparent 12% 100%),
     var(--paper);
   border-top: 1px solid var(--line);
 }
@@ -23,7 +23,7 @@
 
 .header h2 {
   max-width: 1160px;
-  font-size: clamp(2.1rem, 4.15vw, 4.7rem);
+  font-size: clamp(2.2rem, 4.35vw, 4.95rem);
   font-weight: 800;
   line-height: 1.02;
 }
@@ -69,29 +69,24 @@
 }
 
 .green {
-  --skill-color: #2f5f5b;
+  --skill-color: #596934;
 }
 
 .coral {
-  --skill-color: #cf6946;
+  --skill-color: #963f2f;
 }
 
 .blue {
-  --skill-color: #536f9e;
+  --skill-color: #315f87;
 }
 
-.yellow {
-  --skill-color: #b79035;
-}
-
-.card > span {
-  color: var(--skill-color);
-  font: 700 0.78rem var(--mono);
+.umber {
+  --skill-color: #6f5a2a;
 }
 
 .card h3 {
   max-width: 100%;
-  margin-top: 2.45rem;
+  margin-top: 2rem;
   min-height: 2.2rem;
   font-size: clamp(1.35rem, 1.65vw, 1.8rem);
   font-weight: 800;
@@ -116,8 +111,8 @@
   min-height: 5.8rem;
   padding: 0.75rem 0.55rem 0.68rem;
   color: var(--ink);
-  background: rgba(244, 241, 234, 0.72);
-  border: 1px solid rgba(23, 23, 23, 0.07);
+  background: var(--wash);
+  border: 1px solid rgba(23, 24, 20, 0.09);
   border-radius: calc(var(--radius) - 2px);
   font-size: 0.82rem;
   font-weight: 650;
@@ -165,7 +160,7 @@
   }
 
   .header h2 {
-    font-size: clamp(2rem, 3.45vw, 3.7rem);
+    font-size: clamp(2.1rem, 3.65vw, 3.95rem);
   }
 
   .card {
@@ -173,7 +168,7 @@
   }
 
   .card h3 {
-    margin-top: 2.15rem;
+    margin-top: 1.8rem;
     font-size: clamp(1.25rem, 1.45vw, 1.55rem);
   }
 
@@ -214,7 +209,7 @@
   }
 
   .card h3 {
-    margin-top: 2rem;
+    margin-top: 1.6rem;
     min-height: 0;
   }
 

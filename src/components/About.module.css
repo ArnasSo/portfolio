@@ -20,25 +20,12 @@
 }
 
 .sectionLabel {
-  position: absolute;
-  top: -0.15rem;
-  left: 50%;
-  z-index: -1;
-  color: var(--ink);
-  font-family: var(--creative);
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 0.85;
-  opacity: 0.08;
-  transform: translateX(-50%) rotate(-2deg);
-  white-space: nowrap;
-  pointer-events: none;
+  display: none;
 }
 
 .heading h2 {
   max-width: 820px;
-  font-size: clamp(2.1rem, 3.85vw, 4.05rem);
+  font-size: clamp(2.2rem, 4.05vw, 4.35rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
@@ -97,8 +84,8 @@
 .timelineColumn {
   min-width: 0;
   padding: clamp(0.9rem, 1.6vw, 1.15rem);
-  background: rgba(244, 241, 234, 0.42);
-  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(236, 235, 230, 0.72);
+  border: 1px solid rgba(23, 24, 20, 0.1);
   border-radius: var(--radius);
 }
 
@@ -140,9 +127,9 @@
   padding: 1.1rem 1rem 1rem;
   overflow: hidden;
   background:
-    linear-gradient(145deg, rgba(255, 254, 250, 0.94), rgba(248, 246, 241, 0.98)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 245, 242, 0.98)),
     var(--paper-bright);
-  border: 1px solid rgba(23, 23, 23, 0.11);
+  border: 1px solid rgba(23, 24, 20, 0.13);
   border-radius: var(--radius);
   box-shadow: 0 12px 28px rgba(23, 23, 23, 0.045);
 }
@@ -157,7 +144,7 @@
   position: absolute;
   inset: 0 0 auto;
   height: 0.3rem;
-  background: linear-gradient(90deg, var(--accent), rgba(207, 105, 70, 0.76));
+  background: linear-gradient(90deg, var(--accent), #315f87);
 }
 
 .timelineItem h4 {
@@ -218,11 +205,7 @@
 
   .heading h2 {
     max-width: 720px;
-    font-size: clamp(2rem, 3.25vw, 3.45rem);
-  }
-
-  .sectionLabel {
-    font-size: clamp(3rem, 6.8vw, 5.8rem);
+    font-size: clamp(2.1rem, 3.45vw, 3.7rem);
   }
 
   .timelineColumns {

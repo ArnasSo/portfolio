@@ -67,7 +67,6 @@ export default function ProcessStrip() {
               className={`${styles.step} reveal`}
               style={{ '--reveal-delay': `${index * 70}ms` }}
             >
-              <span>{String(index + 1).padStart(2, '0')}</span>
               <h3 className={step.style ? styles[`${step.style}Title`] : undefined}>{step.name}</h3>
               <p>{step.desc}</p>
             </article>

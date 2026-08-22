@@ -3,8 +3,8 @@
   overflow-x: clip;
   padding: clamp(5.5rem, 9vw, 7rem) var(--page-padding) var(--space-2xl);
   background:
-    linear-gradient(118deg, var(--case-shape-primary, rgba(207, 105, 70, 0.08)) 0 16%, transparent 16% 100%),
-    linear-gradient(244deg, var(--case-shape-secondary, rgba(47, 95, 91, 0.08)) 0 14%, transparent 14% 100%),
+    linear-gradient(118deg, var(--case-shape-primary, rgba(150, 63, 47, 0.12)) 0 16%, transparent 16% 100%),
+    linear-gradient(244deg, var(--case-shape-secondary, rgba(49, 95, 135, 0.11)) 0 14%, transparent 14% 100%),
     var(--paper);
 }
 
@@ -17,7 +17,7 @@
   margin-bottom: clamp(2.5rem, 6vw, 5rem);
   padding: 0.68rem 0.9rem;
   color: var(--ink);
-  background: rgba(255, 254, 250, 0.88);
+  background: rgba(251, 251, 247, 0.9);
   border: 1px solid var(--line);
   border-radius: 999px;
   font: 700 0.76rem var(--mono);
@@ -109,7 +109,7 @@
   position: relative;
   padding: clamp(0.8rem, 2vw, 1.25rem);
   background:
-    linear-gradient(135deg, rgba(255, 254, 250, 0.68), color-mix(in srgb, var(--project-accent, var(--accent)) 13%, rgba(244, 241, 234, 0.9))),
+    linear-gradient(135deg, rgba(251, 251, 247, 0.74), color-mix(in srgb, var(--project-accent, var(--accent)) 12%, rgba(241, 242, 238, 0.92))),
     var(--hero-image);
   background-size: cover;
   background-position: center;
@@ -219,7 +219,7 @@
   place-items: center;
   min-width: 18rem;
   padding: 0.62rem 0.78rem;
-  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(255, 254, 250, 0.78));
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(251, 251, 247, 0.8));
   border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 24%, var(--line));
   border-radius: 999px;
   font-weight: 650;
@@ -336,15 +336,7 @@
 }
 
 .customCaseSection::after {
-  content: attr(data-step);
-  position: absolute;
-  right: 0;
-  bottom: -0.22em;
-  z-index: -1;
-  color: color-mix(in srgb, var(--project-accent, var(--accent)) 7%, transparent);
-  font: 900 clamp(7rem, 15vw, 15rem) / 0.78 var(--sans);
-  letter-spacing: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .reverseCaseSection .sectionCopy {
@@ -481,7 +473,7 @@
   margin-top: 1.05rem;
   padding: 0.85rem 1rem 0.9rem;
   color: var(--ink);
-  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(255, 254, 250, 0.78));
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(251, 251, 247, 0.8));
   border-left: 4px solid var(--project-accent, var(--accent));
   font-size: clamp(1rem, 1.25vw, 1.18rem);
   font-weight: 750;
@@ -499,7 +491,7 @@
 .sectionHighlights li {
   padding: 0.5rem 0.62rem;
   color: var(--ink);
-  background: color-mix(in srgb, var(--project-accent, var(--accent)) 9%, rgba(255, 254, 250, 0.72));
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 9%, rgba(251, 251, 247, 0.74));
   border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 28%, var(--line));
   border-radius: 999px;
   font-size: 0.82rem;
@@ -530,7 +522,7 @@
   margin-top: 1.3rem;
   padding: 1rem;
   color: var(--muted);
-  background: color-mix(in srgb, var(--project-accent, var(--accent)) 7%, rgba(255, 254, 250, 0.66));
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 7%, rgba(251, 251, 247, 0.68));
   border: 1px dashed color-mix(in srgb, var(--project-accent, var(--accent)) 44%, transparent);
   border-radius: var(--radius);
   font-size: 0.92rem;
@@ -632,7 +624,7 @@
   padding: 1rem;
   color: var(--ink);
   background:
-    linear-gradient(135deg, rgba(255, 254, 250, 0.8), rgba(244, 241, 234, 0.92)),
+    linear-gradient(135deg, rgba(251, 251, 247, 0.82), rgba(241, 242, 238, 0.92)),
     repeating-linear-gradient(135deg, color-mix(in srgb, var(--project-accent, var(--accent)) 22%, transparent) 0 1px, transparent 1px 18px);
   border: 1px dashed color-mix(in srgb, var(--project-accent, var(--accent)) 42%, transparent);
   border-radius: var(--radius);
@@ -782,7 +774,7 @@
   min-height: 2.75rem;
   padding: 0.7rem 0.9rem;
   color: var(--ink);
-  background: rgba(255, 254, 250, 0.82);
+  background: rgba(251, 251, 247, 0.84);
   border: 1px solid var(--line);
   border-radius: 999px;
   font: 700 0.72rem var(--mono);
@@ -814,7 +806,7 @@
   align-items: center;
   min-height: 8.5rem;
   padding: 0.75rem;
-  background: rgba(255, 254, 250, 0.78);
+  background: rgba(251, 251, 247, 0.8);
   border: 1px solid var(--line);
   border-left: 4px solid var(--project-accent, var(--accent));
   border-radius: var(--radius);
@@ -878,7 +870,7 @@
   z-index: 1;
   padding: 0.65rem 0.8rem;
   color: var(--ink);
-  background: rgba(255, 254, 250, 0.9);
+  background: rgba(251, 251, 247, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   font: 700 0.72rem var(--mono);

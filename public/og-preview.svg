@@ -1,38 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Arnas Sokolovas UX designer portfolio preview">
-  <rect width="1200" height="630" fill="#F4F1EA"/>
-  <rect x="52" y="52" width="1096" height="526" rx="18" fill="#FFFEFA" stroke="#171717" stroke-width="3"/>
+  <rect width="1200" height="630" fill="#F6F5F2"/>
+  <rect x="52" y="52" width="1096" height="526" rx="18" fill="#FFFFFF" stroke="#111111" stroke-width="3"/>
 
-  <rect x="88" y="88" width="58" height="58" rx="12" fill="#F4F1EA" stroke="#171717" stroke-width="3"/>
-  <path d="M104 129L114.8 104H120L130.5 129H124.9L122.9 123.7H112.1L110.1 129H104ZM113.8 119.4H121.1L117.5 109.6L113.8 119.4Z" fill="#171717"/>
-  <path d="M136 104V129" stroke="#2F5F5B" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="136" cy="104" r="3.5" fill="#2F5F5B"/>
+  <rect x="88" y="88" width="58" height="58" rx="12" fill="#F6F5F2" stroke="#111111" stroke-width="3"/>
+  <path d="M104 129L114.8 104H120L130.5 129H124.9L122.9 123.7H112.1L110.1 129H104ZM113.8 119.4H121.1L117.5 109.6L113.8 119.4Z" fill="#111111"/>
+  <path d="M136 104V129" stroke="#963F2F" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="136" cy="104" r="3.5" fill="#963F2F"/>
 
-  <text x="166" y="112" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Arnas Sokolovas</text>
-  <text x="166" y="140" fill="#777168" font-family="DM Mono, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="1">UX DESIGNER PORTFOLIO</text>
-  <text x="1112" y="123" text-anchor="end" fill="#777168" font-family="DM Mono, Consolas, monospace" font-size="15" font-weight="700" letter-spacing="1">AALBORG / AARHUS / REMOTE</text>
+  <text x="166" y="112" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="24" font-weight="800">Arnas Sokolovas</text>
+  <text x="166" y="140" fill="#767676" font-family="Space Mono, monospace" font-size="15" font-weight="700" letter-spacing="1">UX DESIGNER PORTFOLIO</text>
+  <text x="1112" y="123" text-anchor="end" fill="#767676" font-family="Space Mono, monospace" font-size="15" font-weight="700" letter-spacing="1">AALBORG / AARHUS / REMOTE</text>
 
-  <path d="M88 178H1112" stroke="#171717" stroke-opacity=".14" stroke-width="2"/>
+  <path d="M88 178H1112" stroke="#111111" stroke-opacity=".17" stroke-width="2"/>
 
-  <text x="88" y="286" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Designing clearer</text>
-  <text x="88" y="370" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">product experiences</text>
-  <text x="88" y="454" fill="#2F5F5B" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">around real user needs.</text>
+  <text x="88" y="286" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="72" font-weight="800">Designing clearer</text>
+  <text x="88" y="370" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="72" font-weight="800">product experiences</text>
+  <text x="88" y="454" fill="#963F2F" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="72" font-weight="800">around real user needs.</text>
 
-  <rect x="88" y="502" width="214" height="42" rx="21" fill="#171717"/>
-  <text x="195" y="529" text-anchor="middle" fill="#FFFEFA" font-family="DM Mono, Consolas, monospace" font-size="14" font-weight="700">CASE STUDIES</text>
+  <rect x="88" y="502" width="214" height="42" rx="21" fill="#111111"/>
+  <text x="195" y="529" text-anchor="middle" fill="#FFFFFF" font-family="Space Mono, monospace" font-size="14" font-weight="700">CASE STUDIES</text>
 
-  <rect x="326" y="502" width="182" height="42" rx="21" fill="#EBE7DD"/>
-  <text x="417" y="529" text-anchor="middle" fill="#171717" font-family="DM Mono, Consolas, monospace" font-size="14" font-weight="700">RESEARCH</text>
+  <rect x="326" y="502" width="182" height="42" rx="21" fill="#DFE3DA"/>
+  <text x="417" y="529" text-anchor="middle" fill="#111111" font-family="Space Mono, monospace" font-size="14" font-weight="700">RESEARCH</text>
 
-  <rect x="532" y="502" width="196" height="42" rx="21" fill="#EBE7DD"/>
-  <text x="630" y="529" text-anchor="middle" fill="#171717" font-family="DM Mono, Consolas, monospace" font-size="14" font-weight="700">PROTOTYPING</text>
+  <rect x="532" y="502" width="196" height="42" rx="21" fill="#DFE3DA"/>
+  <text x="630" y="529" text-anchor="middle" fill="#111111" font-family="Space Mono, monospace" font-size="14" font-weight="700">PROTOTYPING</text>
 
   <g transform="translate(828 228)">
-    <rect width="284" height="250" rx="14" fill="#F4F1EA" stroke="#171717" stroke-width="2"/>
-    <text x="28" y="44" fill="#777168" font-family="DM Mono, Consolas, monospace" font-size="13" font-weight="700">FOR RECRUITERS</text>
-    <path d="M28 70H256" stroke="#171717" stroke-opacity=".14" stroke-width="2"/>
-    <text x="28" y="112" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Focus</text>
-    <text x="28" y="140" fill="#56534C" font-family="Inter, Arial, sans-serif" font-size="18">UX, research, interaction</text>
-    <text x="28" y="184" fill="#171717" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Learning</text>
-    <text x="28" y="212" fill="#56534C" font-family="Inter, Arial, sans-serif" font-size="18">Google UX Certificate</text>
+    <rect width="284" height="250" rx="14" fill="#FFFFFF" stroke="#111111" stroke-width="2"/>
+    <text x="28" y="44" fill="#767676" font-family="Space Mono, monospace" font-size="13" font-weight="700">FOR RECRUITERS</text>
+    <path d="M28 70H256" stroke="#111111" stroke-opacity=".17" stroke-width="2"/>
+    <text x="28" y="112" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="20" font-weight="800">Focus</text>
+    <text x="28" y="140" fill="#505050" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="18">UX, research, interaction</text>
+    <text x="28" y="184" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="20" font-weight="800">Learning</text>
+    <text x="28" y="212" fill="#505050" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="18">Google UX Certificate</text>
   </g>
 </svg>

@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700;800&family=Playwrite+HU:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Orbitron:wght@700;800&family=Playwrite+HU:wght@400&display=swap');
 
 :root {
-  --paper: #f4f1ea;
-  --paper-bright: #fffefa;
-  --wash: #ebe7dd;
-  --ink: #171717;
-  --ink-soft: #4a4741;
-  --muted: #575047;
-  --accent: #2f5f5b;
-  --focus-ring: #b6e3dc;
-  --focus-shadow: #171717;
-  --line: rgba(23, 23, 23, 0.14);
-  --sans: 'Inter', Arial, sans-serif;
-  --mono: 'DM Mono', monospace;
+  --paper: #f6f5f2;
+  --paper-bright: #ffffff;
+  --wash: #ecebe6;
+  --ink: #111111;
+  --ink-soft: #505050;
+  --muted: #666666;
+  --disabled: #999999;
+  --accent: #963f2f;
+  --focus-ring: #315f87;
+  --focus-shadow: #111111;
+  --line: rgba(17, 17, 17, 0.17);
+  --sans: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
+  --mono: 'Space Mono', monospace;
   --creative: 'Playwrite HU', cursive;
   --robotic: 'Orbitron', var(--mono);
   --max-width: 1440px;
@@ -41,7 +42,7 @@ main > section {
 
 ::selection {
   color: var(--paper-bright);
-  background: var(--accent);
+  background: #315f87;
 }
 
 .skip-link {
@@ -163,6 +164,7 @@ main > section {
   .btn-primary,
   .btn-secondary {
     width: 100%;
+    margin-right: auto;
     min-height: 2.75rem;
     padding-inline: 0.9rem;
   }

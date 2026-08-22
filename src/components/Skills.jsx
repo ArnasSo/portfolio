@@ -166,7 +166,7 @@ const skillGroups = [
   },
   {
     title: 'Working style',
-    tone: 'yellow',
+    tone: 'umber',
     items: [
       { label: 'Curiosity', icon: 'curiosity' },
       { label: 'Feedback-minded', icon: 'feedback' },
@@ -194,7 +194,6 @@ export default function Skills() {
             style={{ '--reveal-delay': `${index * 70}ms` }}
             key={group.title}
           >
-            <span>{String(index + 1).padStart(2, '0')}</span>
             <h3>{group.title}</h3>
             <ul>
               {group.items.map(item => (

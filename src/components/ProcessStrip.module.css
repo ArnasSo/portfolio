@@ -14,27 +14,14 @@
 }
 
 .processLabel {
-  position: absolute;
-  top: -0.15rem;
-  left: 50%;
-  z-index: -1;
-  color: var(--ink);
-  font-family: var(--creative);
-  font-size: clamp(3rem, 9vw, 7.5rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 0.85;
-  opacity: 0.08;
-  transform: translateX(-50%) rotate(-2deg);
-  white-space: nowrap;
-  pointer-events: none;
+  display: none;
 }
 
 .header h2 {
   position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  font-size: clamp(2.2rem, 4.35vw, 4.7rem);
+  font-size: clamp(2.3rem, 4.55vw, 4.95rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
@@ -61,7 +48,7 @@
 
 .processPath {
   fill: none;
-  stroke: rgba(47, 95, 91, 0.22);
+  stroke: rgba(49, 95, 135, 0.22);
   stroke-width: 16;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -86,13 +73,8 @@
   border-radius: var(--radius);
 }
 
-.step span {
-  color: var(--muted);
-  font: 700 0.75rem var(--mono);
-}
-
 .step h3 {
-  margin-top: 4.5rem;
+  margin-top: 3.2rem;
   font-size: clamp(1.6rem, 2.2vw, 2.3rem);
   line-height: 1;
 }
@@ -154,13 +136,9 @@
     padding-top: clamp(1.4rem, 3vw, 2.4rem);
   }
 
-  .processLabel {
-    font-size: clamp(3rem, 7vw, 5.9rem);
-  }
-
   .header h2 {
     max-width: 900px;
-    font-size: clamp(2rem, 3.55vw, 3.85rem);
+    font-size: clamp(2.1rem, 3.75vw, 4.05rem);
   }
 
   .steps {
@@ -173,7 +151,7 @@
   }
 
   .step h3 {
-    margin-top: 3.4rem;
+    margin-top: 2.4rem;
     font-size: clamp(1.3rem, 1.75vw, 1.8rem);
   }
 
@@ -198,7 +176,7 @@
   }
 
   .step h3 {
-    margin-top: 2.7rem;
+    margin-top: 2rem;
   }
 }
 
@@ -234,19 +212,13 @@
     line-height: 1.05;
   }
 
-  .processLabel {
-    top: 0.15rem;
-    font-size: clamp(1.9rem, 8.8vw, 2.75rem);
-    opacity: 0.07;
-  }
-
   .step {
     min-height: 0;
     padding: 1rem;
   }
 
   .step h3 {
-    margin-top: 2rem;
+    margin-top: 1.2rem;
   }
 
   .step p {
