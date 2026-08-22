@@ -1488,3 +1488,102 @@
     max-height: none;
   }
 }
+
+@media (max-width: 560px) {
+  .casePage {
+    overflow-x: hidden !important;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hero,
+  .imageHero,
+  .overview,
+  .caseLead,
+  .caseNarrative,
+  .caseSection,
+  .customCaseSection,
+  .textOnlyCaseSection.customCaseSection,
+  .nextStep,
+  .moreCases {
+    width: 100% !important;
+    max-width: calc(100vw - 2rem) !important;
+    min-width: 0 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hero,
+  .imageHero {
+    display: block;
+  }
+
+  .heroCopy,
+  .imageHero .heroCopy,
+  .sectionCopy,
+  .summaryGrid,
+  .heroVisual,
+  .transparentHeroVisual,
+  .imageGrid,
+  .caseLead dl {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .hero h1,
+  .imageHero h1 {
+    width: 100% !important;
+    max-width: min(12ch, calc(100vw - 2rem)) !important;
+    font-size: clamp(1.85rem, 8.7vw, 2.25rem);
+    line-height: 1.03;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    white-space: normal !important;
+  }
+
+  .summaryGrid p,
+  .overviewText,
+  .caseLead p,
+  .sectionCopy > p,
+  .storyBlock p,
+  .nextStepCopy p {
+    width: 100%;
+    max-width: min(36ch, 100%);
+    hyphens: none;
+    overflow-wrap: anywhere;
+    text-align: left;
+    text-align-last: auto;
+  }
+
+  .heroVisual .staticHeroImage,
+  .imageHero .heroVisual .staticHeroImage,
+  .imageButton img,
+  .imageGrid .imageButton img {
+    width: 100%;
+    max-width: min(22rem, 100%);
+    min-height: 0;
+    max-height: 320px;
+    object-fit: contain;
+  }
+
+  .transparentHeroVisual {
+    margin: 1.35rem auto 0 !important;
+    overflow: visible !important;
+  }
+
+  .transparentHeroVisual .staticHeroImage {
+    width: min(17.5rem, 100%) !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .imageGrid .imageButton,
+  .imagePlaceholder {
+    min-height: 0;
+  }
+
+  .customCaseSection[data-project='keybee'][data-case-section='prototype'] .imageButton img,
+  .customCaseSection[data-project='cphfw-infoscreen'][data-case-section='concept'] .imageButton img {
+    max-height: 280px;
+  }
+}
