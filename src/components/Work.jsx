@@ -574,27 +574,22 @@ export default function Work() {
               key={project.title}
               aria-label={`Read the ${project.title} case study`}
             >
-              <div className={styles.index}>{String(index + 1).padStart(2, '0')}</div>
               <div className={styles.main}>
                 <div className={styles.cardHeader}>
                   <div>
                     <p>{project.type} / {project.year}</p>
                     <h3>{project.title}</h3>
                   </div>
-                  <span className={styles.readLink}>Read case study <span aria-hidden="true">-&gt;</span></span>
                 </div>
 
                 <div
                   className={`${styles.caseSnapshot} ${project.secondarySnapshot ? styles.threePartSnapshot : ''}`}
                   aria-label={`${project.title} preview`}
                 >
-                  <div className={styles.snapshotVisual}>
-                    <strong>{project.snapshot}</strong>
-                  </div>
                   {project.secondarySnapshot && (
                     <div
                       className={`${styles.snapshotVisual} ${styles.snapshotImage}`}
-                      style={{ '--snapshot-image': `url(${project.secondarySnapshotImage})` }}
+                      style={{ '--snapshot-image': `url(${project.caseHeroImage || project.secondarySnapshotImage})` }}
                     >
                       <strong>{project.secondarySnapshot}</strong>
                     </div>

@@ -8,6 +8,7 @@ import ProcessStrip from './components/ProcessStrip'
 import About from './components/About'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
+import { homeMeta, updatePageMeta } from './utils/pageMeta'
 
 function App() {
   const caseMatch = window.location.pathname.match(/^\/case\/([^/]+)\/?$/)
@@ -17,6 +18,8 @@ function App() {
       window.scrollTo(0, 0)
       return
     }
+
+    updatePageMeta(homeMeta)
 
     const hash = window.location.hash
 
