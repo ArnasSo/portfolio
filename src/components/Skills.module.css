@@ -1,6 +1,9 @@
 .skills {
   padding: var(--space-2xl) var(--page-padding);
-  background: var(--paper);
+  background:
+    linear-gradient(104deg, rgba(49, 95, 135, 0.055) 0 14%, transparent 14% 100%),
+    linear-gradient(252deg, rgba(150, 63, 47, 0.06) 0 12%, transparent 12% 100%),
+    var(--paper);
   border-top: 1px solid var(--line);
 }
 
