@@ -49,18 +49,18 @@ export default function About() {
       <div className={`${styles.inner} reveal`}>
         <div className={styles.heading}>
           <p className={`${styles.sectionLabel} section-kicker`} aria-hidden="true">Background</p>
-          <h2 id="about-title">A practical design background with frontend roots</h2>
+          <h2 id="about-title">I came into design through the practical side of building things</h2>
         </div>
 
         <div className={styles.body}>
           <div className={`${styles.timelineIntro} ${styles.currentRole}`}>
             <p className={`${styles.timelineLabel} section-kicker`}>Current position</p>
-            <h3>Junior UX/UI Designer with frontend foundations</h3>
+            <h3>Junior UX/UI Designer</h3>
             <p>
-              I am currently looking for a UX/UI internship, student job, junior design role,
-              or frontend-adjacent position where I can keep building practical product experience.
-              I am serious about the work, but not allergic to humor, which helps when prototypes
-              behave like they have personal opinions.
+              I am currently looking for a UX/UI internship, student job, junior role,
+              or frontend-adjacent position where I can build practical product experience.
+              I am serious about the work, but not allergic to humor when prototypes
+              start acting like they have personal opinions.
             </p>
           </div>
         </div>

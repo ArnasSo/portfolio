@@ -1,9 +1,6 @@
 .skills {
   padding: var(--space-2xl) var(--page-padding);
-  background:
-    linear-gradient(104deg, rgba(49, 95, 135, 0.11) 0 14%, transparent 14% 100%),
-    linear-gradient(252deg, rgba(150, 63, 47, 0.12) 0 12%, transparent 12% 100%),
-    var(--paper);
+  background: var(--paper);
   border-top: 1px solid var(--line);
 }
 
@@ -38,34 +35,12 @@
   position: relative;
   display: grid;
   align-content: start;
-  padding: 1.15rem 1.15rem 1.35rem;
+  padding: 1.45rem 1.45rem 1.5rem;
   overflow: hidden;
   background: var(--paper-bright);
   border: 1px solid rgba(23, 23, 23, 0.11);
   border-radius: var(--radius);
   box-shadow: 0 16px 42px rgba(23, 23, 23, 0.055);
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  height: 0.35rem;
-  background: var(--skill-color);
-}
-
-.card::after {
-  content: '';
-  position: absolute;
-  right: -2rem;
-  bottom: -2.8rem;
-  width: 6rem;
-  aspect-ratio: 1;
-  background:
-    linear-gradient(90deg, transparent 48%, rgba(23, 23, 23, 0.1) 48% 52%, transparent 52%),
-    linear-gradient(0deg, transparent 48%, rgba(23, 23, 23, 0.1) 48% 52%, transparent 52%);
-  opacity: 0.35;
-  transform: rotate(8deg);
 }
 
 .green {
@@ -85,12 +60,34 @@
 }
 
 .card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   max-width: 100%;
-  margin-top: 2rem;
-  min-height: 2.2rem;
-  font-size: clamp(1.35rem, 1.65vw, 1.8rem);
-  font-weight: 800;
-  line-height: 1;
+  margin-top: 0;
+  min-height: 2.5rem;
+  font-family: var(--recruiter);
+  font-size: clamp(1.22rem, 1.45vw, 1.55rem);
+  font-weight: 750;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.titleIcon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  color: var(--skill-color);
+  background: var(--paper-bright);
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  border-radius: 10px;
+}
+
+.titleIcon svg {
+  width: 1.45rem;
+  height: 1.45rem;
 }
 
 .card ul {
@@ -111,19 +108,20 @@
   min-height: 5.8rem;
   padding: 0.75rem 0.55rem 0.68rem;
   color: var(--ink);
-  background: var(--wash);
+  background: var(--paper-bright);
   border: 1px solid rgba(23, 24, 20, 0.09);
   border-radius: calc(var(--radius) - 2px);
   font-size: 0.82rem;
-  font-weight: 650;
+  font-family: var(--recruiter);
+  font-weight: 600;
   line-height: 1.16;
   text-align: center;
   overflow-wrap: anywhere;
 }
 
 .card li > span:last-child {
-  font-family: var(--sans);
-  font-weight: 750;
+  font-family: var(--recruiter);
+  font-weight: 650;
   letter-spacing: 0;
 }
 
@@ -164,12 +162,12 @@
   }
 
   .card {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .card h3 {
-    margin-top: 1.8rem;
-    font-size: clamp(1.25rem, 1.45vw, 1.55rem);
+    margin-top: 0;
+    font-size: clamp(1.16rem, 1.32vw, 1.36rem);
   }
 
   .card ul {
@@ -213,7 +211,7 @@
   }
 
   .card h3 {
-    margin-top: 1.6rem;
+    margin-top: 0;
     min-height: 0;
   }
 

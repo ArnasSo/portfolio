@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Work from './components/Work'
 import CaseStudy from './components/CaseStudy'
-import ProcessStrip from './components/ProcessStrip'
+// import ProcessStrip from './components/ProcessStrip'
 import About from './components/About'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
@@ -49,7 +49,7 @@ function App() {
       <main id="main-content">
         <Hero />
         <Work />
-        <ProcessStrip />
+        {/* <ProcessStrip /> */}
         <About />
         <Skills />
         <Contact />

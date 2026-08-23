@@ -4,19 +4,14 @@ import styles from './Hero.module.css'
 const signals = [
   { label: 'Role', value: <strong>Junior UX/UI Designer</strong> },
   { label: 'Frontend', value: 'HTML, CSS, WordPress, React.js basics' },
-  { label: 'Looking for', value: <strong>UX/UI, frontend, or internship</strong> },
+  { label: 'Looking for', value: <strong>Internship (Spring 2027), UX/UI, or frontend</strong> },
   {
     label: 'Studying',
-    value: (
-      <>
-        <strong>Multimedia Design</strong>
-        <br />
-        Graduating May 2027
-      </>
-    ),
+    value: 'Multimedia Design',
+    subtext: 'Graduating May 2027',
   },
   {
-    label: 'Work experience',
+    label: 'Experience',
     value: 'Internships + education',
     sectionId: '#about',
   },
@@ -55,7 +50,7 @@ export default function Hero() {
       <div className={styles.inner}>
         <div className={styles.copy}>
           <p className={styles.role}>Junior UX/UI Designer</p>
-          <h1 id="hero-title">Designing clear interfaces without making people think too hard</h1>
+          <h1 id="hero-title">UX/UI designer with a frontend brain and a user-first habit</h1>
           <p className={styles.summary}>
             I am <strong>Arnas Sokolovas</strong>, an early-career designer with a UX mindset,
             UI practice, and some frontend experience in WordPress and React.js. I like useful
@@ -80,7 +75,7 @@ export default function Hero() {
             <p className={styles.panelLabel}>For Recruiters</p>
             <dl>
               {signals.map(signal => (
-                <div key={signal.label} className={signal.subtext ? styles.humanNote : undefined}>
+                <div key={signal.label} className={signal.subtext ? styles.hasSubtext : undefined}>
                   <dt>{signal.label}</dt>
                   <dd>
                     {signal.sectionId ? (
@@ -108,7 +103,7 @@ export default function Hero() {
                       </div>
                     ) : signal.subtext ? (
                       <>
-                        <span>{signal.value}</span>
+                        <strong>{signal.value}</strong>
                         <small>{signal.subtext}</small>
                       </>
                     ) : signal.value}

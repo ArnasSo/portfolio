@@ -4,7 +4,6 @@ import styles from './Nav.module.css'
 
 const navLinks = [
   { label: 'Case Studies', href: '#work' },
-  { label: 'Design Process', href: '#process' },
   { label: 'Background', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },

@@ -18,6 +18,7 @@ export const projects = [
     snapshot: 'User-centered Digital Solution',
     secondarySnapshot: 'Mobile Festival Experience',
     secondarySnapshotImage: '/bla-sol-app-preview.png',
+    cardSummary: 'A festival app concept that makes smaller activities easier to find, save, and join.',
     problem: 'BLA SOL needed a stronger event-discovery experience inside an existing festival app, helping visitors find relevant activities without forcing them to constantly use their phone during the festival.',
     role: 'Stakeholder research, client interviews, interview and observation guides, synthesis, UX direction, prototype, and testing.',
     process: ['Festival Discovery UX', 'Community Event Visibility', 'Personal Planning', 'Team-based Client Project'],
@@ -169,6 +170,7 @@ export const projects = [
     snapshot: 'Botanical Learning Game',
     secondarySnapshot: 'Observation-led App',
     secondarySnapshotImage: '/planthunt-observation-app.png',
+    cardSummary: 'A playful QR plant hunt that keeps children exploring the real greenhouse.',
     problem: 'The botanical garden needed a playful digital layer that could keep children engaged in real exploration without replacing the greenhouse visit.',
     role: 'Desk research, field observation, persona, OOUX content modeling, sketches, UI kit, interactive prototype, and testing in a short Double Diamond process.',
     process: ['Field Research', 'Persona + OOUX', 'QR Game Prototype', 'Flash Project'],
@@ -315,6 +317,7 @@ export const projects = [
     snapshot: 'Accessible Interaction Concept',
     secondarySnapshot: 'Inclusive Case Film',
     secondarySnapshotImage: '/keybee-case-film.jpg',
+    cardSummary: 'A haptic lost-key concept that uses vibration instead of sound-first feedback.',
     problem: 'KeyBee explored how a lost-key finder could communicate through vibration instead of relying only on sound or visual attention.',
     role: 'Concept direction, haptic feedback thinking, mobile UI mockups, prototype framing, and case film presentation.',
     process: ['Concept Direction', 'Haptic Feedback', 'Mobile Mockups', 'Case Film'],
@@ -433,6 +436,7 @@ export const projects = [
     snapshot: 'Event Information Touchpoint',
     secondarySnapshot: 'Visual Hierarchy System',
     secondarySnapshotImage: '/cphfw-visual-hierarchy.jpg',
+    cardSummary: 'A large-screen event touchpoint for clearer sustainable fashion learning.',
     problem: 'CPHFW needed an event-ready information touchpoint that could present, inform, and support learning around sustainable materials in a clear desktop and infoscreen format.',
     role: 'CPHFW research, target-group and persona work, concept direction, prototyping, usability testing, and visual hierarchy testing.',
     process: ['Sustainability Context', 'Target Group', 'Infoscreen Prototype', 'Hierarchy Testing'],
@@ -556,7 +560,7 @@ export default function Work() {
     <section id="work" className={styles.work} ref={sectionRef} aria-labelledby="work-title">
       <div className={`${styles.header} reveal`}>
         <p className="section-kicker">Case studies</p>
-        <h2 id="work-title">UX/UI case studies with research, interface work, and prototypes</h2>
+        <h2 id="work-title">Projects where the process mattered as much as the final screens</h2>
       </div>
 
       <div className={styles.list}>
@@ -569,37 +573,27 @@ export default function Work() {
                 '--reveal-delay': `${index * 80}ms`,
                 '--project-accent': project.accent,
                 '--project-bg': project.backgroundImage ? `url(${project.backgroundImage})` : 'none',
-                '--project-bg-size': project.backgroundSize,
+                '--project-thumb': `url(${project.caseHeroImage || project.secondarySnapshotImage || project.backgroundImage})`,
               }}
               key={project.title}
               aria-label={`Read the ${project.title} case study`}
             >
-              <div className={styles.main}>
+              <div className={styles.thumbnail} aria-hidden="true" />
+
+              <div className={styles.cardBody}>
                 <div className={styles.cardHeader}>
                   <div>
-                    <p>{project.type} / {project.year}</p>
+                    <p>{project.type}</p>
                     <h3>{project.title}</h3>
                   </div>
                 </div>
 
-                <div
-                  className={`${styles.caseSnapshot} ${project.secondarySnapshot ? styles.threePartSnapshot : ''}`}
-                  aria-label={`${project.title} preview`}
-                >
-                  {project.secondarySnapshot && (
-                    <div
-                      className={`${styles.snapshotVisual} ${styles.snapshotImage}`}
-                      style={{ '--snapshot-image': `url(${project.caseHeroImage || project.secondarySnapshotImage})` }}
-                    >
-                      <strong>{project.secondarySnapshot}</strong>
-                    </div>
-                  )}
-                  <div className={styles.snapshotMeta}>
-                    <p>Process focus</p>
-                    <ul>
-                      {project.process.map(step => <li key={step}>{step}</li>)}
-                    </ul>
-                  </div>
+                <p className={styles.cardDescription}>{project.cardSummary}</p>
+
+                <div className={styles.cardFooter}>
+                  <ul className={styles.tags} aria-label={`${project.title} process focus`}>
+                    {project.process.slice(0, 2).map(step => <li key={step}>{step}</li>)}
+                  </ul>
                 </div>
               </div>
             </a>

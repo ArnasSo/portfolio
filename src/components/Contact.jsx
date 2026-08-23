@@ -10,7 +10,7 @@ export default function Contact() {
     <section id="contact" className={styles.contact} ref={sectionRef} aria-labelledby="contact-title">
       <div className={`${styles.inner} reveal`}>
         <p className={`${styles.sectionLabel} section-kicker`}>Get in touch</p>
-        <h2 id="contact-title">Looking for a junior UX/UI opportunity and a team that enjoys honest thinking</h2>
+        <h2 id="contact-title">Looking for a place to learn, contribute, and ask better questions</h2>
         <div className={styles.links}>
           <a href="mailto:arnas.sokolovas@gmail.com" aria-label="Email Arnas Sokolovas">arnas.sokolovas@gmail.com</a>
           <a

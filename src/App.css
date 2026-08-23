@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Orbitron:wght@700;800&family=Playwrite+HU:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@700;800&family=Playwrite+HU:wght@400&display=swap');
 
 :root {
   --paper: #f6f5f2;
@@ -13,7 +13,8 @@
   --focus-shadow: #111111;
   --line: rgba(17, 17, 17, 0.17);
   --sans: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif;
-  --mono: 'Space Mono', monospace;
+  --recruiter: 'Inter', 'Helvetica Neue', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
   --creative: 'Playwrite HU', cursive;
   --robotic: 'Orbitron', var(--mono);
   --max-width: 1440px;

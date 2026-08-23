@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Skills.module.css'
 
-function SkillIcon({ name }) {
+export function SkillIcon({ name }) {
   switch (name) {
     case 'figma':
       return (
@@ -124,6 +124,12 @@ function SkillIcon({ name }) {
           <path d="M12 14h.1M20 14h.1M12 20c2 2 6 2 8 0" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
         </svg>
       )
+    case 'code':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="m12.5 10-6 6 6 6M19.5 10l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
     default:
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
@@ -137,6 +143,7 @@ const skillGroups = [
   {
     title: 'UX research',
     tone: 'green',
+    icon: 'interviews',
     items: [
       { label: 'User interviews', icon: 'interviews' },
       { label: 'Observation', icon: 'observation' },
@@ -147,6 +154,7 @@ const skillGroups = [
   {
     title: 'UI and prototyping',
     tone: 'coral',
+    icon: 'wireframes',
     items: [
       { label: 'Wireframes', icon: 'wireframes' },
       { label: 'Figma', icon: 'figma' },
@@ -157,6 +165,7 @@ const skillGroups = [
   {
     title: 'Frontend',
     tone: 'blue',
+    icon: 'code',
     items: [
       { label: 'HTML', icon: 'html' },
       { label: 'CSS', icon: 'css' },
@@ -167,6 +176,7 @@ const skillGroups = [
   {
     title: 'Working style',
     tone: 'umber',
+    icon: 'humor',
     items: [
       { label: 'Curiosity', icon: 'curiosity' },
       { label: 'Feedback-minded', icon: 'feedback' },
@@ -184,7 +194,7 @@ export default function Skills() {
     <section id="skills" className={styles.skills} ref={sectionRef} aria-labelledby="skills-title">
       <div className={`${styles.header} reveal`}>
         <p className="section-kicker">Skills</p>
-        <h2 id="skills-title">Practical skills, a learning mindset, and enough humor to survive feedback rounds</h2>
+        <h2 id="skills-title">The tools I reach for, and the habits I try to bring with them</h2>
       </div>
 
       <div className={styles.grid}>
@@ -194,7 +204,10 @@ export default function Skills() {
             style={{ '--reveal-delay': `${index * 70}ms` }}
             key={group.title}
           >
-            <h3>{group.title}</h3>
+            <h3>
+              <span className={styles.titleIcon}><SkillIcon name={group.icon} /></span>
+              <span>{group.title}</span>
+            </h3>
             <ul>
               {group.items.map(item => (
                 <li key={item.label}>
