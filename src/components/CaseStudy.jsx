@@ -4,6 +4,14 @@ import styles from './CaseStudy.module.css'
 
 const defaultProject = projects[0]
 
+function setMetaTag(selector, attribute, value) {
+  const element = document.head.querySelector(selector)
+
+  if (element) {
+    element.setAttribute(attribute, value)
+  }
+}
+
 const caseStudySections = [
   {
     eyebrow: 'Context',
@@ -71,6 +79,21 @@ export default function CaseStudy({ slug }) {
   const [openImage, setOpenImage] = useState(null)
   const heroImage = project.caseHeroImage || project.secondarySnapshotImage || project.backgroundImage
   const isHeroZoomable = project.caseHeroZoomable !== false
+
+  useEffect(() => {
+    const title = `${project.title} case study | Arnas Sokolovas`
+    const description = `${project.problem} ${project.role}`
+    const canonicalUrl = `https://arnas-so.com/case/${project.slug}`
+
+    document.title = title
+    setMetaTag('meta[name="description"]', 'content', description)
+    setMetaTag('link[rel="canonical"]', 'href', canonicalUrl)
+    setMetaTag('meta[property="og:url"]', 'content', canonicalUrl)
+    setMetaTag('meta[property="og:title"]', 'content', title)
+    setMetaTag('meta[property="og:description"]', 'content', description)
+    setMetaTag('meta[name="twitter:title"]', 'content', title)
+    setMetaTag('meta[name="twitter:description"]', 'content', description)
+  }, [project])
 
   useEffect(() => {
     if (!openImage) {
