@@ -45,16 +45,8 @@
   border-radius: 999px;
 }
 
-.role {
-  display: inline-flex;
-  margin-bottom: 1.1rem;
-  padding: 0.45rem 0.68rem;
-  color: var(--accent);
-  background: rgba(150, 63, 47, 0.08);
-  border: 1px solid rgba(150, 63, 47, 0.22);
-  border-radius: 999px;
-  font: 700 0.76rem var(--mono);
-  text-transform: uppercase;
+.roleTitle {
+  margin-bottom: 0.9rem;
 }
 
 .copy h1 {
@@ -115,11 +107,14 @@
 
 .portrait img {
   position: absolute;
-  right: 50%;
-  bottom: -1.2rem;
-  width: min(108%, 420px);
-  max-width: none;
-  transform: translateX(50%);
+  left: 50%;
+  bottom: 0;
+  width: auto;
+  height: calc(100% - 1rem);
+  max-width: calc(100% - 1rem);
+  object-fit: contain;
+  object-position: center bottom;
+  transform: translateX(-50%);
   filter: drop-shadow(0 22px 26px rgba(23, 23, 23, 0.16));
 }
 
@@ -293,7 +288,7 @@
   }
 
   .portrait img {
-    width: min(92%, 440px);
+    height: calc(100% - 1rem);
   }
 }
 
@@ -337,7 +332,7 @@
   }
 
   .portrait img {
-    width: min(96%, 400px);
+    height: calc(100% - 1rem);
   }
 
   .panel dl > div {
@@ -427,7 +422,7 @@
   }
 
   .portrait img {
-    width: min(86%, 304px);
+    height: calc(100% - 1rem);
   }
 
   .panel dd {

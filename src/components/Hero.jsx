@@ -2,7 +2,6 @@ import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Hero.module.css'
 
 const signals = [
-  { label: 'Role', value: <strong>Junior UX/UI Designer</strong> },
   { label: 'Frontend', value: 'HTML, CSS, WordPress, React.js basics' },
   { label: 'Looking for', value: <strong>Internship (Spring 2027), UX/UI, or frontend</strong> },
   {
@@ -49,7 +48,7 @@ export default function Hero() {
     <section id="home" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.inner}>
         <div className={styles.copy}>
-          <p className={styles.role}>Junior UX/UI Designer</p>
+          <p className={`${styles.roleTitle} section-kicker`}>Junior UX/UI Designer</p>
           <h1 id="hero-title">UX/UI designer with a frontend brain and a user-first habit</h1>
           <p className={styles.summary}>
             I am <strong>Arnas Sokolovas</strong>, an early-career designer with a UX mindset,
