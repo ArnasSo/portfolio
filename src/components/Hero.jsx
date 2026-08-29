@@ -112,8 +112,9 @@ export default function Hero() {
         </div>
 
         <div className={styles.recruiterStack}>
-          <figure className={styles.portrait}>
+          <figure className={styles.portrait} tabIndex="0">
             <img src="/arnas-photo.png" alt="Portrait of Arnas Sokolovas" />
+            <span className={styles.portraitBubble} aria-hidden="true">Hi!</span>
           </figure>
 
           <aside className={styles.panel} aria-label="Portfolio summary">

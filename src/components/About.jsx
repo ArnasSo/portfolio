@@ -48,41 +48,26 @@ export default function About() {
     <section id="about" className={styles.about} ref={sectionRef} aria-labelledby="about-title">
       <div className={`${styles.inner} reveal`}>
         <div className={styles.heading}>
-          <p className={`${styles.sectionLabel} section-kicker`} aria-hidden="true">Background</p>
           <h2 id="about-title">I came into design through the practical side of building things</h2>
         </div>
 
         <div className={styles.body}>
           <div className={`${styles.timelineIntro} ${styles.currentRole}`}>
-            <p className={`${styles.timelineLabel} section-kicker`}>Current position</p>
             <h3>Junior UX/UI Designer</h3>
             <p>
               I am currently looking for a UX/UI internship, student job, junior role,
-              or frontend-adjacent position where I can build practical product experience.
-              I am serious about the work, but not allergic to humor when prototypes
-              start acting like they have personal opinions.
+              or frontend position where I can build practical product experience.
+            </p>
+            <p>
+              I know I still have a lot to learn, and that is exactly what makes the
+              next step exciting to me: learning from people with more experience,
+              seeing how real teams work, and growing through honest feedback.
             </p>
           </div>
         </div>
 
-        <div className={`${styles.timelineColumns} ${styles.experienceRow}`} aria-label="Experience and education">
-          <section className={styles.timelineColumn} aria-labelledby="experience-title">
-            <h3 id="experience-title">Experience</h3>
-            <div className={styles.timelineList}>
-              {experienceItems.map(item => (
-                <article key={`${item.place}-${item.role}`} className={styles.timelineItem}>
-                  <div>
-                    <h4>{item.role}</h4>
-                    <p className={styles.timelineMeta}>{item.place} / {item.type}</p>
-                  </div>
-                  <time>{item.date}</time>
-                  <p>{item.note}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.timelineColumn} aria-labelledby="education-title">
+        <div className={`${styles.timelineColumns} ${styles.experienceRow}`} aria-label="Education and experience">
+          <section className={`${styles.timelineColumn} ${styles.educationColumn}`} aria-labelledby="education-title">
             <h3 id="education-title">Education</h3>
             <div className={styles.timelineList}>
               {educationItems.map((item, index) => (
@@ -93,6 +78,22 @@ export default function About() {
                   <div>
                     <h4>{item.school}</h4>
                     <p className={styles.timelineMeta}>{item.program}</p>
+                  </div>
+                  <time>{item.date}</time>
+                  <p>{item.note}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className={styles.timelineColumn} aria-labelledby="experience-title">
+            <h3 id="experience-title">Experience</h3>
+            <div className={styles.timelineList}>
+              {experienceItems.map(item => (
+                <article key={`${item.place}-${item.role}`} className={styles.timelineItem}>
+                  <div>
+                    <h4>{item.role}</h4>
+                    <p className={styles.timelineMeta}>{item.place} / {item.type}</p>
                   </div>
                   <time>{item.date}</time>
                   <p>{item.note}</p>

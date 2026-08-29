@@ -38,6 +38,48 @@ function SkillIcon({ name }) {
           <path d="M10.2 11.8 13.7 22l2.4-7.1L18.8 22l3-8.8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       )
+    case 'shopify':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M9 13h14l-1.2 12H10.2L9 13Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
+          <path d="M12.5 13a3.5 3.5 0 0 1 7 0" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+          <path d="M13 18h6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        </svg>
+      )
+    case 'video':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="6" y="9" width="16" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2.2" />
+          <path d="m22 14 5-3v10l-5-3M10 13h6M10 18h4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 'adobe':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 25 16 7l8 18M12.2 20h7.6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    case 'ai':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 5v5M16 22v5M5 16h5M22 16h5M9.6 9.6l3.2 3.2M19.2 19.2l3.2 3.2M22.4 9.6l-3.2 3.2M12.8 19.2l-3.2 3.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          <path d="M13 16a3 3 0 0 1 6 0 3 3 0 0 1-6 0Z" fill="none" stroke="currentColor" strokeWidth="2.2" />
+        </svg>
+      )
+    case 'java':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M10 15h12v5a6 6 0 0 1-12 0v-5Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
+          <path d="M22 16h2.5a2.5 2.5 0 0 1 0 5H22M13 10c2-1.6 2-3.2 0-4.8M18 10c2-1.6 2-3.2 0-4.8M9 26h14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        </svg>
+      )
+    case 'brand':
+      return (
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M9 6h14v20H9V6Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
+          <path d="M13 12h6M13 17h6M13 22h3" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        </svg>
+      )
     case 'interviews':
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
@@ -141,10 +183,10 @@ const skillGroups = [
     title: 'Frontend',
     icon: 'code',
     items: [
-      { label: 'HTML', icon: 'html' },
-      { label: 'CSS', icon: 'css' },
+      { label: 'HTML/CSS', icon: 'code' },
       { label: 'WordPress', icon: 'wordpress' },
       { label: 'React basics', icon: 'react' },
+      { label: 'Shopify', icon: 'shopify' },
     ],
   },
   {
@@ -157,6 +199,16 @@ const skillGroups = [
       { label: 'Useful sarcasm', icon: 'humor' },
     ],
   },
+  {
+    title: 'Creative toolkit',
+    icon: 'brand',
+    items: [
+      { label: 'Video editing', icon: 'video' },
+      { label: 'Adobe tools', icon: 'adobe' },
+      { label: 'AI workflows', icon: 'ai' },
+      { label: 'Java familiarity', icon: 'java' },
+    ],
+  },
 ]
 
 export default function Skills() {
@@ -166,7 +218,6 @@ export default function Skills() {
   return (
     <section id="skills" className={styles.skills} ref={sectionRef} aria-labelledby="skills-title">
       <div className={`${styles.header} reveal`}>
-        <p className="section-kicker">Skills</p>
         <h2 id="skills-title">The tools I reach for, and the habits I try to bring with them</h2>
       </div>
 

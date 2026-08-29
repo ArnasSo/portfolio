@@ -559,7 +559,6 @@ export default function Work() {
   return (
     <section id="work" className={styles.work} ref={sectionRef} aria-labelledby="work-title">
       <div className={`${styles.header} reveal`}>
-        <p className="section-kicker">Case studies</p>
         <h2 id="work-title">Projects where the process mattered as much as the final screens</h2>
       </div>
 

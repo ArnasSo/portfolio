@@ -1,5 +1,5 @@
 .contact {
-  padding: clamp(4rem, 8vw, 6.5rem) var(--page-padding) 2rem;
+  padding: clamp(3rem, 6vw, 5rem) var(--page-padding) 2rem;
   color: var(--paper-bright);
   background: var(--ink);
 }
@@ -9,7 +9,7 @@
   isolation: isolate;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding-top: clamp(1.8rem, 4vw, 3rem);
+  padding-top: 0;
 }
 
 .sectionLabel {
@@ -52,7 +52,7 @@
 
 @media (min-width: 901px) and (max-width: 1600px) {
   .contact {
-    padding-top: clamp(3.3rem, 6vw, 5rem);
+    padding-top: clamp(2.6rem, 5vw, 4rem);
   }
 
   .inner h2 {
@@ -71,11 +71,11 @@
 
 @media (max-width: 560px) {
   .contact {
-    padding-top: 4rem;
+    padding-top: 3.25rem;
   }
 
   .inner {
-    padding-top: 2rem;
+    padding-top: 0;
   }
 
   .inner h2 {
