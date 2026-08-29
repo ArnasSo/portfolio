@@ -2,39 +2,29 @@ import { useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Skills.module.css'
 
-export function SkillIcon({ name }) {
+function SkillIcon({ name }) {
   switch (name) {
     case 'figma':
+    case 'wireframes':
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="20" cy="16" r="5" fill="#1abcfe" />
-          <path fill="#0acf83" d="M10 22a5 5 0 0 1 5-5h5v5a5 5 0 1 1-10 0Z" />
-          <path fill="#ff7262" d="M10 10a5 5 0 0 1 5-5h5v10h-5a5 5 0 0 1-5-5Z" />
-          <path fill="#f24e1e" d="M20 5h2a5 5 0 0 1 0 10h-2V5Z" />
-          <path fill="#a259ff" d="M10 16a5 5 0 0 1 5-5h5v10h-5a5 5 0 0 1-5-5Z" />
+          <rect x="7" y="8" width="18" height="16" rx="2" fill="none" stroke="currentColor" strokeWidth="2.2" />
+          <path d="M7 13h18M13 13v11" stroke="currentColor" strokeWidth="2.2" />
         </svg>
       )
     case 'html':
-      return (
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <path fill="#e44d26" d="M6 3h20l-1.8 21.1L16 29l-8.2-4.9L6 3Z" />
-          <path fill="#f16529" d="M16 5.2h8L22.5 22.7 16 26.5V5.2Z" />
-          <path fill="#fff" d="M10.1 9.6h11.8l-.2 2.6h-8.8l.2 2.5h8.4l-.7 6.1-4.8 2.7-4.8-2.7-.3-3.7h2.4l.2 2.1 2.5 1.3 2.5-1.3.3-2.2h-8l-.7-7.4Z" />
-        </svg>
-      )
     case 'css':
+    case 'code':
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
-          <path fill="#1572b6" d="M6 3h20l-1.8 21.1L16 29l-8.2-4.9L6 3Z" />
-          <path fill="#33a9dc" d="M16 5.2h8L22.5 22.7 16 26.5V5.2Z" />
-          <path fill="#fff" d="M10.2 9.6h11.5l-.2 2.6h-8.7l.2 2.3h8.3l-.6 6.3-4.7 2.7-4.8-2.7-.3-3.4h2.4l.2 1.8 2.5 1.3 2.4-1.3.3-2.3h-8l-.2-2.4 8.4-3.5h-8.5l-.2-2.4Z" />
+          <path d="m12.5 10-6 6 6 6M19.5 10l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       )
     case 'react':
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="16" cy="16" r="2.8" fill="#61dafb" />
-          <g fill="none" stroke="#61dafb" strokeWidth="1.8">
+          <circle cx="16" cy="16" r="2.8" fill="currentColor" />
+          <g fill="none" stroke="currentColor" strokeWidth="1.8">
             <ellipse cx="16" cy="16" rx="12" ry="4.7" />
             <ellipse cx="16" cy="16" rx="12" ry="4.7" transform="rotate(60 16 16)" />
             <ellipse cx="16" cy="16" rx="12" ry="4.7" transform="rotate(120 16 16)" />
@@ -44,8 +34,8 @@ export function SkillIcon({ name }) {
     case 'wordpress':
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="16" cy="16" r="13" fill="#21759b" />
-          <path fill="#fff" d="M5.8 16a10.2 10.2 0 0 0 5.8 9.2L6.7 11.8A10 10 0 0 0 5.8 16Zm17.1-.5c0-1.2-.4-2-1-2.9-.6-.9-1.2-1.6-1.2-2.5 0-1 .8-2 2-2h.2A10.2 10.2 0 0 0 8.2 10h.8c1.1 0 2.8-.1 2.8-.1.6 0 .7.8.1.9h-1.1l3.8 11.3 2.3-6.9-1.6-4.4h-1c-.6-.1-.5-.9.1-.9 0 0 1.7.1 2.7.1 1.1 0 2.8-.1 2.8-.1.6 0 .7.8.1.9h-1.1l3.8 11.2 1-3.5c.5-1.5.8-2.3.8-3Zm-6.7 1.4-3.1 8.9a10.1 10.1 0 0 0 6.3-.2l-.1-.2-3.1-8.5Zm8.8-5.8c.1.8.1 1.6-.1 2.6-.2 1.2-.7 2.6-1.2 4l-3.2 9.1a10.2 10.2 0 0 0 4.5-15.7Z" />
+          <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" strokeWidth="2.2" />
+          <path d="M10.2 11.8 13.7 22l2.4-7.1L18.8 22l3-8.8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       )
     case 'interviews':
@@ -75,13 +65,6 @@ export function SkillIcon({ name }) {
         <svg viewBox="0 0 32 32" aria-hidden="true">
           <path d="M12 6h8M16 6v7l5.7 9.4A2.4 2.4 0 0 1 19.6 26h-7.2a2.4 2.4 0 0 1-2.1-3.6L16 13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M12 21h8" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
-        </svg>
-      )
-    case 'wireframes':
-      return (
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <rect x="7" y="8" width="18" height="16" rx="2" fill="none" stroke="currentColor" strokeWidth="2.2" />
-          <path d="M7 13h18M13 13v11" stroke="currentColor" strokeWidth="2.2" />
         </svg>
       )
     case 'prototype':
@@ -124,12 +107,6 @@ export function SkillIcon({ name }) {
           <path d="M12 14h.1M20 14h.1M12 20c2 2 6 2 8 0" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
         </svg>
       )
-    case 'code':
-      return (
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <path d="m12.5 10-6 6 6 6M19.5 10l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      )
     default:
       return (
         <svg viewBox="0 0 32 32" aria-hidden="true">
@@ -142,7 +119,6 @@ export function SkillIcon({ name }) {
 const skillGroups = [
   {
     title: 'UX research',
-    tone: 'green',
     icon: 'interviews',
     items: [
       { label: 'User interviews', icon: 'interviews' },
@@ -153,18 +129,16 @@ const skillGroups = [
   },
   {
     title: 'UI and prototyping',
-    tone: 'coral',
     icon: 'wireframes',
     items: [
       { label: 'Wireframes', icon: 'wireframes' },
       { label: 'Figma', icon: 'figma' },
-      { label: 'Interactive prototypes', icon: 'prototype' },
+      { label: 'Prototypes', icon: 'prototype' },
       { label: 'Visual hierarchy', icon: 'hierarchy' },
     ],
   },
   {
     title: 'Frontend',
-    tone: 'blue',
     icon: 'code',
     items: [
       { label: 'HTML', icon: 'html' },
@@ -175,7 +149,6 @@ const skillGroups = [
   },
   {
     title: 'Working style',
-    tone: 'umber',
     icon: 'humor',
     items: [
       { label: 'Curiosity', icon: 'curiosity' },
@@ -200,7 +173,7 @@ export default function Skills() {
       <div className={styles.grid}>
         {skillGroups.map((group, index) => (
           <article
-            className={`${styles.card} ${styles[group.tone]} reveal`}
+            className={`${styles.card} reveal`}
             style={{ '--reveal-delay': `${index * 70}ms` }}
             key={group.title}
           >

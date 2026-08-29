@@ -74,25 +74,20 @@
 .timelineColumns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 1.7vw, 1.5rem);
+  gap: clamp(1.25rem, 2.5vw, 2.4rem);
 }
 
 .experienceRow {
   grid-column: 1 / -1;
-  padding-top: clamp(1rem, 2vw, 1.4rem);
-  border-top: 1px solid var(--line);
+  padding-top: clamp(0.4rem, 1.2vw, 0.85rem);
 }
 
 .timelineColumn {
   min-width: 0;
-  padding: clamp(0.9rem, 1.6vw, 1.15rem);
-  background: rgba(236, 235, 230, 0.72);
-  border: 1px solid rgba(23, 24, 20, 0.1);
-  border-radius: var(--radius);
 }
 
 .timelineColumn > h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
   color: var(--muted);
   font: 700 0.78rem var(--mono);
   letter-spacing: 0.04em;
@@ -126,14 +121,12 @@
   display: grid;
   align-content: start;
   gap: 0.65rem;
-  padding: 1.1rem 1rem 1rem;
+  padding: clamp(1.15rem, 2vw, 1.45rem);
   overflow: hidden;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 245, 242, 0.98)),
-    var(--paper-bright);
-  border: 1px solid rgba(23, 24, 20, 0.13);
-  border-radius: var(--radius);
-  box-shadow: 0 12px 28px rgba(23, 23, 23, 0.045);
+  background: var(--paper-bright);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.045);
 }
 
 .timelineItem > div:first-child {
@@ -144,18 +137,21 @@
 .timelineItem h4 {
   max-width: none;
   padding-top: 0;
-  font-size: clamp(1rem, 1.4vw, 1.16rem);
+  font-family: var(--recruiter);
+  font-size: clamp(1.08rem, 1.55vw, 1.28rem);
   font-weight: 800;
-  line-height: 1.2;
+  letter-spacing: 0;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
 .timelineMeta {
   margin-top: 0.25rem;
   color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 700;
+  font: 700 0.72rem var(--mono);
+  letter-spacing: 0.04em;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .timelineItem time {
@@ -208,7 +204,7 @@
 
   .timelineItem {
     min-height: 130px;
-    padding: 0.95rem 0.85rem 0.85rem;
+    padding: 1.05rem;
   }
 
   .compactEducationItem {
@@ -251,7 +247,7 @@
   }
 
   .timelineColumn {
-    padding: 0.85rem;
+    padding: 0;
   }
 
   .timelineColumn:nth-child(2) .timelineList {

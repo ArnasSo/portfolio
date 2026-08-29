@@ -14,14 +14,11 @@ const signals = [
     value: 'Internships + education',
     sectionId: '#about',
   },
-  { label: 'Location', value: 'Aalborg, Aarhus, remote' },
   {
     label: 'Certificates',
     value: (
       <>
-        <strong>Google UX Certificate Program</strong>
-        <br />
-        1/7 certificates in progress
+        <strong>Google UX certificates</strong>
       </>
     ),
     links: [
@@ -46,6 +43,55 @@ const signals = [
 export default function Hero() {
   return (
     <section id="home" className={styles.hero} aria-labelledby="hero-title">
+      <div className={styles.heroDrawings} aria-hidden="true">
+        <svg className={styles.heroDrawingLeft} viewBox="0 0 360 560" focusable="false">
+          <path
+            d="M-24 318c67-92 168-144 254-116 72 24 98 94 67 157-33 67-115 94-191 75-53-13-94-48-130-116Z"
+            fill="none"
+            stroke="rgba(150, 63, 47, 0.16)"
+            strokeWidth="34"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M-2 312c59-72 145-110 215-88 56 18 76 73 51 122-26 52-90 73-150 58-44-11-78-38-116-92Z"
+            fill="none"
+            stroke="var(--accent)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.26"
+          />
+          <path
+            d="M34 134c24-15 49-22 75-22M26 170c30-12 61-17 92-13"
+            fill="none"
+            stroke="rgba(150, 63, 47, 0.28)"
+            strokeWidth="6"
+            strokeLinecap="round"
+            opacity="0.45"
+          />
+        </svg>
+
+        <svg className={styles.heroDrawingRight} viewBox="0 0 420 280" focusable="false">
+          <path
+            d="M37 82c77-33 146-42 208-27 57 13 98 47 136 95"
+            fill="none"
+            stroke="rgba(49, 95, 135, 0.16)"
+            strokeWidth="62"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M54 100c67-27 129-34 184-21 50 12 85 39 120 82"
+            fill="none"
+            stroke="rgba(49, 95, 135, 0.3)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx="304" cy="58" r="8" fill="var(--accent)" opacity="0.28" />
+        </svg>
+      </div>
       <div className={styles.inner}>
         <div className={styles.copy}>
           <p className={`${styles.roleTitle} section-kicker`}>Junior UX/UI Designer</p>

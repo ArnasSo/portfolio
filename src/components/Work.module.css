@@ -134,11 +134,11 @@
 }
 
 .tags li {
-  padding: 0.38rem 0.62rem;
+  padding: 0.38rem 0.76rem;
   color: var(--ink-soft);
   background: rgba(236, 235, 230, 0.72);
   border: 1px solid rgba(23, 23, 23, 0.07);
-  border-radius: 999px;
+  border-radius: var(--tag-radius);
   font: 700 0.78rem var(--mono);
   line-height: 1;
 }
@@ -165,10 +165,10 @@
   display: inline-flex;
   align-items: center;
   margin-bottom: 0.7rem;
-  padding: 0.32rem 0.5rem;
+  padding: 0.32rem 0.64rem;
   color: var(--ink);
   background: rgba(150, 63, 47, 0.08);
-  border-radius: 4px;
+  border-radius: var(--tag-radius);
 }
 
 .contentGrid p,
@@ -226,11 +226,11 @@
   align-items: center;
   justify-content: center;
   min-height: 2.65rem;
-  padding: 0.68rem 0.85rem;
+  padding: 0.64rem 1.28rem;
   color: var(--paper-bright);
   background: var(--ink);
   border: 1px solid var(--ink);
-  border-radius: 999px;
+  border-radius: var(--control-radius);
   font: 700 0.72rem var(--mono);
   text-transform: uppercase;
   white-space: nowrap;

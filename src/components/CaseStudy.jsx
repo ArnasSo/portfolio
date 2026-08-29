@@ -70,6 +70,7 @@ export default function CaseStudy({ slug }) {
   const project = projects.find(item => item.slug === slug) || defaultProject
   const otherProjects = projects.filter(item => item.slug !== project.slug)
   const [openImage, setOpenImage] = useState(null)
+  const [showFloatingBackLink, setShowFloatingBackLink] = useState(false)
   const heroImage = project.caseHeroImage || project.secondarySnapshotImage || project.backgroundImage
   const isHeroZoomable = project.caseHeroZoomable !== false
 
@@ -105,6 +106,26 @@ export default function CaseStudy({ slug }) {
     }
   }, [openImage])
 
+  useEffect(() => {
+    const updateFloatingBackLink = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      const viewportHeight = window.innerHeight
+      const pageHeight = document.documentElement.scrollHeight
+      const distanceFromBottom = pageHeight - (scrollTop + viewportHeight)
+
+      setShowFloatingBackLink(scrollTop > viewportHeight * 0.65 && distanceFromBottom > viewportHeight * 0.75)
+    }
+
+    updateFloatingBackLink()
+    window.addEventListener('scroll', updateFloatingBackLink, { passive: true })
+    window.addEventListener('resize', updateFloatingBackLink)
+
+    return () => {
+      window.removeEventListener('scroll', updateFloatingBackLink)
+      window.removeEventListener('resize', updateFloatingBackLink)
+    }
+  }, [])
+
   const openCaseImage = (src, alt) => {
     setOpenImage({ src, alt })
   }
@@ -119,7 +140,66 @@ export default function CaseStudy({ slug }) {
         '--hero-image': `url(${project.backgroundImage})`,
       }}
     >
+      <div className={styles.caseDrawings} aria-hidden="true">
+        <svg className={styles.caseDrawingTop} viewBox="0 0 360 260" focusable="false">
+          <path
+            d="M29 142C63 74 127 27 196 31c58 3 103 41 113 92 11 55-22 96-76 101-47 5-88-17-123-40-30-20-61-22-81-42Z"
+            fill="none"
+            stroke="var(--case-shape-primary, rgba(150, 63, 47, 0.22))"
+            strokeWidth="18"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M73 133c27-38 73-66 122-64 39 2 73 26 82 61 8 34-12 63-47 68-33 5-58-11-85-28-22-14-44-21-72-37Z"
+            fill="none"
+            stroke="var(--project-accent, var(--accent))"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.36"
+          />
+          <circle cx="278" cy="62" r="11" fill="var(--case-shape-secondary, rgba(49, 95, 135, 0.22))" opacity="0.55" />
+          <circle cx="318" cy="96" r="5" fill="var(--project-accent, var(--accent))" opacity="0.35" />
+        </svg>
+
+        <svg className={styles.caseDrawingBottom} viewBox="0 0 340 300" focusable="false">
+          <path
+            d="M287 96c-42-43-112-59-170-31-48 23-76 75-62 123 16 53 74 75 130 58 50-15 75-54 102-92 17-24 24-40 0-58Z"
+            fill="none"
+            stroke="var(--case-shape-secondary, rgba(49, 95, 135, 0.2))"
+            strokeWidth="20"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M259 123c-34-30-86-40-128-19-33 16-53 50-44 82 11 35 49 51 86 39 34-11 52-37 72-64 14-19 21-26 14-38Z"
+            fill="none"
+            stroke="var(--project-accent, var(--accent))"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.34"
+          />
+          <path
+            d="M46 68c18-12 36-18 55-17M51 94c15-8 31-12 48-11"
+            fill="none"
+            stroke="var(--case-shape-primary, rgba(150, 63, 47, 0.24))"
+            strokeWidth="5"
+            strokeLinecap="round"
+            opacity="0.42"
+          />
+        </svg>
+      </div>
       <a className={styles.backLink} href="/#work">Back to work</a>
+      <a
+        className={`${styles.floatingBackLink} ${showFloatingBackLink ? styles.floatingBackLinkVisible : ''}`}
+        href="/#work"
+        aria-hidden={!showFloatingBackLink}
+        tabIndex={showFloatingBackLink ? undefined : -1}
+      >
+        Back to work
+      </a>
 
       <section
         className={`${styles.hero} ${project.caseHeroImage ? styles.imageHero : ''}`}

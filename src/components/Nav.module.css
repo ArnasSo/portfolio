@@ -32,9 +32,9 @@
 
 .link {
   display: block;
-  padding: 0.55rem 0.75rem;
+  padding: 0.5rem 1rem;
   color: var(--muted);
-  border-radius: 999px;
+  border-radius: var(--control-radius);
   font: 700 0.72rem var(--mono);
   text-transform: uppercase;
 }
@@ -76,7 +76,7 @@
 
   .link {
     white-space: nowrap;
-    padding: 0.44rem 0.5rem;
+    padding: 0.38rem 0.76rem;
     font-size: 0.66rem;
   }
 }
@@ -95,6 +95,6 @@
   }
 
   .link {
-    padding: 0.3rem 0.2rem;
+    padding: 0.3rem 0.6rem;
   }
 }

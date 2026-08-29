@@ -22,7 +22,7 @@ export default function Contact() {
             LinkedIn
           </a>
         </div>
-        <p className={styles.meta}>Aalborg / Aarhus / remote. Designed and built by Arnas Sokolovas, with only reasonable amounts of overthinking.</p>
+        <p className={styles.meta}>Designed and built by Arnas Sokolovas, with only reasonable amounts of overthinking.</p>
       </div>
     </section>
   )
