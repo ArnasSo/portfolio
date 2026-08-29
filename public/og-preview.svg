@@ -13,9 +13,9 @@
 
   <path d="M88 178H1112" stroke="#111111" stroke-opacity=".17" stroke-width="2"/>
 
-  <text x="88" y="286" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="72" font-weight="800">Designing clearer</text>
-  <text x="88" y="370" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="72" font-weight="800">product experiences</text>
-  <text x="88" y="454" fill="#963F2F" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="72" font-weight="800">around real user needs.</text>
+  <text x="88" y="274" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="68" font-weight="800">UX/UI designer</text>
+  <text x="88" y="352" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="68" font-weight="800">with a frontend</text>
+  <text x="88" y="430" fill="#963F2F" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="68" font-weight="800">mindset.</text>
 
   <rect x="88" y="502" width="214" height="42" rx="21" fill="#111111"/>
   <text x="195" y="529" text-anchor="middle" fill="#FFFFFF" font-family="Space Mono, monospace" font-size="14" font-weight="700">CASE STUDIES</text>
@@ -33,6 +33,6 @@
     <text x="28" y="112" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="20" font-weight="800">Focus</text>
     <text x="28" y="140" fill="#505050" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="18">UX, research, interaction</text>
     <text x="28" y="184" fill="#111111" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="20" font-weight="800">Learning</text>
-    <text x="28" y="212" fill="#505050" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="18">Google UX Certificate</text>
+    <text x="28" y="212" fill="#505050" font-family="Plus Jakarta Sans, Helvetica Neue, sans-serif" font-size="18">Google UX certificates</text>
   </g>
 </svg>

@@ -26,6 +26,10 @@ const signals = [
         label: 'Verify certificate 1',
         href: 'https://www.coursera.org/account/accomplishments/verify/0ZA3ABEZFUSY',
       },
+      {
+        label: 'Verify certificate 2',
+        href: 'https://www.coursera.org/account/accomplishments/verify/7EOW5W4IZCKK',
+      },
     ],
   },
   {
