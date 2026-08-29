@@ -1,8 +1,8 @@
 const defaultImage = 'https://arnas-so.com/arnas-sokolovas-portfolio-preview-v2.png'
 
 export const homeMeta = {
-  title: 'Arnas Sokolovas | UX/UI & Frontend Designer',
-  description: 'UX/UI and frontend portfolio with case studies in research, interface design, prototyping, accessibility, and product thinking.',
+  title: 'Arnas Sokolovas | Junior UX/UI Designer',
+  description: 'Portfolio with UX/UI case studies, user research, prototypes, usability testing, and a frontend brain.',
   url: 'https://arnas-so.com/',
   image: defaultImage,
 }
