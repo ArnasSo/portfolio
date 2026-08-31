@@ -121,7 +121,6 @@ export default function Hero() {
           </figure>
 
           <aside className={styles.panel} aria-label="Portfolio summary">
-            <p className={styles.panelLabel}>For Recruiters</p>
             <dl>
               {signals.map(signal => (
                 <div key={signal.label} className={signal.subtext ? styles.hasSubtext : undefined}>

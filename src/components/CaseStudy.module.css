@@ -193,7 +193,7 @@
   background-size: cover;
   background-position: center;
   border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 32%, var(--line));
-  border-radius: var(--radius);
+  border-radius: 0;
   box-shadow: 0 24px 70px rgba(23, 23, 23, 0.1);
 }
 
@@ -202,7 +202,7 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
 }
 
 .transparentHeroVisual {
@@ -240,7 +240,7 @@
   color: inherit;
   background: transparent;
   border: 0;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
   cursor: zoom-in;
 }
 
@@ -611,7 +611,7 @@
   color: var(--muted);
   background: color-mix(in srgb, var(--project-accent, var(--accent)) 7%, rgba(251, 251, 247, 0.68));
   border: 1px dashed color-mix(in srgb, var(--project-accent, var(--accent)) 44%, transparent);
-  border-radius: var(--radius);
+  border-radius: 0;
   font-size: var(--case-body-size);
   line-height: 1.55;
 }
@@ -701,7 +701,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
   background: var(--ink);
 }
 
@@ -714,7 +714,7 @@
     linear-gradient(135deg, rgba(251, 251, 247, 0.82), rgba(241, 242, 238, 0.92)),
     repeating-linear-gradient(135deg, color-mix(in srgb, var(--project-accent, var(--accent)) 22%, transparent) 0 1px, transparent 1px 18px);
   border: 1px dashed color-mix(in srgb, var(--project-accent, var(--accent)) 42%, transparent);
-  border-radius: var(--radius);
+  border-radius: 0;
 }
 
 .imagePlaceholder span {
@@ -746,7 +746,7 @@
   padding: clamp(0.6rem, 1.8vw, 1rem);
   background: var(--paper-bright);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0;
 }
 
 .storyBlock img {
@@ -754,7 +754,7 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: center top;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
 }
 
 .storyBlock figcaption {
@@ -896,7 +896,7 @@
   background: rgba(251, 251, 247, 0.8);
   border: 1px solid var(--line);
   border-left: 4px solid var(--project-accent, var(--accent));
-  border-radius: var(--radius);
+  border-radius: 0;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -915,7 +915,7 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
 }
 
 .moreCard p {
@@ -976,7 +976,7 @@
   object-fit: contain;
   background: var(--paper-bright);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: var(--radius);
+  border-radius: 0;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
 }
 

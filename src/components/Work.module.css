@@ -40,7 +40,7 @@
   overflow: hidden;
   background: var(--paper-bright);
   border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 2px);
+  border-radius: 0;
   box-shadow: 0 18px 46px rgba(23, 23, 23, 0.045);
   transition:
     border-color 0.2s ease,
@@ -157,7 +157,7 @@
   overflow: hidden;
   background: rgba(251, 251, 247, 0.78);
   border: 1px solid rgba(23, 24, 20, 0.11);
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
   box-shadow: 0 12px 28px rgba(23, 23, 23, 0.045);
 }
 
@@ -214,7 +214,7 @@
   color: var(--ink);
   background: rgba(49, 95, 135, 0.09);
   border-left: 3px solid var(--project-accent, var(--accent));
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
 }
 
 .placeholder span {
@@ -257,7 +257,7 @@
 .detailText {
   min-width: 0;
   min-height: 260px;
-  border-radius: var(--radius);
+  border-radius: 0;
 }
 
 .detailVisual {
@@ -275,7 +275,7 @@
   background:
     linear-gradient(135deg, rgba(49, 95, 135, 0.96), rgba(23, 23, 23, 0.92)),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 28px);
-  border-radius: var(--radius);
+  border-radius: 0;
 }
 
 .visualFrameImage {

@@ -110,7 +110,7 @@
   color: var(--ink);
   background: var(--paper-bright);
   border: 1px solid var(--line);
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 0;
   box-shadow: 0 18px 44px -22px rgba(23, 23, 23, 0.22);
   font-family: var(--sans);
   font-size: 0.9rem;

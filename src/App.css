@@ -20,7 +20,7 @@
   --max-width: 1440px;
   --page-padding: clamp(1.1rem, 4vw, 4.5rem);
   --space-2xl: clamp(4.5rem, 10vw, 9rem);
-  --radius: 8px;
+  --radius: 0px;
   --control-radius: 6px;
   --tag-radius: 999px;
 }
