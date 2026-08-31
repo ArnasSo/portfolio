@@ -5,7 +5,7 @@
   --case-body-size: 1.05rem;
   --case-lead-size: var(--case-body-size);
   --case-hero-title-size: clamp(3rem, 6vw, 6.4rem);
-  --case-section-title-size: clamp(2.25rem, 3.5vw, 3.6rem);
+  --case-section-title-size: clamp(2rem, 3vw, 3.1rem);
   --case-subtitle-size: 2rem;
   --case-section-space: clamp(4rem, 6vw, 6rem);
   min-height: 100vh;
@@ -1087,7 +1087,7 @@
 @media (min-width: 901px) and (max-width: 1600px) {
   .casePage {
     --case-hero-title-size: clamp(2.65rem, 5vw, 4.85rem);
-    --case-section-title-size: clamp(2rem, 3vw, 3.05rem);
+    --case-section-title-size: clamp(1.95rem, 2.75vw, 2.85rem);
     --case-subtitle-size: 1.9rem;
     --case-section-space: clamp(3.6rem, 5.4vw, 5.4rem);
     padding-block: clamp(5rem, 7vw, 6rem);
@@ -1238,7 +1238,7 @@
   .casePage {
     --case-body-size: 0.96rem;
     --case-hero-title-size: clamp(2.15rem, 4vw, 3.55rem);
-    --case-section-title-size: clamp(1.9rem, 3.2vw, 3.1rem);
+    --case-section-title-size: clamp(1.9rem, 2.8vw, 2.75rem);
     --case-section-space: 3.6rem;
     padding-block: 4.6rem;
   }

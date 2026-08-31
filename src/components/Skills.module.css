@@ -6,20 +6,20 @@
 
 .header,
 .grid {
-  max-width: var(--max-width);
+  width: min(100%, calc(var(--max-width) * 0.9));
   margin: 0 auto;
 }
 
 .header {
   display: block;
   margin-bottom: clamp(2rem, 5vw, 4rem);
-  text-align: center;
+  text-align: left;
 }
 
 .header h2 {
   max-width: 1160px;
-  margin: 0 auto;
-  font-size: clamp(2.2rem, 4.35vw, 4.95rem);
+  margin: 0;
+  font-size: clamp(2rem, 3.2vw, 3.35rem);
   font-weight: 800;
   line-height: 1.02;
 }
@@ -155,7 +155,7 @@
   }
 
   .header h2 {
-    font-size: clamp(2.1rem, 3.65vw, 3.95rem);
+    font-size: clamp(1.95rem, 2.9vw, 3rem);
   }
 
   .card {
@@ -204,7 +204,7 @@
   }
 
   .header h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.85rem, 8.8vw, 2.45rem);
   }
 
   .card {

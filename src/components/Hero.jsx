@@ -101,9 +101,9 @@ export default function Hero() {
           <p className={`${styles.roleTitle} section-kicker`}>Junior UX/UI Designer</p>
           <h1 id="hero-title">UX/UI designer with a frontend brain and a user-first habit</h1>
           <p className={styles.summary}>
-            I am <strong>Arnas Sokolovas</strong>, an early-career designer with a UX mindset,
-            UI practice, and some frontend experience in WordPress and React.js. I like useful
-            details, honest feedback, and teams where good ideas are allowed to be a little messy first.
+            I am <strong>Arnas Sokolovas</strong>, an early-career UX/UI designer with frontend
+            experience in WordPress and React.js. I like thoughtful interfaces, honest feedback,
+            and teams where good ideas can be a little messy first.
           </p>
           <div className={styles.actions}>
             <a href="#work" className="btn-primary" onClick={event => scrollToSection(event, '#work')}>

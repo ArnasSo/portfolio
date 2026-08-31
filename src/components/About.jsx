@@ -28,15 +28,9 @@ const educationItems = [
   },
   {
     school: 'UCN',
-    program: 'Top-Up, Web Development',
-    date: 'Sep 2017 - May 2019',
-    note: 'Web development education with a frontend and digital product foundation.',
-  },
-  {
-    school: 'UCN',
-    program: 'AP degree, Computer Science',
-    date: '2015 - 2017',
-    note: 'Software and programming foundation.',
+    program: 'AP degree, Computer Science + Top-Up, Web Development',
+    date: '2015 - May 2019',
+    note: 'Continuous studies from a software and programming foundation into web development, frontend, and digital product work.',
   },
 ]
 
@@ -51,29 +45,14 @@ export default function About() {
           <h2 id="about-title">I came into design through the practical side of building things</h2>
         </div>
 
-        <div className={styles.body}>
-          <div className={`${styles.timelineIntro} ${styles.currentRole}`}>
-            <h3>Junior UX/UI Designer</h3>
-            <p>
-              I am currently looking for a UX/UI internship, student job, junior role,
-              or frontend position where I can build practical product experience.
-            </p>
-            <p>
-              I know I still have a lot to learn, and that is exactly what makes the
-              next step exciting to me: learning from people with more experience,
-              seeing how real teams work, and growing through honest feedback.
-            </p>
-          </div>
-        </div>
-
         <div className={`${styles.timelineColumns} ${styles.experienceRow}`} aria-label="Education and experience">
           <section className={`${styles.timelineColumn} ${styles.educationColumn}`} aria-labelledby="education-title">
             <h3 id="education-title">Education</h3>
             <div className={styles.timelineList}>
-              {educationItems.map((item, index) => (
+              {educationItems.map(item => (
                 <article
                   key={`${item.school}-${item.program}`}
-                  className={`${styles.timelineItem} ${index > 0 ? styles.compactEducationItem : ''}`}
+                  className={styles.timelineItem}
                 >
                   <div>
                     <h4>{item.school}</h4>
@@ -102,6 +81,7 @@ export default function About() {
             </div>
           </section>
         </div>
+
       </div>
     </section>
   )

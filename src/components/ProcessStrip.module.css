@@ -21,7 +21,7 @@
   position: relative;
   max-width: 1120px;
   margin: 0 auto;
-  font-size: clamp(2.3rem, 4.55vw, 4.95rem);
+  font-size: clamp(2rem, 3.2vw, 3.35rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.04;
@@ -138,7 +138,7 @@
 
   .header h2 {
     max-width: 900px;
-    font-size: clamp(2.1rem, 3.75vw, 4.05rem);
+    font-size: clamp(1.95rem, 2.9vw, 3rem);
   }
 
   .steps {
@@ -208,7 +208,7 @@
   }
 
   .header h2 {
-    font-size: clamp(2rem, 10vw, 2.95rem);
+    font-size: clamp(1.85rem, 8.8vw, 2.45rem);
     line-height: 1.05;
   }
 
