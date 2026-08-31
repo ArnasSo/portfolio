@@ -1,4 +1,4 @@
-const defaultImage = 'https://arnas-so.com/arnas-photo.png'
+const defaultImage = 'https://arnas-so.com/arnas-sokolovas-social-preview.png'
 
 export const homeMeta = {
   title: 'Arnas Sokolovas | Junior UX/UI Designer',
