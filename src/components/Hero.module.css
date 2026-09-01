@@ -83,6 +83,11 @@
   margin-top: 2rem;
 }
 
+.actions :global(.btn-primary),
+.actions :global(.btn-secondary) {
+  border-radius: 16px;
+}
+
 .recruiterStack {
   display: grid;
   gap: 1rem;
@@ -97,7 +102,7 @@
   min-height: clamp(280px, 32vw, 430px);
   overflow: hidden;
   background:
-    linear-gradient(145deg, rgba(236, 235, 230, 0.9), rgba(255, 255, 255, 0.78)),
+    linear-gradient(145deg, rgba(244, 222, 210, 0.62), rgba(239, 228, 219, 0.7) 48%, rgba(232, 207, 193, 0.54)),
     var(--wash);
   border: 1px solid var(--line);
   border-radius: 0;
@@ -447,18 +452,17 @@
   .actions {
     display: grid;
     gap: 0.7rem;
-    width: min(100%, calc(100vw - (var(--page-padding) * 2)));
+    width: 100%;
     max-width: 100%;
-    padding-right: var(--page-padding);
     margin-top: 1.4rem;
   }
 
   .actions a,
   .actions :global(.btn-primary),
   .actions :global(.btn-secondary) {
-    justify-self: start;
-    width: calc(100% - var(--page-padding));
-    max-width: calc(100vw - (var(--page-padding) * 3));
+    justify-self: stretch;
+    width: 100%;
+    max-width: 100%;
   }
 
   .panel dl > div {

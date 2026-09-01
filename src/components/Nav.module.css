@@ -19,8 +19,21 @@
 }
 
 .logo {
-  font-size: 0.95rem;
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.logo img {
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.menuButton {
+  display: none;
 }
 
 .links {
@@ -33,10 +46,9 @@
 .link {
   display: block;
   padding: 0.5rem 1rem;
-  color: var(--muted);
+  color: var(--ink);
   border-radius: var(--control-radius);
-  font: 700 0.72rem var(--mono);
-  text-transform: uppercase;
+  font: 400 1rem var(--mono);
 }
 
 .link:hover,
@@ -47,37 +59,92 @@
 
 @media (max-width: 560px) {
   .nav {
-    flex-wrap: wrap;
-    gap: 0.45rem;
-    padding: 0.72rem 0.62rem;
+    padding: 0.72rem var(--page-padding);
   }
 
   .links {
-    order: 2;
-    flex: 1;
-    flex-basis: 100%;
-    justify-content: flex-start;
-    gap: 0;
-    min-width: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
+    position: absolute;
+    top: calc(100% - 1px);
+    right: var(--page-padding);
+    display: grid;
+    gap: 0.25rem;
+    width: min(14rem, calc(100vw - (var(--page-padding) * 2)));
+    padding: 0.5rem;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(249, 248, 245, 0.97);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 18px 44px rgba(23, 23, 23, 0.12);
+    backdrop-filter: blur(16px);
+    transform: translateY(-0.35rem);
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0.18s ease;
   }
 
-  .links::-webkit-scrollbar {
-    display: none;
+  .open .links {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .links li {
+    min-width: 0;
+  }
+
+  .menuButton {
+    display: grid;
+    gap: 0.24rem;
+    place-content: center;
+    width: 2.65rem;
+    height: 2.65rem;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .menuButton span {
+    display: block;
+    width: 1.05rem;
+    height: 1px;
+    background: currentColor;
+    transition:
+      transform 0.18s ease,
+      opacity 0.18s ease;
+  }
+
+  .open .menuButton span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .open .menuButton span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open .menuButton span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
   }
 
   .logo {
     flex-shrink: 1;
-    max-width: 4.9rem;
-    font-size: 0.72rem;
+    max-width: 9rem;
+    font-size: 1rem;
     line-height: 1.1;
   }
 
+  .logo img {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
   .link {
-    white-space: nowrap;
-    padding: 0.38rem 0.76rem;
-    font-size: 0.66rem;
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    font-size: 1rem;
   }
 }
 
@@ -91,10 +158,10 @@
   }
 
   .links {
-    justify-content: flex-start;
+    right: var(--page-padding);
   }
 
   .link {
-    padding: 0.3rem 0.6rem;
+    padding: 0.68rem 0.8rem;
   }
 }

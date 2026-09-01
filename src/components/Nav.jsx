@@ -14,11 +14,23 @@ const observedSections = ['#home', ...navLinks.map(link => link.href)]
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('#home')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
   useEffect(() => {
@@ -70,19 +82,43 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} aria-label="Primary navigation">
-      <a href="#home" className={styles.logo} onClick={event => scrollToSection(event, '#home')}>
-        Arnas Sokolovas
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.open : ''}`} aria-label="Primary navigation">
+      <a
+        href="#home"
+        className={styles.logo}
+        onClick={event => {
+          setMenuOpen(false)
+          scrollToSection(event, '#home')
+        }}
+      >
+        <img src="/favicon.svg" alt="" aria-hidden="true" />
+        <span>Arnas Sokolovas</span>
       </a>
 
-      <ul className={styles.links}>
+      <button
+        type="button"
+        className={styles.menuButton}
+        aria-expanded={menuOpen}
+        aria-controls="primary-menu"
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        onClick={() => setMenuOpen(current => !current)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <ul id="primary-menu" className={styles.links}>
         {navLinks.map(link => (
           <li key={link.href}>
             <a
               href={link.href}
               className={`${styles.link} ${activeSection === link.href ? styles.active : ''}`}
               aria-current={activeSection === link.href ? 'location' : undefined}
-              onClick={event => scrollToSection(event, link.href)}
+              onClick={event => {
+                setMenuOpen(false)
+                scrollToSection(event, link.href)
+              }}
             >
               {link.label}
             </a>

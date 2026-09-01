@@ -7,7 +7,7 @@
   --case-hero-title-size: clamp(3rem, 6vw, 6.4rem);
   --case-section-title-size: clamp(2rem, 3vw, 3.1rem);
   --case-subtitle-size: 2rem;
-  --case-section-space: clamp(4rem, 6vw, 6rem);
+  --case-section-space: clamp(4.8rem, 7vw, 7.2rem);
   min-height: 100vh;
   overflow-x: clip;
   padding: clamp(5.5rem, 9vw, 7rem) var(--page-padding);
@@ -161,14 +161,43 @@
 
 .summaryGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(1.2rem, 3vw, 2rem);
-  margin-top: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.45rem, 2.6vw, 2.15rem);
+  max-width: 50rem;
+  margin-top: clamp(1.5rem, 3.5vw, 2.8rem);
+}
+
+.heroProcessTags {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+  width: 100%;
+  max-width: 34rem;
+  margin-top: clamp(1.1rem, 2.2vw, 1.65rem);
+}
+
+.heroProcessTags li {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 2rem;
+  padding: 0.8rem 0.72rem;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(251, 251, 247, 0.82));
+  border: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 24%, var(--line));
+  border-radius: var(--tag-radius);
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .summaryGrid h2,
 .nextStep a {
-  color: var(--muted);
+  color: var(--ink);
   font: 700 var(--case-label-size) var(--mono);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -318,9 +347,9 @@
 .caseLead {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.72fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: end;
-  margin-bottom: clamp(2.5rem, 6vw, 5.2rem);
+  gap: clamp(2rem, 4.8vw, 5rem);
+  align-items: center;
+  margin-top: clamp(2.4rem, 5vw, 4.5rem);
   padding: clamp(1.8rem, 4vw, 3.6rem) 0;
   border-top: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 28%, var(--line));
 }
@@ -346,7 +375,8 @@
 
 .caseLead dl {
   display: grid;
-  gap: 0.75rem;
+  gap: 1.15rem;
+  align-self: center;
 }
 
 .caseLead dl div {
@@ -372,8 +402,8 @@
 
 .gallery {
   display: grid;
-  gap: clamp(4rem, 8vw, 7rem);
-  margin-top: clamp(5rem, 10vw, 8rem);
+  gap: clamp(4.8rem, 9vw, 8.2rem);
+  margin-top: clamp(5.8rem, 11vw, 9rem);
   padding-top: clamp(3rem, 7vw, 6rem);
   border-top: 1px solid var(--line);
 }
@@ -398,7 +428,7 @@
 .customCaseSection {
   position: relative;
   grid-template-columns: minmax(380px, 0.78fr) minmax(0, 1fr);
-  gap: clamp(2.5rem, 5.5vw, 6rem);
+  gap: clamp(3rem, 6.4vw, 7.2rem);
   align-items: start;
   padding: var(--case-section-space) 0;
   border-top: 1px solid color-mix(in srgb, var(--project-accent, var(--accent)) 25%, var(--line));
@@ -450,6 +480,7 @@
   align-items: start;
   min-height: 0;
   padding-block: var(--case-section-space);
+  border-bottom: 0;
 }
 
 .closingCaseSection .sectionCopy {
@@ -517,7 +548,7 @@
 
 .sectionCopy h2 {
   max-width: 34rem;
-  margin-top: 0.8rem;
+  margin-top: 1.15rem;
   font-size: var(--case-section-title-size);
   font-weight: 800;
   line-height: 1;
@@ -525,14 +556,14 @@
 
 .customCaseSection .sectionCopy h2 {
   max-width: 38rem;
-  margin-top: 1.25rem;
+  margin-top: 1.55rem;
   font-size: var(--case-section-title-size);
   line-height: 1.05;
 }
 
 .sectionCopy > p {
   max-width: 35rem;
-  margin-top: 1.25rem;
+  margin-top: 1.55rem;
   color: var(--ink-soft);
   font-size: var(--case-body-size);
   line-height: 1.72;
@@ -543,7 +574,7 @@
 
 .customCaseSection .sectionCopy > p {
   max-width: 37rem;
-  margin-top: 1.15rem;
+  margin-top: 1.45rem;
   font-size: var(--case-body-size);
   line-height: 1.66;
   text-align: left;
@@ -551,12 +582,12 @@
 }
 
 .sectionCopy > p + p {
-  margin-top: 0.95rem;
+  margin-top: 1.45rem;
 }
 
 .sectionCopy .takeaway {
   max-width: 38rem;
-  margin-top: 1.2rem;
+  margin-top: 1.6rem;
   padding: 1.05rem 1.2rem 1.12rem;
   color: var(--ink);
   background: color-mix(in srgb, var(--project-accent, var(--accent)) 8%, rgba(251, 251, 247, 0.8));
@@ -569,9 +600,9 @@
 .sectionHighlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1rem;
+  gap: 0.95rem 1.15rem;
   max-width: 36rem;
-  margin-top: 1.4rem;
+  margin-top: 1.8rem;
 }
 
 .sectionHighlights li {
@@ -588,9 +619,9 @@
 .customCaseSection .sectionHighlights {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem 1.1rem;
+  gap: 1.05rem 1.25rem;
   max-width: 37rem;
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
 }
 
 .customCaseSection .sectionHighlights li {
@@ -619,14 +650,14 @@
 .imageGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 1.35rem;
 }
 
 .customCaseSection .imageGrid {
   align-self: start;
   width: 100%;
   grid-template-columns: 1fr;
-  gap: clamp(1.15rem, 2.4vw, 2rem);
+  gap: clamp(1.45rem, 3vw, 2.5rem);
 }
 
 .singleImageGrid {
@@ -734,7 +765,7 @@
 .storyBlock {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.56fr);
-  gap: clamp(1.5rem, 5vw, 5rem);
+  gap: clamp(2rem, 5.8vw, 6.2rem);
   align-items: center;
 }
 
@@ -790,9 +821,9 @@
 .nextStep {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(1.5rem, 4vw, 4rem);
+  gap: clamp(2rem, 4.8vw, 5rem);
   align-items: end;
-  margin-top: clamp(3.5rem, 7vw, 6rem);
+  margin-top: clamp(4.2rem, 8vw, 7rem);
   padding: clamp(1.4rem, 3vw, 2.5rem) 0 0;
   background: transparent;
   border-top: 2px solid var(--project-accent, var(--accent));
@@ -1022,7 +1053,7 @@
 
   .caseLead {
     align-items: start;
-    margin-bottom: clamp(2.2rem, 7vw, 4rem);
+    margin-bottom: clamp(2.8rem, 8vw, 5rem);
   }
 
   .caseLead dl {
@@ -1055,11 +1086,11 @@
     --case-hero-title-size: clamp(2.35rem, 12vw, 3rem);
     --case-section-title-size: clamp(1.7rem, 8vw, 2.25rem);
     --case-subtitle-size: clamp(1.7rem, 8vw, 2.25rem);
-    --case-section-space: 4rem;
+    --case-section-space: 4.5rem;
   }
 
   .customCaseSection {
-    gap: 2rem;
+    gap: 2.4rem;
     align-items: start;
     padding: var(--case-section-space) 0;
   }
@@ -1089,7 +1120,7 @@
     --case-hero-title-size: clamp(2.65rem, 5vw, 4.85rem);
     --case-section-title-size: clamp(1.95rem, 2.75vw, 2.85rem);
     --case-subtitle-size: 1.9rem;
-    --case-section-space: clamp(3.6rem, 5.4vw, 5.4rem);
+    --case-section-space: clamp(4.2rem, 6vw, 6.2rem);
     padding-block: clamp(5rem, 7vw, 6rem);
   }
 
@@ -1117,7 +1148,7 @@
   }
 
   .imageHero .summaryGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .imageHero .summaryGrid p {
@@ -1133,8 +1164,19 @@
   }
 
   .summaryGrid {
-    gap: 1rem;
+    gap: clamp(1.3rem, 2.2vw, 1.85rem);
     margin-top: clamp(1.4rem, 3.2vw, 2.6rem);
+  }
+
+  .heroProcessTags {
+    gap: 0.4rem;
+    max-width: 30rem;
+  }
+
+  .heroProcessTags li {
+    min-height: 1.85rem;
+    padding: 0.44rem 0.62rem;
+    font-size: 0.72rem;
   }
 
   .summaryGrid p {
@@ -1152,8 +1194,8 @@
 
   .caseLead {
     grid-template-columns: minmax(0, 0.88fr) minmax(280px, 0.62fr);
-    gap: clamp(1.2rem, 3vw, 3rem);
-    margin-bottom: clamp(2.5rem, 5.5vw, 4.8rem);
+    gap: clamp(1.8rem, 3.8vw, 4rem);
+    margin-bottom: clamp(3rem, 6vw, 5.4rem);
     padding: clamp(1.25rem, 2.6vw, 2.4rem) 0;
   }
 
@@ -1168,7 +1210,7 @@
 
   .caseSection {
     grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1fr);
-    gap: clamp(1.5rem, 4vw, 3.8rem);
+    gap: clamp(2rem, 4.8vw, 4.8rem);
   }
 
   .customNarrative {
@@ -1177,7 +1219,7 @@
 
   .customCaseSection {
     grid-template-columns: minmax(380px, 0.78fr) minmax(0, 1fr);
-    gap: clamp(2rem, 4.5vw, 4.8rem);
+    gap: clamp(2.4rem, 5.2vw, 5.8rem);
     align-items: start;
     padding: var(--case-section-space) 0;
   }
@@ -1206,7 +1248,7 @@
   }
 
   .imageGrid {
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .imageGrid .imageButton,
@@ -1229,8 +1271,8 @@
   }
 
   .gallery {
-    gap: clamp(3rem, 6vw, 5rem);
-    margin-top: clamp(3.6rem, 7vw, 5.8rem);
+    gap: clamp(3.8rem, 7vw, 6rem);
+    margin-top: clamp(4.4rem, 8vw, 6.8rem);
   }
 }
 
@@ -1239,7 +1281,7 @@
     --case-body-size: 0.96rem;
     --case-hero-title-size: clamp(2.15rem, 4vw, 3.55rem);
     --case-section-title-size: clamp(1.9rem, 2.8vw, 2.75rem);
-    --case-section-space: 3.6rem;
+    --case-section-space: 4rem;
     padding-block: 4.6rem;
   }
 
@@ -1257,7 +1299,8 @@
   }
 
   .imageHero .summaryGrid {
-    margin-top: 1.35rem;
+    margin-top: 1.5rem;
+    gap: 1.2rem;
   }
 
   .summaryGrid h2,
@@ -1353,8 +1396,20 @@
     display: block;
   }
 
+  .heroProcessTags {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  .heroProcessTags li {
+    padding: 0.46rem 0.45rem;
+    font-size: 0.68rem;
+    line-height: 1.1;
+  }
+
   .summaryGrid section + section {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
   }
 
   .overview ul {
@@ -1371,7 +1426,8 @@
   }
 
   .customCaseSection .sectionCopy h2 {
-    max-width: none;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .nextStep a {
@@ -1689,4 +1745,3 @@
     max-height: 280px;
   }
 }
-

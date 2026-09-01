@@ -2,8 +2,11 @@ import { scrollToSection } from '../utils/scrollToSection'
 import styles from './Hero.module.css'
 
 const signals = [
-  { label: 'Frontend', value: 'HTML, CSS, WordPress, React.js basics' },
-  { label: 'Looking for', value: <strong>Internship (Spring 2027), UX/UI, or frontend</strong> },
+  { label: 'Frontend', value: 'HTML & CSS and React.js basics' },
+  { 
+  label: 'Looking for', 
+  value: <><strong>UX/UI Internship</strong> (Spring 2027)</> 
+},
   {
     label: 'Studying',
     value: 'Multimedia Design',
@@ -117,7 +120,12 @@ export default function Hero() {
 
         <div className={styles.recruiterStack}>
           <figure className={styles.portrait}>
-            <img src="/arnas-photo.png" alt="Portrait of Arnas Sokolovas" />
+            <img
+              src="/arnas-photo.png"
+              alt="Portrait of Arnas Sokolovas"
+              fetchPriority="high"
+              decoding="async"
+            />
           </figure>
 
           <aside className={styles.panel} aria-label="Portfolio summary">

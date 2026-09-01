@@ -24,7 +24,14 @@ export default function Contact() {
         </div>
         <p className={styles.meta}>Designed and built by Arnas Sokolovas, with only reasonable amounts of overthinking.</p>
       </div>
-      <img className={styles.sticker} src="/footer-sticker.png" alt="" aria-hidden="true" />
+      <img
+        className={styles.sticker}
+        src="/footer-sticker.png"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+      />
     </section>
   )
 }

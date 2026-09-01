@@ -62,8 +62,6 @@
   width: clamp(15rem, 19vw, 19rem);
   height: auto;
   filter: drop-shadow(0 18px 34px rgba(0, 0, 0, 0.38));
-  mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 9rem), rgba(0, 0, 0, 0.38) calc(100% - 4rem), transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 calc(100% - 9rem), rgba(0, 0, 0, 0.38) calc(100% - 4rem), transparent 100%);
   pointer-events: none;
 }
 

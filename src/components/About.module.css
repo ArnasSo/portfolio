@@ -55,7 +55,7 @@
 
 .timelineColumn > h3 {
   margin-bottom: 0.9rem;
-  color: var(--muted);
+  color: var(--ink);
   font: 700 0.78rem var(--mono);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -85,14 +85,13 @@
 }
 
 .timelineItem > div:first-child {
-  min-height: 3.8rem;
-  padding-right: 7.25rem;
+  padding-right: 10.25rem;
 }
 
 .timelineItem h4 {
   max-width: none;
   padding-top: 0;
-  font-family: var(--recruiter);
+  font-family: var(--heading);
   font-size: clamp(1.08rem, 1.55vw, 1.28rem);
   font-weight: 800;
   letter-spacing: 0;
@@ -113,7 +112,7 @@
   position: absolute;
   top: 1.05rem;
   right: 1rem;
-  max-width: 6.6rem;
+  max-width: 9.25rem;
   color: var(--muted);
   font-size: 0.62rem;
   font-weight: 700;
@@ -121,13 +120,13 @@
   line-height: 1.25;
   text-align: right;
   text-transform: uppercase;
+  white-space: nowrap;
   opacity: 0.78;
 }
 
 .timelineItem > p:last-child {
   max-width: 35rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
+  padding-top: 0.35rem;
   color: var(--ink-soft);
   font-size: 0.9rem;
   line-height: 1.48;

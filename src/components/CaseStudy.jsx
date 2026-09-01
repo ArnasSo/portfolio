@@ -53,7 +53,7 @@ function ImageSlot({ src, label, onOpen }) {
         onClick={() => onOpen(src, label)}
         aria-label={`Open larger image of ${label}`}
       >
-        <img src={src} alt={label} />
+        <img src={src} alt={label} loading="lazy" decoding="async" />
       </button>
     )
   }
@@ -208,6 +208,9 @@ export default function CaseStudy({ slug }) {
         <div className={styles.heroCopy}>
           <p>{project.type} / {project.year}</p>
           <h1 id="case-title">{project.title}</h1>
+          <ul className={styles.heroProcessTags} aria-label="Process focus">
+            {project.process.map(step => <li key={step}>{step}</li>)}
+          </ul>
           <div className={styles.summaryGrid}>
             <section>
               <h2>Problem</h2>
@@ -216,6 +219,10 @@ export default function CaseStudy({ slug }) {
             <section>
               <h2>Role</h2>
               <p>{project.role}</p>
+            </section>
+            <section>
+              <h2>Outcome</h2>
+              <p>{project.outcome}</p>
             </section>
           </div>
         </div>
@@ -227,25 +234,18 @@ export default function CaseStudy({ slug }) {
               onClick={() => openCaseImage(heroImage, `${project.title} preview`)}
               aria-label={`Open larger image of ${project.title} preview`}
             >
-              <img src={heroImage} alt={`${project.title} preview`} />
+              <img src={heroImage} alt={`${project.title} preview`} fetchPriority="high" decoding="async" />
             </button>
           ) : (
-            <img className={styles.staticHeroImage} src={heroImage} alt={`${project.title} preview`} />
+            <img
+              className={styles.staticHeroImage}
+              src={heroImage}
+              alt={`${project.title} preview`}
+              fetchPriority="high"
+              decoding="async"
+            />
           )}
         </figure>
-      </section>
-
-      <section className={styles.overview} aria-label="Project overview">
-        <div>
-          <p className="section-kicker">Process focus</p>
-          <ul>
-            {project.process.map(step => <li key={step}>{step}</li>)}
-          </ul>
-        </div>
-        <div>
-          <p className="section-kicker">Outcome</p>
-          <p className={styles.overviewText}>{project.outcome}</p>
-        </div>
       </section>
 
       {project.caseLead && (
@@ -374,7 +374,12 @@ export default function CaseStudy({ slug }) {
                 onClick={() => openCaseImage(project.detailVisualImages[index], project.detailVisuals[index])}
                 aria-label={`Open larger image of ${project.detailVisuals[index]}`}
               >
-                <img src={project.detailVisualImages[index]} alt={project.detailVisuals[index]} />
+                <img
+                  src={project.detailVisualImages[index]}
+                  alt={project.detailVisuals[index]}
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
               <figcaption>{project.detailVisuals[index]}</figcaption>
             </figure>
@@ -415,7 +420,12 @@ export default function CaseStudy({ slug }) {
               style={{ '--project-accent': item.accent }}
               key={item.slug}
             >
-              <img src={item.secondarySnapshotImage || item.backgroundImage} alt={`${item.title} preview`} />
+              <img
+                src={item.secondarySnapshotImage || item.backgroundImage}
+                alt={`${item.title} preview`}
+                loading="lazy"
+                decoding="async"
+              />
               <div>
                 <p>{item.type} / {item.year}</p>
                 <h3>{item.title}</h3>
@@ -437,7 +447,7 @@ export default function CaseStudy({ slug }) {
             <button type="button" onClick={() => setOpenImage(null)} aria-label="Close image">
               Close
             </button>
-            <img src={openImage.src} alt={openImage.alt} />
+            <img src={openImage.src} alt={openImage.alt} decoding="async" />
           </div>
         </div>
       )}

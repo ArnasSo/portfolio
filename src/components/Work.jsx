@@ -10,6 +10,7 @@ export const projects = [
     type: 'Mobile UX / client project',
     year: '2026',
     accent: '#315f87',
+    cardGradient: 'linear-gradient(145deg, rgba(49, 95, 135, 0.2), rgba(124, 172, 205, 0.11) 48%, rgba(255, 255, 255, 0.52))',
     caseShapePrimary: 'rgba(49, 95, 135, 0.13)',
     caseShapeSecondary: 'rgba(89, 105, 52, 0.1)',
     backgroundImage: '/bla-sol-background.png',
@@ -18,7 +19,7 @@ export const projects = [
     snapshot: 'User-centered Digital Solution',
     secondarySnapshot: 'Mobile Festival Experience',
     secondarySnapshotImage: '/bla-sol-app-preview.png',
-    cardSummary: 'A festival app concept that makes smaller activities easier to find, save, and join.',
+    cardSummary: 'Festival app for finding and saving smaller activities',
     problem: 'BLA SOL needed a stronger event-discovery experience inside an existing festival app, helping visitors find relevant activities without forcing them to constantly use their phone during the festival.',
     role: 'Stakeholder research, client interviews, interview and observation guides, synthesis, UX direction, prototype, and testing.',
     process: ['Festival Discovery UX', 'Community Event Visibility', 'Personal Planning', 'Team-based Client Project'],
@@ -162,6 +163,7 @@ export const projects = [
     type: 'Flash UX/UI Project / learning game',
     year: '2026',
     accent: '#596934',
+    cardGradient: 'linear-gradient(145deg, rgba(89, 105, 52, 0.21), rgba(164, 188, 119, 0.12) 50%, rgba(255, 255, 255, 0.52))',
     caseShapePrimary: 'rgba(89, 105, 52, 0.14)',
     caseShapeSecondary: 'rgba(49, 95, 135, 0.09)',
     backgroundImage: '/planthunt-background.png',
@@ -170,7 +172,7 @@ export const projects = [
     snapshot: 'Botanical Learning Game',
     secondarySnapshot: 'Observation-led App',
     secondarySnapshotImage: '/planthunt-observation-app.png',
-    cardSummary: 'A playful QR plant hunt that keeps children exploring the real greenhouse.',
+    cardSummary: 'QR plant hunt for real greenhouse exploration',
     problem: 'The botanical garden needed a playful digital layer that could keep children engaged in real exploration without replacing the greenhouse visit.',
     role: 'Desk research, field observation, persona, OOUX content modeling, sketches, UI kit, interactive prototype, and testing in a short Double Diamond process.',
     process: ['Field Research', 'Persona + OOUX', 'QR Game Prototype', 'Flash Project'],
@@ -308,6 +310,7 @@ export const projects = [
     type: 'Inclusive product concept',
     year: '2026',
     accent: '#6f5a2a',
+    cardGradient: 'linear-gradient(145deg, rgba(210, 157, 45, 0.22), rgba(247, 202, 93, 0.13) 50%, rgba(255, 255, 255, 0.54))',
     caseShapePrimary: 'rgba(111, 90, 42, 0.15)',
     caseShapeSecondary: 'rgba(49, 95, 135, 0.1)',
     backgroundImage: '/keybee-background.png',
@@ -317,7 +320,7 @@ export const projects = [
     snapshot: 'Accessible Interaction Concept',
     secondarySnapshot: 'Inclusive Case Film',
     secondarySnapshotImage: '/keybee-case-film.jpg',
-    cardSummary: 'A haptic lost-key concept that uses vibration instead of sound-first feedback.',
+    cardSummary: 'Haptic lost-key concept using vibration-first feedback',
     problem: 'KeyBee explored how a lost-key finder could communicate through vibration instead of relying only on sound or visual attention.',
     role: 'Concept direction, haptic feedback thinking, mobile UI mockups, prototype framing, and case film presentation.',
     process: ['Concept Direction', 'Haptic Feedback', 'Mobile Mockups', 'Case Film'],
@@ -428,6 +431,7 @@ export const projects = [
     type: 'Service touchpoint / visual hierarchy',
     year: '2025',
     accent: '#963f2f',
+    cardGradient: 'linear-gradient(145deg, rgba(118, 128, 132, 0.19), rgba(188, 195, 190, 0.13) 48%, rgba(255, 255, 255, 0.56))',
     caseShapePrimary: 'rgba(150, 63, 47, 0.13)',
     caseShapeSecondary: 'rgba(49, 95, 135, 0.08)',
     backgroundImage: '/cphfw-background.png',
@@ -436,7 +440,7 @@ export const projects = [
     snapshot: 'Event Information Touchpoint',
     secondarySnapshot: 'Visual Hierarchy System',
     secondarySnapshotImage: '/cphfw-visual-hierarchy.jpg',
-    cardSummary: 'A large-screen event touchpoint for clearer sustainable fashion learning.',
+    cardSummary: 'Large-screen touchpoint for sustainable fashion learning',
     problem: 'CPHFW needed an event-ready information touchpoint that could present, inform, and support learning around sustainable materials in a clear desktop and infoscreen format.',
     role: 'CPHFW research, target-group and persona work, concept direction, prototyping, usability testing, and visual hierarchy testing.',
     process: ['Sustainability Context', 'Target Group', 'Infoscreen Prototype', 'Hierarchy Testing'],
@@ -571,6 +575,7 @@ export default function Work() {
               style={{
                 '--reveal-delay': `${index * 80}ms`,
                 '--project-accent': project.accent,
+                '--project-gradient': project.cardGradient,
                 '--project-bg': project.backgroundImage ? `url(${project.backgroundImage})` : 'none',
                 '--project-thumb': `url(${project.caseHeroImage || project.secondarySnapshotImage || project.backgroundImage})`,
               }}
@@ -582,7 +587,6 @@ export default function Work() {
               <div className={styles.cardBody}>
                 <div className={styles.cardHeader}>
                   <div>
-                    <p>{project.type}</p>
                     <h3>{project.title}</h3>
                   </div>
                 </div>
